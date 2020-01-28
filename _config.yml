@@ -1,5 +1,8 @@
 title: "Introduction to Causality: A Modern Approach"
 description: A gentle introduction into the art and science of causal inference
+nav_item:
+    - { url: '/', text: 'Home' }
+    - { url: '/introduction', text: 'About' }
 plugins:
   - jekyll-relative-links
 relative_links:
