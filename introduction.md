@@ -63,15 +63,5 @@ The code snippets at the end of the book are purely optional. If you want to fol
 
 ## Acknowledgements
 
-This book isn't just the product of Hadley and Garrett, but is the result of many conversations (in person and online) that we've had with the many people in the R community. There are a few people we'd like to thank in particular, because they have spent many hours answering our dumb questions and helping us to better think about data science:
-
-* Jenny Bryan and Lionel Henry for many helpful discussions around working
-  with lists and list-columns.
-
-* The three chapters on workflow were adapted (with permission), from
-  <http://stat545.com/block002_hello-r-workspace-wd-project.html> by
-  Jenny Bryan.
-
-* Tal Galili for augmenting his dendextend package to support a section on clustering that did not make it into the final draft.
 
 An online version of this book is available at xxx. The source of the book is available at xxx.
