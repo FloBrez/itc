@@ -1,2 +1,2 @@
-# intro_to_causality
+# Intro to Causality
 An introduction into causal analysis
