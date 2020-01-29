@@ -1,0 +1,14 @@
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><strong><a href="./">Introduction To Causality: A Modern Approach</a></strong></li>
+    edit:
+      link: https://github.com/flobrez/intro-to-causality/edit/master/%s
+      text: "Edit"
+    sharing: no
+  css: itc.css
+
+bookdown::pdf_book:
+  latex_engine: "xelatex"

@@ -1,0 +1,10 @@
+new_session: no
+delete_merged_file: yes
+
+rmd_files:
+  [
+    "index.md",
+
+    "introduction.md",
+    "causality.md",
+  ]
