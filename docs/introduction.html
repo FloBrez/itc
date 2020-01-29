@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introduction | Introduction To Causality: A Modern Approach</title>
+  <meta name="description" content="A gentle introduction into the art and science of causal inference" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introduction | Introduction To Causality: A Modern Approach" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
+  
+  <meta property="og:description" content="A gentle introduction into the art and science of causal inference" />
+  <meta name="github-repo" content="flobrez/intro_to_causality" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introduction | Introduction To Causality: A Modern Approach" />
+  
+  <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
+  
+
+<meta name="author" content="Florian Brezina" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="causality.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="itc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">Introduction To Causality: A Modern Approach</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-you-will-learn"><i class="fa fa-check"></i><b>1.1</b> What you will learn</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#how-this-book-is-organised"><i class="fa fa-check"></i><b>1.2</b> How this book is organised</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#what-you-wont-learn"><i class="fa fa-check"></i><b>1.3</b> What you won’t learn</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#statistics"><i class="fa fa-check"></i><b>1.3.1</b> Statistics</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#machine-learning"><i class="fa fa-check"></i><b>1.3.2</b> Machine Learning</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#proofs"><i class="fa fa-check"></i><b>1.3.3</b> Proofs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#prerequisites"><i class="fa fa-check"></i><b>1.4</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.5</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction To Causality: A Modern Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect. Being able to infer what the effect is going to be if you decide to do A versus B will help you make better decisions.</p>
+<p>“Introduction To Causality” will help you learn the fundamentals of the art and science of causal analysis. After reading this book, you’ll have the tools to understand and communicate causal concepts and you will know how to tackle the common questions. The code in the appendix will help you to apply these methods using the R programming language.</p>
+<div id="what-you-will-learn" class="section level2">
+<h2><span class="header-section-number">1.1</span> What you will learn</h2>
+<p>First we will discuss causality in a trivial lab environment where we are able to control every important aspect of the environment. This will help us get familiar with the vocabulary and notation and will provide some insights in how to think about causality.</p>
+<p>Once we have become familiar with the simple setting, we will loosen the assumption that we are able to fully control the environment. At this point, we will introduce causality as a probabilistic concept. Our inability to fully control and understand our environment forces us to settle for a less precise inference on the effects. We can’t say what will happen, but we can still provide robust inference on what will happen <strong>on average</strong>. Most importantly, we will see why classical statistical concepts and notation are not sufficient for a rigorous and unambiguous treatment of causality and we will get a sense that there is a fundamental difference between what can be learned from passive observation (“correlation”) and active intervention (“causation”).</p>
+<p>Once we mastered the probabilistic nature of causality we will discuss on how we can <strong>measure</strong> the effect of <strong>actions</strong> in a variety of settings. We will start with the easiest scenario, the randomized controlled trial. It is often considered the gold standard for clinical trials and applied across scientific disciplines. It will serve as a benchmark in our further discussion, where we will look at scenarios that violate the assumption behind the randomized controlled trial: we will discuss observational studies, synthetic cohorts and time series analysis.</p>
+<p>After this tour de force, we shift gears and have a closer look at a couple of applications. We will discuss how to measure and interpret the placebo effect in clinical trials, how to optimize marketing using A/B tests and multi-armed bandits, and how to evaluate government interventions.</p>
+<p>Finally, I will wrap up this book by providing some parting thoughts on epistemology and the importance of causality in the evolution of artificial intelligence and machine learning.</p>
+<p>These chapters will hopefully provide you with a solid foundation and will allow you to find the right solution for your causal problem. But for most of your problems they will not be enough. Throughout this book we’ll point you to resources where you can learn more. The appendix provides some additional material on statistics and programming.</p>
+</div>
+<div id="how-this-book-is-organised" class="section level2">
+<h2><span class="header-section-number">1.2</span> How this book is organised</h2>
+<p>The previous description of the tools of data science is organised roughly according to the order in which you use them in an analysis (although of course you’ll iterate through them multiple times). In our experience, however, this is not the best way to learn them:</p>
+<ul>
+<li><p>Starting with data ingest and tidying is sub-optimal because 80% of the time
+it’s routine and boring, and the other 20% of the time it’s weird and
+frustrating. That’s a bad place to start learning a new subject! Instead,
+we’ll start with visualisation and transformation of data that’s already been
+imported and tidied. That way, when you ingest and tidy your own data, your
+motivation will stay high because you know the pain is worth it.</p></li>
+<li><p>Some topics are best explained with other tools. For example, we believe that
+it’s easier to understand how models work if you already know about
+visualisation, tidy data, and programming.</p></li>
+<li><p>Programming tools are not necessarily interesting in their own right,
+but do allow you to tackle considerably more challenging problems. We’ll
+give you a selection of programming tools in the middle of the book, and
+then you’ll see how they can combine with the data science tools to tackle
+interesting modelling problems.</p></li>
+</ul>
+<p>Within each chapter, we try and stick to a similar pattern: start with some motivating examples so you can see the bigger picture, and then dive into the details. Each section of the book is paired with exercises to help you practice what you’ve learned. While it’s tempting to skip the exercises, there’s no better way to learn than practicing on real problems.</p>
+</div>
+<div id="what-you-wont-learn" class="section level2">
+<h2><span class="header-section-number">1.3</span> What you won’t learn</h2>
+<p>There are some important topics that this book doesn’t cover. We hope that this book will leave you wanting more and that you will continue in your journey to master causality by going deeper into this topic or by exploring closly related fields and applications that we did not cover in sufficient length.</p>
+<div id="statistics" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Statistics</h3>
+<p>The book focuses on causal inference rather than the statistics. Some basic statistical concepts are discussed in the appendix, but they primarily serve as a refresher and shows how to translate conventional statistical notation into a causal framework. We assume that the reader is (or has been) familiar with statistics as it is taught in most Statistics 101 classes.</p>
+</div>
+<div id="machine-learning" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Machine Learning</h3>
+<p>We will address issues of machine learning where we see a connection to causal concepts. We do not go deep on any causal and non-causal ML algorithms.</p>
+</div>
+<div id="proofs" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Proofs</h3>
+<p>The book does not contain any proof or any heavy mathematical derivations.</p>
+</div>
+</div>
+<div id="prerequisites" class="section level2">
+<h2><span class="header-section-number">1.4</span> Prerequisites</h2>
+<p>To get the most out of this book, you should be familiar with basic concepts of statistical analysis, nomeclature and notation. If “expected value”, “conditional probability” or “hypothesis test” are only vaguely familiar to you, please review the appendix before digging into the main text.</p>
+<p>The code snippets at the end of the book are purely optional. If you want to follow along on these, you need to have R on your computer. To download the software, go to CRAN, the <strong>c</strong>omprehensive <strong>R</strong> <strong>a</strong>rchive <strong>n</strong> etwork. CRAN is composed of a set of mirror servers distributed around the world and is used to distribute R and R packages. Don’t try and pick a mirror that’s close to you: instead use the cloud mirror, <a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a>, which automatically figures it out for you. RStudio is an integrated development environment, or IDE, for R programming. Download and install it from <a href="http://www.rstudio.com/download" class="uri">http://www.rstudio.com/download</a>.</p>
+</div>
+<div id="acknowledgements" class="section level2">
+<h2><span class="header-section-number">1.5</span> Acknowledgements</h2>
+<p>An online version of this book is available at xxx. The source of the book is available at xxx.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="causality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/flobrez/intro-to-causality/edit/master/introduction.md",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
