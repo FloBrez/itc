@@ -3,9 +3,9 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><strong><a href="./">Introduction To Causality: A Modern Approach</a></strong></li>
+        <li><strong><a href="./">Introduction To Causality</a></strong></li>
     edit:
-      link: https://github.com/flobrez/intro-to-causality/edit/master/%s
+      link: https://github.com/flobrez/itc/edit/master/%s
       text: "Edit"
     sharing: no
   css: itc.css
