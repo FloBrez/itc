@@ -13,6 +13,7 @@ link-citations: yes
 # Welcome {-}
 
 This is the website for **"Introduction to Causality"**. This book will teach you the basics of causal inference: You will learn
+
 * how **causal inference** differs from **statistical inference** or **prediction**.
 * how to express these differences in **unambiguous mathematical notation** and **causal graphs**;
 * a variety of techniques to probe causal questions, from **randomized controlled experiments** to **structural equation models**;
