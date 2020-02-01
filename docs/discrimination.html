@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Causality | Introduction To Causality: A Modern Approach</title>
+  <title>6 Discrimination | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Causality | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="6 Discrimination | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/intro_to_causality" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Causality | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="6 Discrimination | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="kapitel-2.html"/>
+<link rel="prev" href="marketing.html"/>
+<link rel="next" href="epistemology.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -114,78 +114,38 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="causality" class="section level1">
-<h1><span class="header-section-number">2</span> Causality</h1>
-<div id="definition" class="section level2">
-<h2><span class="header-section-number">2.1</span> Definition</h2>
-<p>Betrachten wir zunächst ein maximal einfaches System, schematisch dargestellt in Abb xxx. Es handelt sich hierbei um ein elektrisches Schalt Diagramm mit Stromquelle, Schalter (X) und Leuchte (Y). Wir nehmen der Einfachheit halber an, dass alle Elemente dieses Systems nur jeweils zwei Zustände annehmen können, die wir bequem als 0 und 1 kodieren können:
-* der Schalter ist entweder geöffnet (0) oder geschlossen (1)
-* die Leuchte bleibt dunkel (0) oder leuchtet (1).
-Wir nehmen, an, dass die Stromquelle über ausreichend Kapazität verfügt. Somit hängt der Zustand der Leuchte trivial vom Zustand des Schalters ab, ist der Schalter geschlossen ist der Stromkteis geschlossen, Strom fließt durch die Leuchte und sie beginnt zu leuchten. Wird der Schalter geöffnet, wird der Stromkreis unterbrochen und die Leuchte erlischt.
-Wir können dieses (zugegebenermaßen triviale) System auch formalisieren, zum Einen indem wir es in einen Graphen überführen, der die kausalen Zusammenhänge in Form von gerichteten Verbindungen zwischen Knoten darstellt sowie eine strukturelle Gleichung, die dies in mathematische Ausdrucksweise tut:</p>
-<p><span class="math display">\[\begin{equation}
-Y := f(X) = X
-\end{equation}\]</span>
-Man beachte, dass in dieser Gleichung kein normales <span class="math inline">\(=\)</span> steht, sondern der Zuweisungsoperator <span class="math inline">\(:=\)</span>: er besagt, dass der auf der rechten Seite stehende Ausdruck evaluiert wird, und anschließend der Variablen aug der linken Seite zugewiesen wird.. Da die strukturelle Gleichung kausal zu interpretieren ist, können wir folgendes schließen: wenn der Schalter geschlossen wird, dann gilt <span class="math inline">\(Y := 1\)</span>, was die Leuchte zum Leuchten bringt. Wird der Schalter geöffnet, <span class="math inline">\(Y := 0\)</span>, erlischt diese.</p>
-<p>Viel mehr gibt dieses einfache System nicht her, daher wenden wir uns nun dem System mit zwei Schaltern, <span class="math inline">\(X_1\)</span> und <span class="math inline">\(X_2\)</span>. Beide sind in Reihe geschaltet, siehe Abbildung xxx. Als kausales System dargestellt, sieht es aus wie in Abbildung xxx. Somit kann es vier mögliche Schalterzustände geben, und nur wenn beide zugleich geschlossen sind wird die Leuchte brennen, siehe auch Tabellel xxx</p>
-<table>
-<thead>
-<tr class="header">
-<th>Schalter <span class="math inline">\(X_1\)</span></th>
-<th>Schalter <span class="math inline">\(X_2\)</span></th>
-<th>Leuchte</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<p>Wir erkennen leicht, dass sich dies auch als strukturelle Gleichung schreiben lässt:
-<span class="math display">\[\begin{equation}
-Y := f(X_1, X_2) = X_1 \cdot X_2
-\end{equation}\]</span></p>
-<p>(Beispiel abändern und mit ein bzw zwei Batterien durchspielen? Dann wäre der Strom additiv und die Modellierung wäre flexibler.)</p>
-<p>Setzen wir in diesem System nun den Schalter 1 auf geschlossen, erkennen wir, dass der Zustand der Leuchte nun noch vom Zustand des zweiten Schalters abhängt.
-<span class="math display">\[\begin{equation}
-Y := f(1, X_2) = 1 \cdot X_2 = X_2
-\end{equation}\]</span></p>
-<p>Nehmen wir nun an, dass wir nicht allwissend sind, sondern sich ein Schleier des Unwissens über Schalter 2 gelegt hat: wir wissen, dass es ihn gibt, wir wissen nur nicht, ob dieser geschlossen ist oder nicht.</p>
-<p>Man stellt uns nun die Aufgabe, den Zustand des Schalters 2 aus der rein passiven Beobachtung des Systems zu lernen.</p>
-<p>Ein Blick auf Tabelle xxx zeigt, dass uns das nur in einigen Fällen gelingen wird. Bestimmte Konstellationen von Schalter 1 und Leuchte geben uns nicht ausreichende Information, um den Zustand von Schalter 2 lernen zu können. Selbstverständlich könnten wir dieses Problem lösen, indem wir Schalter 1 betätigen und beobachten, wie sich Leuchte dann ändert. Tatsächlich können wir durch die Intervention und die weitere Beobachtung auf den Zustand von Schalter 2 zu schließen.</p>
-<p>Dies ist bereits ein erster Hinweis auf ein fundamentales Problem, auf das wir im Weiteren noch detaillierter eingehen werden: durch Interventionen in eine System können Informationen generiert werden, die aus rein passiver Beobachtung nicht verfügbar sind.</p>
-<p>Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem gelöst werden kann, indem wir</p>
-</div>
-<div id="abschnitt-1" class="section level2">
-<h2><span class="header-section-number">2.2</span> Abschnitt 1</h2>
-<p>fefkaejkajketja ke jkaej kajke taktj akkejktj</p>
-</div>
+<div id="discrimination" class="section level1">
+<h1><span class="header-section-number">6</span> Discrimination</h1>
+<p>In den letzten Jahren wurde in Politik, Medien und Wissenschaft häufiger über Diskriminierung diskutiert, einige Beispiele sind hierbei die Diskriminierung von Frauen im Berufsleben, der Wahl von Abegordneten zum Bundestag. Ein Verbot von Diskriminierung hat in Deutschland im Jahre 2006 Gesetzescharakter angenommen mit der Verabschiedung des <em>Allgemeinen Gleichbehandlungsgesetzes (AGG)</em>, dass u.a. die Diskriminierung aus Gründen des Alters, der ethnischen Herkunft oder des Geschlechts unzulässig ist. Wie bereits des Gesetzesname andeutet, wird Diskriminierung als ein Vorgang angesehen, nicht als ein Zustand. Dies wird insebesondere in §3 deutlich, wo eine (unmittelbare) Diskriminierung dann vorliegt “wenn eine Person wegen [Alter, Herkunft oder Geschlecht] eine weniger günstige Behandlung erfährt, als eine andere Person in einer vergleichbaren Situation erfährt”.
+Die zunehmende Anwendung automatisierter Entscheidungsalgorithmen rückt die Frage nach Diskrimierung auch in den Blickpunkt der Forschung im Bereich des maschinellen Lernens. Es ist in diesem Kontext, dass dieses Thema eine mathematische Formalisierung erfahren hat. Dabei wurden zuletzt auch kausale Argumentationen und Notation eingeführt, siehe etwa Kilbertus etl al..</p>
+<p>Wir werden uns im Folgenden an einem einfachen Beispiel diesem Problem nähern sowie einen Versuch der
+Die Identifikation von diskriminierenden Handlungen wird dadurch erschwert, dass die Handelnden Personen häufig nur einen Teil des gesamten Mechanismus kontrollieren und es begründete Sachzwänge gibt.
+Im Folgenden unterscheiden wir zwei Merkmalstypen</p>
+<p>First, let’s introduce some basic terminology first:
+* <em>protected feature</em>: this is a person’s feature that is legally protected, e.g. age or gender.
+* <em>accepted feature</em>: these are features that are explicitely or implicitely accepted for discrimination, e.g. the job might (by law) require a certain certificate of qualification or the job requires a certain skillset like a specific programming language or the ability to lift weigths heavier than 30 kg.</p>
+<p>While the protected features are usually unambiguous and explicitly stated in law, the accepted features can be reason for disagreement. It is usually the set of features that are deemed to be necessary to do the job, but of course “doing the job” can done in different qualities. A bar owner might believe it to be necessary for his waiters to be handsome and flirty with the predominantely female audience, but an applicant might think it is not. Getting the order right and providing the right servcie while being friendly he might consider to be sufficient.</p>
+<ul>
+<li><p><em>unprotected feature</em>: these are all features that are not explicitly protected, e.g. eye color, ability to lift more than 30kg</p></li>
+<li><p><em>zulässige Merkmale</em>: dies sind Merkmale, nach denen eine diskriminierende Handlung zulässig ist. So kann etwa für eine Tätigkeit in einem Warenlager voraussgesetzt werden, dass ein Bewerber in der Lage sein muss, Lasten über 20kg zu transportieren, da dies für die Erfüllung der Tätigkeit unabdingbar ist.</p></li>
+<li><p><em>aufhebende Merkmale</em>: diese stellen eine Teilmenge der <em>zulässigen Merkmale</em> dar. Es sind diejenigen Merkmale, die auf dem kausalen Pfad zwischen den <em>geschützten</em> Merkmalen und dem Output liegen. Das Merkmal “kann Lasten über 20kg transportieren” ist vermutlich ein solches, da dieses kausal vom Geschlecht und/oder dem Alter eines Bewerbers beeinflusst ist.</p></li>
+<li><p><em>unzulässige Merkmale</em>: sind Merkmale, nach denen eine diskriminierende Handlung nicht zulässig ist, die aber nicht ein <em>geschütztes Merkmal</em> sind. Dies könnte etwa die Augenfarbe des Bewerbers sein, die (etwa gemäß AGG nicht geschützt ist), jedoch für die Erfüllung der Tätigkeit irrelevant sein dürfte.</p></li>
+<li><p><em>stellvertretende Merkmale</em>: diese stellen eine Teilmenge der <em>unzulässigen Merkmale</em> dar. Es sind diejenige Merkmale, die auf dem kausalen Pfad zwischen den <em>geschützten</em> Merkmalen und dem Output liegen. So kann die Augenfarbe eines Bewerbers ein <em>stellvertretendes Merkmal</em> sein, wenn die Augenfarbe etwa durch das Geschlecht oder die ethnische Herkunft beeinflusst wird. Sie werden <em>stellvertretend</em> genannt, da sie Information über das geschützte Merkmals beinhalten und somit zur Diskriminierung herangezogen werden könnten.</p></li>
+</ul>
+<p>TODO: sollte <em>unzulässig</em> nicht anders bezeichnet werden, da ja eine Diskriminierung nach nicht-stellvertretern rechtlich nicht verboten ist.</p>
+<p>Es gelten folgende Definitionen:</p>
+<ul>
+<li>kann ein Mechanismus der unmittelbaren Diskriminierung durch einen vom geschützten Merkmal unabhängigen Prozess (oder eine Konstante) ersetzt werden, ohne dass sich die Verteilung der Zielvariable ändert, so ist dieser Mechanismus nicht-diskriminierend</li>
+</ul>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kapitel-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="marketing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="epistemology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -207,7 +167,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/causality.md",
+"link": "https://github.com/flobrez/itc/edit/master/discrimination.md",
 "text": "Edit"
 },
 "history": {
