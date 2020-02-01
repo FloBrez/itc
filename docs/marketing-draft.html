@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Causality | Introduction To Causality: A Modern Approach</title>
+  <title>3 Marketing (DRAFT) | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Causality | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="3 Marketing (DRAFT) | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/intro_to_causality" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Causality | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="3 Marketing (DRAFT) | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="marketing-draft.html"/>
+<link rel="prev" href="causality.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -99,9 +99,19 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="causality" class="section level1">
-<h1><span class="header-section-number">2</span> Causality</h1>
-<p>tbd</p>
+<div id="marketing-draft" class="section level1">
+<h1><span class="header-section-number">3</span> Marketing (DRAFT)</h1>
+<p>Another common application where correlation is often confused with causation is in marketing. This might be because data scientist and business might not speak the same language. It might, however, also be a valid pragmatic assumption, which is later validated in an experiment.
+I will focus here on the (mis-)application of propensity modeling. Propensity modeling attempts to predict if a (potential) customers will perform a certain action, e.g. whether a new visitor on your site will register or whether a customer will buy a certain product. The model output is an estimated probability that the customer will do the action. Propensity models therefore fall into the class of binary regression.</p>
+<p><span class="math display">\[\begin{equation}
+P(y|I) = f(I)
+\end{equation}\]</span></p>
+<p>There are plently of algorithms that could be used to estimate the function. Logistic regression is often chosen as it is easy to implement and the model itself might provide some insights. Here, we will focus not on the implementation part, but on the interpretation and (mis-) use of the model.</p>
+<p>To see why the model might not be want you think it is, we will have a
+A naive usage of the model is to focus marketing on customers with high likelhood to do the action. This however, can be serverly misleading, as we will discuss next. To show this, we will start with an ideal assumption: our model is perfect. A perfect model means that we predict the customer action correctly for every customer and the model produces predicted probabilies which are well calibrated. This means that we only get two predictions, either a customer will do action with estimated probability 0 or whether they will do so with probability 1 - and the model is always right.
+However, although we have the best possible model, it illustrates well why the naive interpreation cannot be correct. If we focus our marketing on those customers with highest propensity (as there are only two values it is those with predicted probability 1), we focus our attention on a customer group that buys the product anyways. In fact, these are the customers that we should <em>least</em> focus on as the best we can do is to have no effect on those customers (but we still have the cost of the marketing intervention, which might be an opportunity cost) and in some case we might even affect the customer adversely (as they might be annoyed by the marketing). Hence, we’re left with the second group of customers, those with predicted probability of 0. In this group, there might be some who will be convinced to buy the product after being exposed to the marketing, but we are not able to say which ones. Even after doing an experiment, we will not improve on our decision rule. Say, we run an A/B test on all customers who were predicted to not buy, and we estimate that 0.02
+Depending on the situation, this model might not be very useful. The only thing that we learned from the model is that we should exclude those customers with highest probability from our marketing. This runs counter to our intuition. Furthermore, in many applications, the action might be a rare event, with likelihoods not much higher than 1%. Excluding these customers from marketing might not save a lot of money in the first place, and establishing a system where you’re able to provide different marketing on customer-level might have some fixed costs (e.g. it might require to store and process customer-level data and deploy the model-outputs to production systems).</p>
+<p></p>
 
 </div>
             </section>
@@ -109,8 +119,8 @@
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="marketing-draft.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="causality.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -132,7 +142,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/causality.md",
+"link": "https://github.com/flobrez/itc/edit/master/marketing.md",
 "text": "Edit"
 },
 "history": {
