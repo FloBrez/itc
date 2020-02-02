@@ -82,7 +82,9 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>3</b> Notation</a><ul>
@@ -112,8 +114,12 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect. Being able to infer what the effect is going to be if you decide to do A versus B will help you make better decisions.</p>
-<p>“Introduction To Causality” will help you learn the fundamentals of the art and science of causal analysis. After reading this book, you’ll have the tools to understand and communicate causal concepts and you will know how to tackle the common questions. The code in the appendix will help you to apply these methods using the R programming language.</p>
+<blockquote>
+<p>Correlation doesn’t imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing ‘look over there.’
+— Randall Munroe</p>
+</blockquote>
+<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of <em>causality</em> has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The <em>causal revolution</em>[^footnote-causal-revolution] swept away decades of experts and students arguing about the correct interpretation of phenomena such as <em>Simpson’s paradox</em>, the nature and properties of the <em>error term in regression equations</em> and the interpretation of <em>structural parameters</em> in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, <em>correlation</em> is never again to be confused with <em>causation</em>".</p>
+<p>“Introduction To Causality” is a gentle introduction into this modern understanding of causality as it unfolded after the revolution. It will help you learn the fundamentals of this art and science of causal analysis. After reading this book, you’ll have the tools to understand and communicate causal concepts and you will know how to tackle the common questions. The code in the appendix will help you to apply these methods using the R programming language.</p>
 <div id="what-you-will-learn" class="section level2">
 <h2><span class="header-section-number">1.1</span> What you will learn</h2>
 <p>First we will discuss causality in a trivial lab environment where we are able to control every important aspect of the environment. This will help us get familiar with the vocabulary and notation and will provide some insights in how to think about causality.</p>

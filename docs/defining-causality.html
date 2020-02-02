@@ -82,7 +82,9 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>3</b> Notation</a><ul>
@@ -114,22 +116,26 @@
 <h1><span class="header-section-number">2</span> Defining Causality</h1>
 <div id="causality-in-simple-environments" class="section level2">
 <h2><span class="header-section-number">2.1</span> Causality in simple environments</h2>
-<p>Betrachten wir zunächst ein maximal einfaches System, schematisch dargestellt in Abb xxx. Es handelt sich hierbei um ein elektrisches Schalt Diagramm mit Stromquelle, Schalter (X) und Leuchte (Y). Wir nehmen der Einfachheit halber an, dass alle Elemente dieses Systems nur jeweils zwei Zustände annehmen können, die wir bequem als 0 und 1 kodieren können:
-* der Schalter ist entweder geöffnet (0) oder geschlossen (1)
-* die Leuchte bleibt dunkel (0) oder leuchtet (1).
-Wir nehmen, an, dass die Stromquelle über ausreichend Kapazität verfügt. Somit hängt der Zustand der Leuchte trivial vom Zustand des Schalters ab, ist der Schalter geschlossen ist der Stromkteis geschlossen, Strom fließt durch die Leuchte und sie beginnt zu leuchten. Wird der Schalter geöffnet, wird der Stromkreis unterbrochen und die Leuchte erlischt.
-Wir können dieses (zugegebenermaßen triviale) System auch formalisieren, zum Einen indem wir es in einen Graphen überführen, der die kausalen Zusammenhänge in Form von gerichteten Verbindungen zwischen Knoten darstellt sowie eine strukturelle Gleichung, die dies in mathematische Ausdrucksweise tut:</p>
-<p><span class="math display">\[\begin{equation}
+<p>Let’s first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
+* the switch can either be open (0) or closed (1)
+* the lamp can either be off (0) or on (1).
+Let’s further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let’s take an extra second to translate the circuit diagram into a <em>causal graph</em>, a representation that will become quite handy in more complex environments that will be discussed later in the book.</p>
+<div id="causal-graphs" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Causal Graphs</h3>
+<p>tbd</p>
+<p>We can further represent a <em>causal graph</em> as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
+<span class="math display">\[\begin{equation}
 Y := f(X) = X
 \end{equation}\]</span>
-Man beachte, dass in dieser Gleichung kein normales <span class="math inline">\(=\)</span> steht, sondern der Zuweisungsoperator <span class="math inline">\(:=\)</span>: er besagt, dass der auf der rechten Seite stehende Ausdruck evaluiert wird, und anschließend der Variablen aug der linken Seite zugewiesen wird.. Da die strukturelle Gleichung kausal zu interpretieren ist, können wir folgendes schließen: wenn der Schalter geschlossen wird, dann gilt <span class="math inline">\(Y := 1\)</span>, was die Leuchte zum Leuchten bringt. Wird der Schalter geöffnet, <span class="math inline">\(Y := 0\)</span>, erlischt diese.</p>
-<p>Viel mehr gibt dieses einfache System nicht her, daher wenden wir uns nun dem System mit zwei Schaltern, <span class="math inline">\(X_1\)</span> und <span class="math inline">\(X_2\)</span>. Beide sind in Reihe geschaltet, siehe Abbildung xxx. Als kausales System dargestellt, sieht es aus wie in Abbildung xxx. Somit kann es vier mögliche Schalterzustände geben, und nur wenn beide zugleich geschlossen sind wird die Leuchte brennen, siehe auch Tabellel xxx</p>
+Note, that the equation uses operator “<span class="math inline">\(:=\)</span>”" rather than the usual “<span class="math inline">\(=\)</span>”. It reads “<span class="math inline">\(f(X)\)</span> is evaluated and <em>assigned</em> to <span class="math inline">\(Y\)</span>” and therefore resembles variable assignment in many programming languages where, for example, <code>x = x + 1</code> is a valid expression.</p>
+<p>Since the structural equation represents the <em>causal mechanism</em> relating the switch and the lamp, we can immediately read what happens if we intervene on the switch: when we close the switch, i.e. <span class="math inline">\(do(X:= 1)\)</span>, then the lamp will be on, <span class="math inline">\(Y := 1\)</span>; if we open the switch, <span class="math inline">\(do(X:= 0)\)</span>, then the lamp dies, <span class="math inline">\(Y := 0\)</span>.</p>
+<p>Let’s take it up a notch and create a more interesting environment by adding a second switch, connected in series, see figure XXX for the circuit diagram and figure xxx for the graph representation. The two switches allow the environment to be in four different states. Only if both switches are on, will the lamp be on, in the other three states it will be off:</p>
 <table>
 <thead>
 <tr class="header">
-<th>Schalter <span class="math inline">\(X_1\)</span></th>
-<th>Schalter <span class="math inline">\(X_2\)</span></th>
-<th>Leuchte</th>
+<th>switch <span class="math inline">\(X_1\)</span></th>
+<th>switch <span class="math inline">\(X_2\)</span></th>
+<th>lamp <span class="math inline">\(Y\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -155,11 +161,10 @@ Man beachte, dass in dieser Gleichung kein normales <span class="math inline">\(
 </tr>
 </tbody>
 </table>
-<p>Wir erkennen leicht, dass sich dies auch als strukturelle Gleichung schreiben lässt:
+<p>We can easily spot that the structural equation representation is
 <span class="math display">\[\begin{equation}
 Y := f(X_1, X_2) = X_1 \cdot X_2
 \end{equation}\]</span></p>
-<p>(Beispiel abändern und mit ein bzw zwei Batterien durchspielen? Dann wäre der Strom additiv und die Modellierung wäre flexibler.)</p>
 <p>Setzen wir in diesem System nun den Schalter 1 auf geschlossen, erkennen wir, dass der Zustand der Leuchte nun noch vom Zustand des zweiten Schalters abhängt.
 <span class="math display">\[\begin{equation}
 Y := f(1, X_2) = 1 \cdot X_2 = X_2
@@ -169,6 +174,7 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 <p>Ein Blick auf Tabelle xxx zeigt, dass uns das nur in einigen Fällen gelingen wird. Bestimmte Konstellationen von Schalter 1 und Leuchte geben uns nicht ausreichende Information, um den Zustand von Schalter 2 lernen zu können. Selbstverständlich könnten wir dieses Problem lösen, indem wir Schalter 1 betätigen und beobachten, wie sich Leuchte dann ändert. Tatsächlich können wir durch die Intervention und die weitere Beobachtung auf den Zustand von Schalter 2 zu schließen.</p>
 <p>Dies ist bereits ein erster Hinweis auf ein fundamentales Problem, auf das wir im Weiteren noch detaillierter eingehen werden: durch Interventionen in eine System können Informationen generiert werden, die aus rein passiver Beobachtung nicht verfügbar sind.</p>
 <p>Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem gelöst werden kann, indem wir</p>
+</div>
 </div>
 <div id="causality-in-complex-environments" class="section level2">
 <h2><span class="header-section-number">2.2</span> Causality in complex environments</h2>

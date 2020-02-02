@@ -82,7 +82,9 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>3</b> Notation</a><ul>
@@ -157,7 +159,16 @@ P(Y) &amp;= P^{S;do(Z:=0)}(Y) \cdot (1-Z) + P^{S;do(Z:=1)}(Y) \cdot Z \\
      &amp;= P^{S;do(Z:=0)}(Y) + (P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y)) \cdot Z \\
      &amp;= P^{S;do(Z:=0)}(Y) + P(\Delta) \cdot Z \\
      &amp;= \beta_0 + \beta_1 Z
-\end{align}\]</span></p>
+\end{align}\]</span>
+Further, replacing unconditional quantities with conditional ones, we can write
+<span class="math display">\[\begin{align}
+P(Y | A) &amp;= P^{S;do(Z:=0)}(Y | A) + P(\Delta | A) \cdot Z \\
+         &amp;= \alpha_0 + \alpha_1 A + (\Delta_0 + \Delta_1 \cdot A) \cdot Z \\
+         &amp;= \alpha_0 + \alpha_1 A + \Delta_0 Z + \Delta_1 A Z
+\end{align}\]</span>
+which looks quite familiar as it is the conventional way to specify a logistic regression equation on <span class="math inline">\(A\)</span>, <span class="math inline">\(Z\)</span> and the interaction of both <span class="math inline">\(A \cdot Z\)</span>.[^footnote-hte-nomenclature] If the treatment is ineffective <span class="math inline">\(\Delta_0 = 0\)</span> <em>and</em> <span class="math inline">\(Delta_1 = 0\)</span>. The <em>differential causal effect</em> is said to be heterogeneous, if <span class="math inline">\(\Delta_1 \neq 0\)</span>.
+[^footnote-hte-nomenclature]: The literature on <em>heterogeneous treatment effect</em> models often groups parameters of this equation regarding their role in application: <span class="math inline">\(\alpha_1\)</span> is called “prognostic” as it shows if and how the success rate differs across attributes <span class="math inline">\(A\)</span> <em>if no intervention/treatment</em> is provided; <span class="math inline">\(\Delta_1\)</span> on the other hand is often called “predictive”, meaning how predictive <span class="math inline">\(A\)</span> is on the <em>effectiveness of the intervention/treatment</em>, i.e. whether and by how much treatment effects differ across values of <span class="math inline">\(A\)</span>.</p>
+<p>The model can be generalized to the case where not just a single (binary) attribute is considered, but a vector of attributes.</p>
 
 </div>
 <div class="footnotes">
