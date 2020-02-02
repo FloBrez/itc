@@ -1,6 +1,6 @@
-# Causality
+# Defining Causality
 
-## Definition
+## Causality in simple environments
 Betrachten wir zunächst ein maximal einfaches System, schematisch dargestellt in Abb xxx. Es handelt sich hierbei um ein elektrisches Schalt Diagramm mit Stromquelle, Schalter (X) und Leuchte (Y). Wir nehmen der Einfachheit halber an, dass alle Elemente dieses Systems nur jeweils zwei Zustände annehmen können, die wir bequem als 0 und 1 kodieren können:
 * der Schalter ist entweder geöffnet (0) oder geschlossen (1)
 * die Leuchte bleibt dunkel (0) oder leuchtet (1).
@@ -44,25 +44,16 @@ Dies ist bereits ein erster Hinweis auf ein fundamentales Problem, auf das wir i
 Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem gelöst werden kann, indem wir
 
 
-## Abschnitt 1
 
-fefkaejkajketja ke jkaej kajke taktj akkejktj
-
-# Kapitel 2
-
-afnkefaefne. see also chapter [Kap 1](# Kapitel 1)
-
+## Causality in complex environments
 \begin{equation}
-\beta_0 = \beta_1
+\Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}
 
-
-## Terminologie
-
-
-
-
-## Unmittelbare Diskriminierung
+As $Y$ is binary, $\Delta$ can be one of ${-1, 0, 1}$ with $\Delta = 1$ being the desired outcome. As discussed in [causality], we are not able to measure this quantity directly, but need to resort to population-level quantities instead:
+\begin{equation}
+P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2}
+\end{equation}
 
 
 
