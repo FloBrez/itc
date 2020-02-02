@@ -1,27 +1,32 @@
 # Defining Causality
 
 ## Causality in simple environments
-Betrachten wir zunächst ein maximal einfaches System, schematisch dargestellt in Abb xxx. Es handelt sich hierbei um ein elektrisches Schalt Diagramm mit Stromquelle, Schalter (X) und Leuchte (Y). Wir nehmen der Einfachheit halber an, dass alle Elemente dieses Systems nur jeweils zwei Zustände annehmen können, die wir bequem als 0 und 1 kodieren können:
-* der Schalter ist entweder geöffnet (0) oder geschlossen (1)
-* die Leuchte bleibt dunkel (0) oder leuchtet (1).
-Wir nehmen, an, dass die Stromquelle über ausreichend Kapazität verfügt. Somit hängt der Zustand der Leuchte trivial vom Zustand des Schalters ab, ist der Schalter geschlossen ist der Stromkteis geschlossen, Strom fließt durch die Leuchte und sie beginnt zu leuchten. Wird der Schalter geöffnet, wird der Stromkreis unterbrochen und die Leuchte erlischt.
-Wir können dieses (zugegebenermaßen triviale) System auch formalisieren, zum Einen indem wir es in einen Graphen überführen, der die kausalen Zusammenhänge in Form von gerichteten Verbindungen zwischen Knoten darstellt sowie eine strukturelle Gleichung, die dies in mathematische Ausdrucksweise tut:
+Let's first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
+* the switch can either be open (0) or closed (1)
+* the lamp can either be off (0) or on (1).
+Let's further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let's take an extra second to translate the circuit diagram into a *causal graph*, a representation that will become quite handy in more complex environments that will be discussed later in the book.
 
+### Causal Graphs
+tbd
+
+We can further represent a *causal graph* as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
 \begin{equation}
 Y := f(X) = X
 \end{equation}
-Man beachte, dass in dieser Gleichung kein normales $=$ steht, sondern der Zuweisungsoperator $:=$: er besagt, dass der auf der rechten Seite stehende Ausdruck evaluiert wird, und anschließend der Variablen aug der linken Seite zugewiesen wird.\footnote{Dies kennen Sie vielleicht aus Programmiersprachen, wo Ausdrücke wie $x = x + 1$ gängig sind. Auch hier ist die Gleichung so zu verstehen, dass zunächst der bestehende Wert von x um 1 erhöht wird, bevor dann das Ergebnis an die Speicherstelle von x kopiert wird.}. Da die strukturelle Gleichung kausal zu interpretieren ist, können wir folgendes schließen: wenn der Schalter geschlossen wird, dann gilt $Y := 1$, was die Leuchte zum Leuchten bringt. Wird der Schalter geöffnet, $Y := 0$, erlischt diese.
+Note, that the equation uses operator "$:=$"" rather than the usual "$=$". It reads "$f(X)$ is evaluated and *assigned* to $Y$" and therefore resembles variable assignment in many programming languages where, for example, `x = x + 1` is a valid expression.
 
-Viel mehr gibt dieses einfache System nicht her, daher wenden wir uns nun dem System mit zwei Schaltern, $X_1$ und $X_2$. Beide sind in Reihe geschaltet, siehe Abbildung xxx. Als kausales System dargestellt, sieht es aus wie in Abbildung xxx. Somit kann es vier mögliche Schalterzustände geben, und nur wenn beide zugleich geschlossen sind wird die Leuchte brennen, siehe auch Tabellel xxx
+Since the structural equation represents the *causal mechanism* relating the switch and the lamp, we can immediately read what happens if we intervene on the switch: when we close the switch, i.e. $do(X:= 1)$, then the lamp will be on, $Y := 1$; if we open the switch, $do(X:= 0)$, then the lamp dies, $Y := 0$.
 
-| Schalter $X_1$ 	| Schalter $X_2$ 	| Leuchte 	|
+Let's take it up a notch and create a more interesting environment by adding a second switch, connected in series, see figure XXX for the circuit diagram and figure xxx for the graph representation. The two switches allow the environment to be in four different states. Only if both switches are on, will the lamp be on, in the other three states it will be off:
+
+| switch $X_1$ 	| switch $X_2$ 	| lamp 	    |
 |-------------	|-------------	|---------	|
 | 0           	| 0           	| 0       	|
 | 0           	| 1           	| 0       	|
 | 1           	| 0           	| 0       	|
 | 1           	| 1           	| 1       	|
 
-Wir erkennen leicht, dass sich dies auch als strukturelle Gleichung schreiben lässt:
+We can easily spot that the structural equation representation is
 \begin{equation}
 Y := f(X_1, X_2) = X_1 \cdot X_2
 \end{equation}
