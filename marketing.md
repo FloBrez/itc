@@ -56,3 +56,13 @@ P(Y) &= P^{S;do(Z:=0)}(Y) \cdot (1-Z) + P^{S;do(Z:=1)}(Y) \cdot Z \\
      &= P^{S;do(Z:=0)}(Y) + P(\Delta) \cdot Z \\
      &= \beta_0 + \beta_1 Z
 \end{align}
+Further, replacing unconditional quantities with conditional ones, we can write
+\begin{align}
+P(Y | A) &= P^{S;do(Z:=0)}(Y | A) + P(\Delta | A) \cdot Z \\
+         &= \alpha_0 + \alpha_1 A + (\Delta_0 + \Delta_1 \cdot A) \cdot Z \\
+         &= \alpha_0 + \alpha_1 A + \Delta_0 Z + \Delta_1 A Z
+\end{align}
+which looks quite familiar as it is the conventional way to specify a logistic regression equation on $A$, $Z$ and the interaction of both $A \cdot Z$.[^footnote-hte-nomenclature] If the treatment is ineffective $\Delta_0 = 0$ *and* $Delta_1 = 0$. The *differential causal effect* is said to be heterogeneous, if $\Delta_1 \neq 0$.
+[^footnote-hte-nomenclature]: The literature on *heterogeneous treatment effect* models often groups parameters of this equation regarding their role in application: $\alpha_1$ is called "prognostic" as it shows if and how the success rate differs across attributes $A$ *if no intervention/treatment* is provided; $\Delta_1$ on the other hand is often called "predictive", meaning how predictive $A$ is on the *effectiveness of the intervention/treatment*, i.e. whether and by how much treatment effects differ across values of $A$.
+
+The model can be generalized to the case where not just a single (binary) attribute is considered, but a vector of attributes.
