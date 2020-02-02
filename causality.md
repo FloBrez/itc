@@ -19,7 +19,7 @@ Since the structural equation represents the *causal mechanism* relating the swi
 
 Let's take it up a notch and create a more interesting environment by adding a second switch, connected in series, see figure XXX for the circuit diagram and figure xxx for the graph representation. The two switches allow the environment to be in four different states. Only if both switches are on, will the lamp be on, in the other three states it will be off:
 
-| switch $X_1$ 	| switch $X_2$ 	| lamp 	    |
+| switch $X_1$ 	| switch $X_2$ 	| lamp $Y$  |
 |-------------	|-------------	|---------	|
 | 0           	| 0           	| 0       	|
 | 0           	| 1           	| 0       	|
@@ -30,8 +30,6 @@ We can easily spot that the structural equation representation is
 \begin{equation}
 Y := f(X_1, X_2) = X_1 \cdot X_2
 \end{equation}
-
-(Beispiel abändern und mit ein bzw zwei Batterien durchspielen? Dann wäre der Strom additiv und die Modellierung wäre flexibler.)
 
 Setzen wir in diesem System nun den Schalter 1 auf geschlossen, erkennen wir, dass der Zustand der Leuchte nun noch vom Zustand des zweiten Schalters abhängt.
 \begin{equation}
