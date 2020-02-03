@@ -7,8 +7,9 @@ rmd_files:
 
     "introduction.md",
     "causality.md",
-
+    "methods.md",
     "marketing.md",
+    "drug_trial.md",
     "discrimination.md",
 
     "epistemology.md",

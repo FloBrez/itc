@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B Statistics | Introduction To Causality: A Modern Approach</title>
+  <title>3 Methods for Causal Inference | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B Statistics | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="3 Methods for Causal Inference | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B Statistics | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="3 Methods for Causal Inference | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="notation-and-terminology.html"/>
-<link rel="next" href="r-code.html"/>
+<link rel="prev" href="defining-causality.html"/>
+<link rel="next" href="applications.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -122,18 +122,42 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="statistics-1" class="section level1">
-<h1><span class="header-section-number">B</span> Statistics</h1>
+<div id="methods-for-causal-inference" class="section level1">
+<h1><span class="header-section-number">3</span> Methods for Causal Inference</h1>
+<p>Causal relations can be inferred from <strong>experiments</strong> as well as <strong>observational studies</strong>.
+The randomized controlled experiment is a proven method to infer causal relations in complex environments. It involves full control over the assignment mechanism and the assignment is random.
+A common variation is the situation where the variable of interest cannot be directly intervened on, but a causal parent can. For example, a doctor can (randomly) prescribe a certain drug, but the patient still chooses to take the drug or not. The method of instrumental variables allows us to infer (local) causal effects nevertheless.</p>
+<p>Afterwards, we switch to those methods that can be used even if we cannot intervene in the environment, but have to rely on passive observation only. Inferring causal relations in these situations requires a thorough understanding of the causal links from the variable of interest to the effect. We will study two different inference strategies which rely on different sets of assumptions.</p>
+<p>Finally, we discuss methods for causal inference in samples of size 1. Given appropriate assumptions, we are able to infer causal relations by leveraging (dependent) observations over time.</p>
+<div id="randomized-controlled-experiments" class="section level2">
+<h2><span class="header-section-number">3.1</span> Randomized Controlled Experiments</h2>
+<p>TODO</p>
+</div>
+<div id="instrumental-variables" class="section level2">
+<h2><span class="header-section-number">3.2</span> Instrumental Variables</h2>
+<p>TODO</p>
+</div>
+<div id="propensity-score-matching" class="section level2">
+<h2><span class="header-section-number">3.3</span> Propensity Score Matching</h2>
+<p>TODO</p>
+</div>
+<div id="difference-in-difference-estimator" class="section level2">
+<h2><span class="header-section-number">3.4</span> Difference-in-Difference Estimator</h2>
+<p>TODO</p>
+</div>
+<div id="time-series-methods" class="section level2">
+<h2><span class="header-section-number">3.5</span> Time Series Methods</h2>
 <p>TODO</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="notation-and-terminology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="r-code.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="defining-causality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -155,7 +179,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/statistics.md",
+"link": "https://github.com/flobrez/itc/edit/master/methods.md",
 "text": "Edit"
 },
 "history": {

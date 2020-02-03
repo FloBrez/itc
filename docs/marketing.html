@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Marketing | Introduction To Causality: A Modern Approach</title>
+  <title>4 Marketing | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Marketing | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="4 Marketing | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Marketing | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="4 Marketing | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="defining-causality.html"/>
+<link rel="prev" href="methods-for-causal-inference.html"/>
 <link rel="next" href="discrimination.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -86,10 +86,17 @@
 <li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
 <li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.3</b> Measuring causal effects</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="marketing.html"><a href="marketing.html"><i class="fa fa-check"></i><b>3</b> Marketing</a></li>
-<li class="chapter" data-level="4" data-path="discrimination.html"><a href="discrimination.html"><i class="fa fa-check"></i><b>4</b> Discrimination</a></li>
-<li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
-<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.1</b> Are all sciences equal?</a></li>
+<li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
+<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.1</b> Randomized Controlled Experiments</a></li>
+<li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#instrumental-variables"><i class="fa fa-check"></i><b>3.2</b> Instrumental Variables</a></li>
+<li class="chapter" data-level="3.3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#propensity-score-matching"><i class="fa fa-check"></i><b>3.3</b> Propensity Score Matching</a></li>
+<li class="chapter" data-level="3.4" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#difference-in-difference-estimator"><i class="fa fa-check"></i><b>3.4</b> Difference-in-Difference Estimator</a></li>
+<li class="chapter" data-level="3.5" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#time-series-methods"><i class="fa fa-check"></i><b>3.5</b> Time Series Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="marketing.html"><a href="marketing.html"><i class="fa fa-check"></i><b>4</b> Marketing</a></li>
+<li class="chapter" data-level="5" data-path="discrimination.html"><a href="discrimination.html"><i class="fa fa-check"></i><b>5</b> Discrimination</a></li>
+<li class="chapter" data-level="6" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>6</b> Epistemology</a><ul>
+<li class="chapter" data-level="6.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>6.1</b> Are all sciences equal?</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a></li>
@@ -113,7 +120,7 @@
 
             <section class="normal" id="section-">
 <div id="marketing" class="section level1">
-<h1><span class="header-section-number">3</span> Marketing</h1>
+<h1><span class="header-section-number">4</span> Marketing</h1>
 <p>Another common application where correlation is often confused with causation is in marketing. This might be because data scientist and business might not speak the same language. It might, however, also be a valid pragmatic assumption, which is later validated in an experiment.
 I will focus here on the (mis-)application of propensity modeling. Propensity modeling attempts to predict if a (potential) customers will perform a certain action, e.g. whether a new visitor on your site will register or whether a customer will buy a certain product. The model output is an estimated probability that the customer will do the action. Propensity models therefore fall into the class of binary regression.</p>
 <p><span class="math display">\[\begin{equation}
@@ -181,7 +188,7 @@ which looks quite familiar as it is the conventional way to specify a logistic r
           </div>
         </div>
       </div>
-<a href="defining-causality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods-for-causal-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="discrimination.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
