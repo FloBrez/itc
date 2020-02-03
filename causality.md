@@ -6,8 +6,9 @@ Let's first take a look at a maximally simple environment, shown in figure xxx. 
 * the lamp can either be off (0) or on (1).
 Let's further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let's take an extra second to translate the circuit diagram into a *causal graph*, a representation that will become quite handy in more complex environments that will be discussed later in the book.
 
-### Causal Graphs
-tbd
+```{theorem, graphs, name = "Causal Graphs"}
+A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In *causal graphs*, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an *ordered* pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs).
+```
 
 We can further represent a *causal graph* as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
 \begin{equation}
@@ -57,15 +58,6 @@ As $Y$ is binary, $\Delta$ can be one of ${-1, 0, 1}$ with $\Delta = 1$ being th
 \begin{equation}
 P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2}
 \end{equation}
-
-
-
-# Notation
-Interventionen in einem System $S$ notieren wir mit dem $do()$ Operator. So bezeichnet etwa $S;do(Z:=1)$, dass im System $S$ der Knoten $Z$ auf den Wert 1 festgesetzt wird, jedoch alle anderen Beziehungen unverändert bleiben. Sofern wir diese Intervention mit einer statistischen Größe in Verbindung bringen, wird diese hochgestellt an die statistische Größe angefügt, z.B. $P^{S;do(Z:=1)}(Y)$. Damit folgen wir der Notation wie sie etwa auch in Peters et al. verwendet wird und weichen somit von der von Pearl (2000) verwendeten Notatation $P(Y|do(Z=1))$ ab. Obwohl Letztere griffiger ist, kann sie zuweilen zu Missverständnissen führen:
-
-* Der Ausdruck $P(Y|do(Z=1))$ ist der bedingten Wahrscheinlichkeit $P(Y|Z=1)$ sehr ähnlich, und kann daher - trotz der Verwendung des $do()$ Operator - zur Verwechslung führen.
-* Die Intervention $do(Z:=1)$ bezieht sich immer auf ein bestimmtes System $S$. Dies machen wir in der Notation sichtbar.
-* Die Verwendung von $Z=1$ statt $Z:=1$ kann - in komplizierteren Anwendungen - als symmetrische Beziehung missverstanden werden. $Z:=1$ verdeutlicht jedoch die Asymmetrie, nämlich dass der Variablen $Z$ der Wert 1 *zugewiesen* wird, und die Beziehung somit "von rechts nach links" zu lesen ist.
 
 
 ## Measuring causal effects

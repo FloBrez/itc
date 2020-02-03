@@ -4,19 +4,19 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Discrimination | Introduction To Causality: A Modern Approach</title>
+  <title>4 Discrimination | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Discrimination | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="4 Discrimination | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
   <meta property="og:description" content="A gentle introduction into the art and science of causal inference" />
-  <meta name="github-repo" content="flobrez/intro_to_causality" />
+  <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Discrimination | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="4 Discrimination | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -82,19 +82,19 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
-</ul></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a></li>
 <li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.3</b> Measuring causal effects</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>3</b> Notation</a><ul>
-<li class="chapter" data-level="3.1" data-path="notation.html"><a href="notation.html#measuring-causal-effects"><i class="fa fa-check"></i><b>3.1</b> Measuring causal effects</a></li>
+<li class="chapter" data-level="3" data-path="marketing.html"><a href="marketing.html"><i class="fa fa-check"></i><b>3</b> Marketing</a></li>
+<li class="chapter" data-level="4" data-path="discrimination.html"><a href="discrimination.html"><i class="fa fa-check"></i><b>4</b> Discrimination</a></li>
+<li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
+<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.1</b> Are all sciences equal?</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="marketing.html"><a href="marketing.html"><i class="fa fa-check"></i><b>4</b> Marketing</a></li>
-<li class="chapter" data-level="5" data-path="discrimination.html"><a href="discrimination.html"><i class="fa fa-check"></i><b>5</b> Discrimination</a></li>
-<li class="chapter" data-level="6" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>6</b> Epistemology</a><ul>
-<li class="chapter" data-level="6.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>6.1</b> Are all sciences equal?</a></li>
-</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a></li>
+<li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a></li>
+<li class="chapter" data-level="C" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>C</b> R Code</a></li>
 </ul>
 
       </nav>
@@ -113,7 +113,7 @@
 
             <section class="normal" id="section-">
 <div id="discrimination" class="section level1">
-<h1><span class="header-section-number">5</span> Discrimination</h1>
+<h1><span class="header-section-number">4</span> Discrimination</h1>
 <p>In den letzten Jahren wurde in Politik, Medien und Wissenschaft häufiger über Diskriminierung diskutiert, einige Beispiele sind hierbei die Diskriminierung von Frauen im Berufsleben, der Wahl von Abegordneten zum Bundestag. Ein Verbot von Diskriminierung hat in Deutschland im Jahre 2006 Gesetzescharakter angenommen mit der Verabschiedung des <em>Allgemeinen Gleichbehandlungsgesetzes (AGG)</em>, dass u.a. die Diskriminierung aus Gründen des Alters, der ethnischen Herkunft oder des Geschlechts unzulässig ist. Wie bereits des Gesetzesname andeutet, wird Diskriminierung als ein Vorgang angesehen, nicht als ein Zustand. Dies wird insebesondere in §3 deutlich, wo eine (unmittelbare) Diskriminierung dann vorliegt “wenn eine Person wegen [Alter, Herkunft oder Geschlecht] eine weniger günstige Behandlung erfährt, als eine andere Person in einer vergleichbaren Situation erfährt”.
 Die zunehmende Anwendung automatisierter Entscheidungsalgorithmen rückt die Frage nach Diskrimierung auch in den Blickpunkt der Forschung im Bereich des maschinellen Lernens. Es ist in diesem Kontext, dass dieses Thema eine mathematische Formalisierung erfahren hat. Dabei wurden zuletzt auch kausale Argumentationen und Notation eingeführt, siehe etwa Kilbertus etl al..</p>
 <p>Wir werden uns im Folgenden an einem einfachen Beispiel diesem Problem nähern sowie einen Versuch der

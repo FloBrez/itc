@@ -8,6 +8,7 @@ github-repo: flobrez/itc
 site: bookdown::bookdown_site
 documentclass: book
 link-citations: yes
+bibliography: ["bib.bib"]
 ---
 
 # Welcome {-}

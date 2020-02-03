@@ -1,7 +1,7 @@
 # Introduction
 
 > Correlation doesn’t imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing ‘look over there.’
-— Randall Munroe
+> — Randall Munroe
 
 Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of *causality* has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The *causal revolution*[^footnote-causal-revolution] swept away decades of experts and students arguing about the correct interpretation of phenomena such as *Simpson's paradox*, the nature and properties of the *error term in regression equations* and the interpretation of *structural parameters* in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, *correlation* is never again to be confused with *causation*".
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Notation | Introduction To Causality: A Modern Approach</title>
+  <title>B Statistics | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Notation | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="B Statistics | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Notation | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="B Statistics | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="epistemology.html"/>
-<link rel="next" href="statistics-1.html"/>
+<link rel="prev" href="notation-and-terminology.html"/>
+<link rel="next" href="r-code.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -92,7 +92,7 @@
 <li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.1</b> Are all sciences equal?</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>A</b> Notation</a></li>
+<li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a></li>
 <li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a></li>
 <li class="chapter" data-level="C" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>C</b> R Code</a></li>
 </ul>
@@ -112,14 +112,9 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="notation" class="section level1">
-<h1><span class="header-section-number">A</span> Notation</h1>
-<p>Interventionen in einem System <span class="math inline">\(S\)</span> notieren wir mit dem <span class="math inline">\(do()\)</span> Operator. So bezeichnet etwa <span class="math inline">\(S;do(Z:=1)\)</span>, dass im System <span class="math inline">\(S\)</span> der Knoten <span class="math inline">\(Z\)</span> auf den Wert 1 festgesetzt wird, jedoch alle anderen Beziehungen unverändert bleiben. Sofern wir diese Intervention mit einer statistischen Größe in Verbindung bringen, wird diese hochgestellt an die statistische Größe angefügt, z.B. <span class="math inline">\(P^{S;do(Z:=1)}(Y)\)</span>. Damit folgen wir der Notation wie sie etwa auch in Peters et al. verwendet wird und weichen somit von der von Pearl (2000) verwendeten Notatation <span class="math inline">\(P(Y|do(Z=1))\)</span> ab. Obwohl Letztere griffiger ist, kann sie zuweilen zu Missverständnissen führen:</p>
-<ul>
-<li>Der Ausdruck <span class="math inline">\(P(Y|do(Z=1))\)</span> ist der bedingten Wahrscheinlichkeit <span class="math inline">\(P(Y|Z=1)\)</span> sehr ähnlich, und kann daher - trotz der Verwendung des <span class="math inline">\(do()\)</span> Operator - zur Verwechslung führen.</li>
-<li>Die Intervention <span class="math inline">\(do(Z:=1)\)</span> bezieht sich immer auf ein bestimmtes System <span class="math inline">\(S\)</span>. Dies machen wir in der Notation sichtbar.</li>
-<li>Die Verwendung von <span class="math inline">\(Z=1\)</span> statt <span class="math inline">\(Z:=1\)</span> kann - in komplizierteren Anwendungen - als symmetrische Beziehung missverstanden werden. <span class="math inline">\(Z:=1\)</span> verdeutlicht jedoch die Asymmetrie, nämlich dass der Variablen <span class="math inline">\(Z\)</span> der Wert 1 <em>zugewiesen</em> wird, und die Beziehung somit “von rechts nach links” zu lesen ist.</li>
-</ul>
+<div id="statistics-1" class="section level1">
+<h1><span class="header-section-number">B</span> Statistics</h1>
+<p>TODO</p>
 
 </div>
             </section>
@@ -127,8 +122,8 @@
           </div>
         </div>
       </div>
-<a href="epistemology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="statistics-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="notation-and-terminology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-code.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -150,7 +145,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/notation.md",
+"link": "https://github.com/flobrez/itc/edit/master/statistics.md",
 "text": "Edit"
 },
 "history": {
