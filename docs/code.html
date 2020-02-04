@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Methods for Causal Inference | Introduction To Causality: A Modern Approach</title>
+  <title>C Code | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Methods for Causal Inference | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="C Code | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Methods for Causal Inference | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="C Code | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="defining-causality.html"/>
-<link rel="next" href="applications.html"/>
+<link rel="prev" href="statistics-1.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -134,46 +134,57 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods-for-causal-inference" class="section level1">
-<h1><span class="header-section-number">3</span> Methods for Causal Inference</h1>
-<p>Causal relations can be inferred from <strong>experiments</strong> as well as <strong>observational studies</strong>.
-The randomized controlled experiment is a proven method to infer causal relations in complex environments. It involves full control over the assignment mechanism and the assignment is random.
-A common variation is the situation where the variable of interest cannot be directly intervened on, but a causal parent can. For example, a doctor can (randomly) prescribe a certain drug, but the patient still chooses to take the drug or not. The method of instrumental variables allows us to infer (local) causal effects nevertheless.</p>
-<p>Afterwards, we switch to those methods that can be used even if we cannot intervene in the environment, but have to rely on passive observation only. Inferring causal relations in these situations requires a thorough understanding of the causal links from the variable of interest to the effect. We will study two different inference strategies which rely on different sets of assumptions.</p>
-<p>Finally, we discuss methods for causal inference in samples of size 1. Given appropriate assumptions, we are able to infer causal relations by leveraging (dependent) observations over time.</p>
-<div id="causal-vs-statistical-inference" class="section level2">
-<h2><span class="header-section-number">3.1</span> Causal vs Statistical Inference</h2>
-<p>Causal inference is much harder than statistical inference.</p>
-</div>
-<div id="randomized-controlled-experiments" class="section level2">
-<h2><span class="header-section-number">3.2</span> Randomized Controlled Experiments</h2>
-<p>TODO</p>
-</div>
-<div id="instrumental-variables" class="section level2">
-<h2><span class="header-section-number">3.3</span> Instrumental Variables</h2>
-<p>TODO</p>
-</div>
-<div id="propensity-score-matching" class="section level2">
-<h2><span class="header-section-number">3.4</span> Propensity Score Matching</h2>
-<p>TODO</p>
-</div>
-<div id="difference-in-difference-estimator" class="section level2">
-<h2><span class="header-section-number">3.5</span> Difference-in-Difference Estimator</h2>
-<p>TODO</p>
-</div>
-<div id="time-series-methods" class="section level2">
-<h2><span class="header-section-number">3.6</span> Time Series Methods</h2>
-<p>TODO</p>
+<div id="code" class="section level1">
+<h1><span class="header-section-number">C</span> Code</h1>
+<div id="equivalence-of-statistical-properties-and-sql" class="section level2">
+<h2><span class="header-section-number">C.1</span> Equivalence of statistical properties and SQL</h2>
+<p>The probability distribution <span class="math inline">\(P(X = x)\)</span></p>
+<pre><code>SELECT
+    X                                AS value_x
+  , SUM(1.0) / SUM(SUM(1.0)) OVER () AS probability_of_x
+FROM table
+GROUP BY X</code></pre>
+<p>The expected value <span class="math inline">\(E(X)\)</span></p>
+<pre><code>SELECT
+    AVG(X) AS expected_value_of_X
+FROM table</code></pre>
+<p>The set of conditional expected values <span class="math inline">\(E(X|Y)\)</span></p>
+<pre><code>SELECT
+      Y      AS value_y
+    , AVG(X) AS cond_expected_value_X_given_y
+FROM table
+GROUP BY Y</code></pre>
+<p>The conditional expected values <span class="math inline">\(E(X|Y = y)\)</span></p>
+<pre><code>SELECT
+      Y      AS value_y
+    , AVG(X) AS cond_expected_value_X_given_y
+FROM table
+WHERE Y = y
+GROUP BY Y</code></pre>
 
+<div id="refs" class="references">
+<div>
+<p>Pearl, Judea. 2009. <em>Causality</em>. 2nd ed. Cambridge University Press.</p>
+</div>
+<div>
+<p>Peters, Jonas, Dominik Janzik, and Bernhard Schölkopf. 2017. <em>Elements of Causal Inference: Foundations and Learning Algorithms</em>. MIT Press.</p>
 </div>
 </div>
+</div>
+</div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="defining-causality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="statistics-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -195,7 +206,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/methods.md",
+"link": "https://github.com/flobrez/itc/edit/master/r-code.md",
 "text": "Edit"
 },
 "history": {
