@@ -8,6 +8,9 @@ Afterwards, we switch to those methods that can be used even if we cannot interv
 
 Finally, we discuss methods for causal inference in samples of size 1. Given appropriate assumptions, we are able to infer causal relations by leveraging (dependent) observations over time.
 
+## Causal vs Statistical Inference
+Causal inference is much harder than statistical inference.
+
 ## Randomized Controlled Experiments
 
 TODO

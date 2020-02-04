@@ -66,3 +66,13 @@ which looks quite familiar as it is the conventional way to specify a logistic r
 [^footnote-hte-nomenclature]: The literature on *heterogeneous treatment effect* models often groups parameters of this equation regarding their role in application: $\alpha_1$ is called "prognostic" as it shows if and how the success rate differs across attributes $A$ *if no intervention/treatment* is provided; $\Delta_1$ on the other hand is often called "predictive", meaning how predictive $A$ is on the *effectiveness of the intervention/treatment*, i.e. whether and by how much treatment effects differ across values of $A$.
 
 The model can be generalized to the case where not just a single (binary) attribute is considered, but a vector of attributes.
+
+
+In a marketing context with binary treatment and outcome, table xxx can be restated as
+
+Table: (\#tab:simple-table) Caption here
+
+|             	                | $Y^{\Gamma;do(X:=0)} = 0$ 	| $Y^{\Gamma;do(X:=0)} = 1$ |
+|------------------------------:|:---------------------------:|:-------------------------:|
+| $Y^{\Gamma;do(X:=1)} = 0$    	| "Lost Cause"           	    | "Do-Not-Disturb"          |
+| $Y^{\Gamma;do(X:=1)} = 1$    	| "Persuadable"           	  | "Sure Things"       	    |

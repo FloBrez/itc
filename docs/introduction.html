@@ -87,11 +87,12 @@
 <li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.3</b> Measuring causal effects</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
-<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.1</b> Randomized Controlled Experiments</a></li>
-<li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#instrumental-variables"><i class="fa fa-check"></i><b>3.2</b> Instrumental Variables</a></li>
-<li class="chapter" data-level="3.3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#propensity-score-matching"><i class="fa fa-check"></i><b>3.3</b> Propensity Score Matching</a></li>
-<li class="chapter" data-level="3.4" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#difference-in-difference-estimator"><i class="fa fa-check"></i><b>3.4</b> Difference-in-Difference Estimator</a></li>
-<li class="chapter" data-level="3.5" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#time-series-methods"><i class="fa fa-check"></i><b>3.5</b> Time Series Methods</a></li>
+<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
+<li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.2</b> Randomized Controlled Experiments</a></li>
+<li class="chapter" data-level="3.3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#instrumental-variables"><i class="fa fa-check"></i><b>3.3</b> Instrumental Variables</a></li>
+<li class="chapter" data-level="3.4" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#propensity-score-matching"><i class="fa fa-check"></i><b>3.4</b> Propensity Score Matching</a></li>
+<li class="chapter" data-level="3.5" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#difference-in-difference-estimator"><i class="fa fa-check"></i><b>3.5</b> Difference-in-Difference Estimator</a></li>
+<li class="chapter" data-level="3.6" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#time-series-methods"><i class="fa fa-check"></i><b>3.6</b> Time Series Methods</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
 <li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#marketing"><i class="fa fa-check"></i><b>4.1</b> Marketing</a></li>
@@ -103,8 +104,18 @@
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a></li>
-<li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a></li>
+<li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a><ul>
+<li class="chapter" data-level="B.1" data-path="statistics-1.html"><a href="statistics-1.html#distributions"><i class="fa fa-check"></i><b>B.1</b> Distributions</a><ul>
+<li class="chapter" data-level="B.1.1" data-path="statistics-1.html"><a href="statistics-1.html#single-random-variable"><i class="fa fa-check"></i><b>B.1.1</b> Single Random Variable</a></li>
+<li class="chapter" data-level="B.1.2" data-path="statistics-1.html"><a href="statistics-1.html#multiple-random-variables"><i class="fa fa-check"></i><b>B.1.2</b> Multiple Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="statistics-1.html"><a href="statistics-1.html#statistical-inference"><i class="fa fa-check"></i><b>B.2</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="B.2.1" data-path="statistics-1.html"><a href="statistics-1.html#estimators"><i class="fa fa-check"></i><b>B.2.1</b> Estimators</a></li>
+<li class="chapter" data-level="B.2.2" data-path="statistics-1.html"><a href="statistics-1.html#hypothesis-tests"><i class="fa fa-check"></i><b>B.2.2</b> Hypothesis Tests</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="C" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>C</b> R Code</a></li>
+<li class="chapter" data-level="D" data-path="equivalence-of-statistical-properties-and-sql.html"><a href="equivalence-of-statistical-properties-and-sql.html"><i class="fa fa-check"></i><b>D</b> Equivalence of statistical properties and SQL</a></li>
 </ul>
 
       </nav>
@@ -128,7 +139,7 @@
 <p>Correlation doesn’t imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing ‘look over there.’
 — Randall Munroe</p>
 </blockquote>
-<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of <em>causality</em> has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The <em>causal revolution</em>[^footnote-causal-revolution] swept away decades of experts and students arguing about the correct interpretation of phenomena such as <em>Simpson’s paradox</em>, the nature and properties of the <em>error term in regression equations</em> and the interpretation of <em>structural parameters</em> in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, <em>correlation</em> is never again to be confused with <em>causation</em>".</p>
+<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of <strong>causality</strong> has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The <strong>causal revolution</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="pearl2019"><strong>???</strong></span>)</span> swept away decades of experts and students arguing about the correct interpretation of phenomena such as <strong>Simpson’s paradox</strong>, the nature and properties of the <strong>error term in regression equations</strong> and the interpretation of <strong>structural parameters</strong> in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, <strong>correlation</strong> is never again to be confused with <strong>causation</strong>.</p>
 <p>“Introduction To Causality” is a gentle introduction into this modern understanding of causality as it unfolded after the revolution. It will help you learn the fundamentals of this art and science of causal analysis. After reading this book, you’ll have the tools to understand and communicate causal concepts and you will know how to tackle the common questions. The code in the appendix will help you to apply these methods using the R programming language.</p>
 <div id="what-you-will-learn" class="section level2">
 <h2><span class="header-section-number">1.1</span> What you will learn</h2>
@@ -147,15 +158,16 @@
 <p>There are some important topics that this book doesn’t cover. We hope that this book will leave you wanting more and that you will continue in your journey to master causality by going deeper into this topic or by exploring closly related fields and applications that we did not cover in sufficient length.</p>
 <div id="statistics" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> Statistics</h3>
-<p>The book focuses on causal inference rather than the statistics. Some basic statistical concepts are discussed in the appendix, but they primarily serve as a refresher and shows how to translate conventional statistical notation into a causal framework. We assume that the reader is (or has been) familiar with statistics as it is taught in most Statistics 101 classes.</p>
+<p>The book focuses on causal inference rather than statistics. Some basic statistical concepts are discussed in the appendix, but they primarily serve as a refresher. We assume that the reader is (or has been) familiar with statistics as it is taught in most Statistics 101 classes. Details on estimation methods and properties of estimators (e.g. consistency) are not discussed. We will provide references that provide more details.
+We will, however, extensively discuss the differences between these two types of inferences and how they relate. Our discussion on causal inference will, except for the basic introduction, be probabilistic in nature and statistical notation will be used throughout the book. We have summarized information on notation and terminology in CHAPTER XX.</p>
 </div>
 <div id="machine-learning" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> Machine Learning</h3>
-<p>We will address issues of machine learning where we see a connection to causal concepts. We do not go deep on any causal and non-causal ML algorithms.</p>
+<p>We will address issues of machine learning where we see a connection to causal concepts. We do not go deep on any causal and non-causal ML algorithms. The discussion will focus on the discussion of supervised ML versus reinforcement learning.</p>
 </div>
 <div id="proofs" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Proofs</h3>
-<p>The book does not contain any proof or any heavy mathematical derivations.</p>
+<p>The book does not contain any proof or any heavy mathematical derivations. We will link to reference material. Despite that, we do intend to be rigorous in argumentation and notation and some discussions might seem overly verbose at first. We believe however that this is necessary, especially to avoid confusion between statistical and causal concepts.</p>
 </div>
 </div>
 <div id="prerequisites" class="section level2">
@@ -165,6 +177,7 @@
 </div>
 <div id="acknowledgements" class="section level2">
 <h2><span class="header-section-number">1.5</span> Acknowledgements</h2>
+<p>The book has been compiled from markdown documents using R package bookdown. This package has allowed me to adopt a very flexible workflow where the compilation and publication of an HTML version only takes seconds.</p>
 </div>
 <div id="links" class="section level2">
 <h2><span class="header-section-number">1.6</span> Links</h2>
