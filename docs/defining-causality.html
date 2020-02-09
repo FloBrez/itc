@@ -82,9 +82,10 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
-<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.3</b> Measuring causal effects</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a></li>
+<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in simple environments</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.3</b> Causality in complex environments</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.4</b> Measuring causal effects</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
 <li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
@@ -100,7 +101,9 @@
 <li class="chapter" data-level="4.3" data-path="applications.html"><a href="applications.html#discrimination"><i class="fa fa-check"></i><b>4.3</b> Discrimination</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
-<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.1</b> Are all sciences equal?</a></li>
+<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#manipulation"><i class="fa fa-check"></i><b>5.1</b> Manipulation</a></li>
+<li class="chapter" data-level="5.2" data-path="epistemology.html"><a href="epistemology.html#long-term-effects"><i class="fa fa-check"></i><b>5.2</b> Long-Term Effects</a></li>
+<li class="chapter" data-level="5.3" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.3</b> Are all sciences equal?</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a></li>
@@ -136,8 +139,15 @@
             <section class="normal" id="section-">
 <div id="defining-causality" class="section level1">
 <h1><span class="header-section-number">2</span> Defining Causality</h1>
+<div id="causal-models" class="section level2">
+<h2><span class="header-section-number">2.1</span> Causal Models</h2>
+<p>We assume the world can be modelled by <em>variables</em>. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. <span class="math inline">\(X\)</span>, whereas we use lower-case letters for their values, e.g. <span class="math inline">\(x\)</span>. In case <span class="math inline">\(X\)</span> is <em>categorical</em>, different values will be denoted by a subscript <span class="math inline">\(x_j\)</span>. Where <span class="math inline">\(X\)</span> has two values only, we will encode them with <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p>
+<p><em>Structural equations</em> represent the causal relations between <em>variables</em>. The <em>absence</em> of a variable from the model assumes that it is not relevant for the causal description of the system.
+We will focus exposition on <em>categorical variables</em> which can assume a</p>
+<p><span class="math inline">\(X \rightarrow Y\)</span> means that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span>. Manipulating <span class="math inline">\(X\)</span> determines the value of <span class="math inline">\(Y\)</span>, but not the other way round. We call <span class="math inline">\(X\)</span> the <em>cause</em> and <span class="math inline">\(Y\)</span> the <em>outcome</em>. Others call <span class="math inline">\(Y\)</span> the “<em>effect</em>”, but we will use <em>effect</em> to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. “average treatment effect”) and its usage in everyday language (e.g. “tipping on that button had no effect on the brightness of the screen”).</p>
+</div>
 <div id="causality-in-simple-environments" class="section level2">
-<h2><span class="header-section-number">2.1</span> Causality in simple environments</h2>
+<h2><span class="header-section-number">2.2</span> Causality in simple environments</h2>
 <p>Let’s first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
 * the switch can either be open (0) or closed (1)
 * the lamp can either be off (0) or on (1).
@@ -151,7 +161,7 @@ Let’s further assume that the voltage source has enough capacity to lighten th
 <span class="math display">\[\begin{equation}
 Y := f(X) = X
 \end{equation}\]</span>
-Note, that the equation uses operator “<span class="math inline">\(:=\)</span>”" rather than the usual “<span class="math inline">\(=\)</span>”. It reads “<span class="math inline">\(f(X)\)</span> is evaluated and <em>assigned</em> to <span class="math inline">\(Y\)</span>” and therefore resembles variable assignment in many programming languages where, for example, <code>x = x + 1</code> is a valid expression.</p>
+Note, that the equation uses operator “<span class="math inline">\(:=\)</span>”" rather than the usual “<span class="math inline">\(=\)</span>”. It reads “<span class="math inline">\(f(X)\)</span> is evaluated and <em>assigned</em> to <span class="math inline">\(Y\)</span>” and therefore resembles variable assignment in many programming languages where, for example, <code>x = x + 1</code> is a valid expression. Crucially, it is asymmetric: if <span class="math inline">\(X\)</span> is the air temperature and <span class="math inline">\(Y\)</span> the reading of the temperature on a thermometer, the reading will change if we heat up the air; manipulating the reading, e.g. by exposing the thermometer to direct sunlight will not heat up the air around it.</p>
 <p>Since the structural equation represents the <em>causal mechanism</em> relating the switch and the lamp, we can immediately read what happens if we intervene on the switch: when we close the switch, i.e. <span class="math inline">\(do(X:= 1)\)</span>, then the lamp will be on, <span class="math inline">\(Y := 1\)</span>; if we open the switch, <span class="math inline">\(do(X:= 0)\)</span>, then the lamp dies, <span class="math inline">\(Y := 0\)</span>.</p>
 <p>Let’s take it up a notch and create a more interesting environment by adding a second switch, connected in series, see figure XXX for the circuit diagram and figure xxx for the graph representation. The two switches allow the environment to be in four different states. Only if both switches are on, will the lamp be on, in the other three states it will be off:</p>
 <table>
@@ -200,7 +210,7 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 <p>Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem gelöst werden kann, indem wir</p>
 </div>
 <div id="causality-in-complex-environments" class="section level2">
-<h2><span class="header-section-number">2.2</span> Causality in complex environments</h2>
+<h2><span class="header-section-number">2.3</span> Causality in complex environments</h2>
 <p><span class="math display">\[\begin{equation}
 \Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}\]</span></p>
@@ -210,7 +220,7 @@ P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2
 \end{equation}\]</span></p>
 </div>
 <div id="measuring-causal-effects" class="section level2">
-<h2><span class="header-section-number">2.3</span> Measuring causal effects</h2>
+<h2><span class="header-section-number">2.4</span> Measuring causal effects</h2>
 <p>The fundamental problem of causal inference</p>
 <p>The definition of [causal effect] hints at a severe problem for its measurements. It involves two quantities which can never be both observed at once. This poses a problem, a problem so fundamental that is often called <strong>the fundamental problem of causal inference</strong>.</p>
 

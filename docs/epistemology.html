@@ -82,9 +82,10 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.1</b> Causality in simple environments</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in complex environments</a></li>
-<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.3</b> Measuring causal effects</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a></li>
+<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in simple environments</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.3</b> Causality in complex environments</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.4</b> Measuring causal effects</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
 <li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
@@ -100,7 +101,9 @@
 <li class="chapter" data-level="4.3" data-path="applications.html"><a href="applications.html#discrimination"><i class="fa fa-check"></i><b>4.3</b> Discrimination</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
-<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.1</b> Are all sciences equal?</a></li>
+<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#manipulation"><i class="fa fa-check"></i><b>5.1</b> Manipulation</a></li>
+<li class="chapter" data-level="5.2" data-path="epistemology.html"><a href="epistemology.html#long-term-effects"><i class="fa fa-check"></i><b>5.2</b> Long-Term Effects</a></li>
+<li class="chapter" data-level="5.3" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.3</b> Are all sciences equal?</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a></li>
@@ -136,8 +139,29 @@
             <section class="normal" id="section-">
 <div id="epistemology" class="section level1">
 <h1><span class="header-section-number">5</span> Epistemology</h1>
+<div id="manipulation" class="section level2">
+<h2><span class="header-section-number">5.1</span> Manipulation</h2>
+<p>Sometimes the cause cannot be directly manipulated: the doctor can prescribe a drug but not ensure the patient is taking the drug; a marketing manager might choose who to sent a mail to, but the delivery could fail; we dealt with problems like these in our application on instrumental variables.
+The problem is however, more subtle, and probably more important than we might have anticipated. The issue appears in situations where cannot directly intervene on a variable, but only on a mechanism that affects that variable.</p>
+<p>Assume, you’re an economist asked to evaluate the effect of university education on a persons lifetime income to inform a decision on whether or not to expand access to university education.
+As an expert in economics, statistics and causal inference, you immediately recognize the problems with this task.
+* knowing about treatment effect heterogeneity, you understand that the average treatment effect calculated for the current group of students is not an estimate for the treatment effect for those who will become available under the new policy.
+* you’re asked to provide a causal effect, but the intervention is not specified. The government can’t directly manipulate</p>
+<p>Uncertainty about effectiveness of interventions can have various reasons:
+* <em>correct model</em>: we are uncertain about the assumptions on the causal structure used to make the causal inference
+* <em>extrapolation</em>: the causal inference relied on data drawn from other populations, either other individual or a different time. In dynamic environments such as the economy, causal knowledge can depreciate fast with new technology, a changing competition and ever-so slightly different regulation.
+*</p>
+<p>In many circumstances the optimal decision will differ by perspective. Imagine a doctor having two different treatments at hand. Drug A is known to be most effective (100), but relies on the patient taking the drug reliably every day. If taken irregularly, the drug’s effectiveness is severly lower (50). Drug B on the other hand works similarly if take regularly or irregularly (75). If the doctor has to make a decision whether to prefer A vs B, she will have to rely on her judgements of the patient’s ability to follow through on a regular schedule. If it is known that most patients have a hard time doing this, the best treatment to prescribe from a doctor’s perspective is drug B. The patient, however, might think differently. Knowing that they have the self-discipline they might choose to go with drug A.
+This is just one example on how a guideline with simple recommendations can be sub-optimal. If the patient was given the information, he could use it to make a better judgement (but of course the patient might be overconfident in his ability to stick to a rigid schedule).
+This is similar to giving someone advice to exercise and restrict to 2000kcal food intake to loose weight. This certainly works <em>if</em> one adhere’s to it. The likelihood to fail will be great though. A less ambitious and rigid goal might be less effective, but might be substantially easier to follow-through. The <em>recommendation</em> for a diet will have to have a larger effect than the more rigid one.</p>
+</div>
+<div id="long-term-effects" class="section level2">
+<h2><span class="header-section-number">5.2</span> Long-Term Effects</h2>
+<p>In examples so far we have considered situations where the intervention was one-shot, i.e. we only intervened once in the system. Although plausible in the applications considered, there are many applications where this is not the case. Especially when we are interested in long-term goals rather than short-term outcomes, it is implausible that we would not be able to intervene in the future. Of course, this can partly be alleviated estimating the likelihood of future actions and taken these into account, but that doesn’t make sense if we are the actors ourselves.
+The British xx was tasked to evaluate the effect of Brexit on British GDP in the years after Brexit. This is difficult to establish as many important decisions are undetermined by Brexit itself (leaving out the problem that the terms and conditions of the Brexit are not fully specified themselves). Leaving the EU will allow Great Britain to explore policies that were not available within the EU: every country in the EU has to have a value-added tax system. Leaving the EU allows to choose a different policy. An economist trying to provide this estimate will have to assume a probability distribution on this topic, as it will certainly have non-trivial impact. A politician in charge, e.g. the prime minister, might disregard this recommendation as he might have quite different plans and the probability distribution might be quite different (it might not be fully centered at a single option as he might be unsure whether he might achieve this policy if he is willing to go for it).</p>
+</div>
 <div id="are-all-sciences-equal" class="section level2">
-<h2><span class="header-section-number">5.1</span> Are all sciences equal?</h2>
+<h2><span class="header-section-number">5.3</span> Are all sciences equal?</h2>
 <p>The concept of causality as discussed in this book is a cornerstone of many scientific disciplines. Although in most cases not stated explicitly in those terms, the question <strong>what will happen if i does x (versus y)</strong> is implicit in most scientific work in diverse fields such as economics, psychology, medicine, and history.
 The interventions contemplated and analyzed in these disciplines vary widely in terms of manipulability, scope and ethics: a randomized experiment on fiscal policy is neither operationally feasible nor ethically desirable - at least at a the level of entire nations; assessing how individuals provide different answers if questions are phrased differently is both manipulable in a controlled environment and too unintrusive to be ethically problematic. Throughout the book we discussed several methods to infer causal relationships ranging from randomized controlled trials to time series analysis. With every step away from the ideal properties of an RCT, the reliability and robustness of results crucially depended on the validity of the assumptions that we were willing to accept. In general, the more assumptions we make, the more likely the results will be unreliable.
 On a sidenote: of course, incorrect causal assumptions are not the only or even the main reason for scientific results to be unreliable. Many of those have to do with problems of <em>statisical inference</em> instead. Even in experiments following an RCT design, there are plenty of pitfalls to be aware of. Too small samples, p-hacking, and publishing bias are just a few reasons for the <a href="https://en.wikipedia.org/wiki/Replication_crisis">replication crisis</a> in psychology, medicine and other social sciences.</p>
