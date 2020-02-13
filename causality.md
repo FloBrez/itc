@@ -10,12 +10,12 @@ We assume the world can be modelled by *variables*. Variables can take various v
 A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In *causal graphs*, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an *ordered* pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs)[^dag1]. These DAGs have no feedback loops.
 ```
 
-[^dag1]: Readers familiar with DAGs data processing pipelines will recognize that these too describe causal mechanisms. Datasets are manipulated in an ordered sequence of steps to produce a final outcome where the result of each step is determined by the outcome of its parents steps (the input datasets) and the mechanism itself (the transformation of the datasets). 
+[^dag1]: Readers familiar with DAGs data processing pipelines will recognize that these too describe causal mechanisms. Datasets are manipulated in an ordered sequence of steps to produce a final outcome where the result of each step is determined by the outcome of its parents steps (the input datasets) and the mechanism itself (the transformation of the datasets).
 
 The causal graphs convey the qualitative pattern of causal relations. They do not quantify that relation, i.e. specify how two variables are related. A graph with relation $A \rightarrow B$
 It The quantitative aspects are better represented in a set of structural equations.
 
-```{definition, graphs, name = "Exogeneous and Endogeneous Variables"}
+```{definition, exoendo, name = "Exogeneous and Endogeneous Variables"}
 An exogeneous variable in a graph G has no edges pointing into itself.
 An endogeneous variable in a graph G has at least one edge point into itself.
 ```
@@ -93,6 +93,7 @@ The definition of [causal effect] hints at a severe problem for its measurements
 
 ### Definition
 
+bla
 
 ### Causal Effect Statistics
 

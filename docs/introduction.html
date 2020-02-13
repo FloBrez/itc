@@ -82,10 +82,16 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in simple environments</a></li>
-<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.3</b> Causality in complex environments</a></li>
-<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.4</b> Measuring causal effects</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
+<li class="chapter" data-level="2.1.2" data-path="defining-causality.html"><a href="defining-causality.html#structural-equations"><i class="fa fa-check"></i><b>2.1.2</b> Structural Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.2</b> Causality In A Simple Environment</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Complex Environment</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#causal-effects"><i class="fa fa-check"></i><b>2.4</b> Causal Effects</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="defining-causality.html"><a href="defining-causality.html#definition"><i class="fa fa-check"></i><b>2.4.1</b> Definition</a></li>
+<li class="chapter" data-level="2.4.2" data-path="defining-causality.html"><a href="defining-causality.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.4.2</b> Causal Effect Statistics</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
 <li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
@@ -143,7 +149,7 @@
 <p>Correlation doesn’t imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing ‘look over there.’
 — Randall Munroe</p>
 </blockquote>
-<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of <strong>causality</strong> has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The <strong>causal revolution</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="pearl2019"><strong>???</strong></span>)</span> swept away decades of experts and students arguing about the correct interpretation of phenomena such as <strong>Simpson’s paradox</strong>, the nature and properties of the <strong>error term in regression equations</strong> and the interpretation of <strong>structural parameters</strong> in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, <strong>correlation</strong> is never again to be confused with <strong>causation</strong>.</p>
+<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of <strong>causality</strong> has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The <strong>causal revolution</strong> <span class="citation">(Pearl and Mackenzie <a href="#ref-pearl2019" role="doc-biblioref">2018</a>)</span> swept away decades of experts and students arguing about the correct interpretation of phenomena such as <strong>Simpson’s paradox</strong>, the nature and properties of the <strong>error term in regression equations</strong> and the interpretation of <strong>structural parameters</strong> in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, <strong>correlation</strong> is never again to be confused with <strong>causation</strong>.</p>
 <p>“Introduction To Causality” is a gentle introduction into this modern understanding of causality as it unfolded after the revolution. It will help you learn the fundamentals of this art and science of causal analysis. After reading this book, you’ll have the tools to understand and communicate causal concepts and you will know how to tackle the common questions. The code in the appendix will help you to apply these methods using the R programming language.</p>
 <div id="what-you-will-learn" class="section level2">
 <h2><span class="header-section-number">1.1</span> What you will learn</h2>
@@ -187,6 +193,12 @@ We will, however, extensively discuss the differences between these two types of
 <h2><span class="header-section-number">1.6</span> Links</h2>
 <p>A free HTML version of this book is available at <a href="https://flobrez.github.io/itc/" class="uri">https://flobrez.github.io/itc/</a>. The markdown sources and supplementary material is available at <a href="https://github.com/flobrez/itc" class="uri">https://github.com/flobrez/itc</a>.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-pearl2019">
+<p>Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic Books.</p>
 </div>
 </div>
             </section>

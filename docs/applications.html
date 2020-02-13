@@ -82,10 +82,16 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in simple environments</a></li>
-<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.3</b> Causality in complex environments</a></li>
-<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.4</b> Measuring causal effects</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
+<li class="chapter" data-level="2.1.2" data-path="defining-causality.html"><a href="defining-causality.html#structural-equations"><i class="fa fa-check"></i><b>2.1.2</b> Structural Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.2</b> Causality In A Simple Environment</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Complex Environment</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#causal-effects"><i class="fa fa-check"></i><b>2.4</b> Causal Effects</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="defining-causality.html"><a href="defining-causality.html#definition"><i class="fa fa-check"></i><b>2.4.1</b> Definition</a></li>
+<li class="chapter" data-level="2.4.2" data-path="defining-causality.html"><a href="defining-causality.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.4.2</b> Causal Effect Statistics</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
 <li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
@@ -146,7 +152,7 @@ I will focus here on the (mis-)application of propensity modeling. Propensity mo
 <p><span class="math display">\[\begin{equation}
 P(Y|I) = f(I) \label{eq:mktg1} \tag{1}
 \end{equation}\]</span>
-where <span class="math inline">\(I\)</span> is the information set available for prediction.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+where <span class="math inline">\(I\)</span> is the information set available for prediction.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>There are plently of algorithms that could be used to estimate the function. Logistic regression is often chosen as it is easy to implement and the model itself might provide some insights. Here, we will focus not on the implementation part, but on the interpretation and (mis-) use of the model.</p>
 <p>To see why the model might not be want you think it is, we will have a
 A naive usage of the model is to focus marketing on customers with high likelhood to do the action. This however, can be serverly misleading, as we will discuss next. To show this, we will start with an ideal assumption: our model is perfect. A perfect model means that we predict the customer action correctly for every customer and the model produces predicted probabilies which are well calibrated. This means that we only get two predictions, either a customer will do action with estimated probability 0 or whether they will do so with probability 1 - and the model is always right.
@@ -252,8 +258,8 @@ Im Folgenden unterscheiden wir zwei Merkmalstypen</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Typically you will find a notation similar to <span class="math inline">\(P(Y|X) = f(X)\)</span> where <span class="math inline">\(X\)</span> is called a feature set or a vector/matrix of features. I use the term information set to deliberately distinguish between the notion of all the information you have available for a customer. The information set is abstract and represents information in potentially very different formats, e.g. order data in your data base, the recorded call with the customer service team, or the customer’s product reviews. Feature engineering is the step where this information is transformed into a format that can be used by ML algorithms: the order data could be transformed into multiple features, e.g. the total revenue in past 30 days, total revenue in past 180 days, the number of days the customer put an order in; the recorded call can transformed into days since the latest customer service contanct, length of the call, length of waiting in line and whether or not the issue was resolved; the product reviews are transformed into word embeddings.<a href="applications.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p>Typically you will find a notation similar to <span class="math inline">\(P(Y|X) = f(X)\)</span> where <span class="math inline">\(X\)</span> is called a feature set or a vector/matrix of features. I use the term information set to deliberately distinguish between the notion of all the information you have available for a customer. The information set is abstract and represents information in potentially very different formats, e.g. order data in your data base, the recorded call with the customer service team, or the customer’s product reviews. Feature engineering is the step where this information is transformed into a format that can be used by ML algorithms: the order data could be transformed into multiple features, e.g. the total revenue in past 30 days, total revenue in past 180 days, the number of days the customer put an order in; the recorded call can transformed into days since the latest customer service contanct, length of the call, length of waiting in line and whether or not the issue was resolved; the product reviews are transformed into word embeddings.<a href="applications.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

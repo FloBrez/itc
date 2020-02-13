@@ -82,10 +82,16 @@
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-simple-environments"><i class="fa fa-check"></i><b>2.2</b> Causality in simple environments</a></li>
-<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-complex-environments"><i class="fa fa-check"></i><b>2.3</b> Causality in complex environments</a></li>
-<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#measuring-causal-effects"><i class="fa fa-check"></i><b>2.4</b> Measuring causal effects</a></li>
+<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.1</b> Causal Models</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Causal Graphs</a></li>
+<li class="chapter" data-level="2.1.2" data-path="defining-causality.html"><a href="defining-causality.html#structural-equations"><i class="fa fa-check"></i><b>2.1.2</b> Structural Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.2</b> Causality In A Simple Environment</a></li>
+<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Complex Environment</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#causal-effects"><i class="fa fa-check"></i><b>2.4</b> Causal Effects</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="defining-causality.html"><a href="defining-causality.html#definition"><i class="fa fa-check"></i><b>2.4.1</b> Definition</a></li>
+<li class="chapter" data-level="2.4.2" data-path="defining-causality.html"><a href="defining-causality.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.4.2</b> Causal Effect Statistics</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
 <li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
@@ -142,21 +148,35 @@
 <div id="causal-models" class="section level2">
 <h2><span class="header-section-number">2.1</span> Causal Models</h2>
 <p>We assume the world can be modelled by <em>variables</em>. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. <span class="math inline">\(X\)</span>, whereas we use lower-case letters for their values, e.g. <span class="math inline">\(x\)</span>. In case <span class="math inline">\(X\)</span> is <em>categorical</em>, different values will be denoted by a subscript <span class="math inline">\(x_j\)</span>. Where <span class="math inline">\(X\)</span> has two values only, we will encode them with <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p>
+<div id="causal-graphs" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Causal Graphs</h3>
+
+<div class="definition">
+<span id="def:graphs" class="definition"><strong>Definition 2.1  (Causal Graph)  </strong></span>A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In <em>causal graphs</em>, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an <em>ordered</em> pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. These DAGs have no feedback loops.
+</div>
+
+<p>The causal graphs convey the qualitative pattern of causal relations. They do not quantify that relation, i.e. specify how two variables are related. A graph with relation <span class="math inline">\(A \rightarrow B\)</span>
+It The quantitative aspects are better represented in a set of structural equations.</p>
+
+<div class="definition">
+<span id="def:exoendo" class="definition"><strong>Definition 2.2  (Exogeneous and Endogeneous Variables)  </strong></span>An exogeneous variable in a graph G has no edges pointing into itself.
+An endogeneous variable in a graph G has at least one edge point into itself.
+</div>
+
+</div>
+<div id="structural-equations" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Structural Equations</h3>
 <p><em>Structural equations</em> represent the causal relations between <em>variables</em>. The <em>absence</em> of a variable from the model assumes that it is not relevant for the causal description of the system.
 We will focus exposition on <em>categorical variables</em> which can assume a</p>
 <p><span class="math inline">\(X \rightarrow Y\)</span> means that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span>. Manipulating <span class="math inline">\(X\)</span> determines the value of <span class="math inline">\(Y\)</span>, but not the other way round. We call <span class="math inline">\(X\)</span> the <em>cause</em> and <span class="math inline">\(Y\)</span> the <em>outcome</em>. Others call <span class="math inline">\(Y\)</span> the “<em>effect</em>”, but we will use <em>effect</em> to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. “average treatment effect”) and its usage in everyday language (e.g. “tipping on that button had no effect on the brightness of the screen”).</p>
 </div>
-<div id="causality-in-simple-environments" class="section level2">
-<h2><span class="header-section-number">2.2</span> Causality in simple environments</h2>
+</div>
+<div id="causality-in-a-simple-environment" class="section level2">
+<h2><span class="header-section-number">2.2</span> Causality In A Simple Environment</h2>
 <p>Let’s first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
 * the switch can either be open (0) or closed (1)
 * the lamp can either be off (0) or on (1).
 Let’s further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let’s take an extra second to translate the circuit diagram into a <em>causal graph</em>, a representation that will become quite handy in more complex environments that will be discussed later in the book.</p>
-
-<div class="theorem">
-<span id="thm:graphs" class="theorem"><strong>Theorem 2.1  (Causal Graphs)  </strong></span>A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In <em>causal graphs</em>, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an <em>ordered</em> pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs).
-</div>
-
 <p>We can further represent a <em>causal graph</em> as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
 <span class="math display">\[\begin{equation}
 Y := f(X) = X
@@ -209,8 +229,8 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 <p>Dies ist bereits ein erster Hinweis auf ein fundamentales Problem, auf das wir im Weiteren noch detaillierter eingehen werden: durch Interventionen in eine System können Informationen generiert werden, die aus rein passiver Beobachtung nicht verfügbar sind.</p>
 <p>Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem gelöst werden kann, indem wir</p>
 </div>
-<div id="causality-in-complex-environments" class="section level2">
-<h2><span class="header-section-number">2.3</span> Causality in complex environments</h2>
+<div id="causality-in-a-complex-environment" class="section level2">
+<h2><span class="header-section-number">2.3</span> Causality In A Complex Environment</h2>
 <p><span class="math display">\[\begin{equation}
 \Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}\]</span></p>
@@ -219,12 +239,48 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2}
 \end{equation}\]</span></p>
 </div>
-<div id="measuring-causal-effects" class="section level2">
-<h2><span class="header-section-number">2.4</span> Measuring causal effects</h2>
+<div id="causal-effects" class="section level2">
+<h2><span class="header-section-number">2.4</span> Causal Effects</h2>
 <p>The fundamental problem of causal inference</p>
 <p>The definition of [causal effect] hints at a severe problem for its measurements. It involves two quantities which can never be both observed at once. This poses a problem, a problem so fundamental that is often called <strong>the fundamental problem of causal inference</strong>.</p>
+<div id="definition" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Definition</h3>
+<p>bla</p>
+</div>
+<div id="causal-effect-statistics" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Causal Effect Statistics</h3>
+
+<div class="definition">
+<span id="def:ate" class="definition"><strong>Definition 2.3  (Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+</div>
+
+<p>bla bla bla</p>
+
+<div class="definition">
+<span id="def:att" class="definition"><strong>Definition 2.4  (Average Treatment Effect on the Treated)  </strong></span>The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
+</div>
+
+<p>It is often used in situations where the treatment effect is expected to be heterogeneous in a population. In a given environment, selection into treatment could yield treated individuals to have a different average treatment effect than the total population. For example, if university eduction has a higher effect on earnings for people with high intelligence and if people with high intelligence more often chose a university education than less intelligent ones, the average effect of university eduction of those who choose to go to university will be higher than in the overall population (and therefore than those choosing not to go to university).</p>
+
+<div class="definition">
+<span id="def:itt" class="definition"><strong>Definition 2.5  (Intention To Treat Effect)  </strong></span>The Intention To Treat Effect, or ITT, is the expected value of xx in population x.
+</div>
+
+<p>It is conceptually the same as the ATE, but often refers to a situation where the primary intervention cannot be manipulated directly, e.g. where a doctor can prescribe a drug but not enforce that the patient actually takes the drug.</p>
+
+<div class="definition">
+<span id="def:late" class="definition"><strong>Definition 2.6  (Local Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+</div>
+
 
 </div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Readers familiar with DAGs data processing pipelines will recognize that these too describe causal mechanisms. Datasets are manipulated in an ordered sequence of steps to produce a final outcome where the result of each step is determined by the outcome of its parents steps (the input datasets) and the mechanism itself (the transformation of the datasets).<a href="defining-causality.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
