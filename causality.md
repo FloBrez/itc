@@ -4,20 +4,36 @@
 ## Causal Models
 We assume the world can be modelled by *variables*. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. $X$, whereas we use lower-case letters for their values, e.g. $x$. In case $X$ is *categorical*, different values will be denoted by a subscript $x_j$. Where $X$ has two values only, we will encode them with $0$ and $1$.
 
+### Causal Graphs
+
+```{definition, graphs, name = "Causal Graph"}
+A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In *causal graphs*, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an *ordered* pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs)[^dag1]. These DAGs have no feedback loops.
+```
+
+[^dag1]: Readers familiar with DAGs data processing pipelines will recognize that these too describe causal mechanisms. Datasets are manipulated in an ordered sequence of steps to produce a final outcome where the result of each step is determined by the outcome of its parents steps (the input datasets) and the mechanism itself (the transformation of the datasets). 
+
+The causal graphs convey the qualitative pattern of causal relations. They do not quantify that relation, i.e. specify how two variables are related. A graph with relation $A \rightarrow B$
+It The quantitative aspects are better represented in a set of structural equations.
+
+```{definition, graphs, name = "Exogeneous and Endogeneous Variables"}
+An exogeneous variable in a graph G has no edges pointing into itself.
+An endogeneous variable in a graph G has at least one edge point into itself.
+```
+
+### Structural Equations
+
 *Structural equations* represent the causal relations between *variables*. The *absence* of a variable from the model assumes that it is not relevant for the causal description of the system.
 We will focus exposition on *categorical variables* which can assume a
 
 $X \rightarrow Y$ means that $X$ causes $Y$. Manipulating $X$ determines the value of $Y$, but not the other way round. We call $X$ the *cause* and $Y$ the *outcome*. Others call $Y$ the "*effect*", but we will use *effect* to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. "average treatment effect") and its usage in everyday language (e.g. "tipping on that button had no effect on the brightness of the screen").
 
-## Causality in simple environments
+## Causality In A Simple Environment
 Let's first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
 * the switch can either be open (0) or closed (1)
 * the lamp can either be off (0) or on (1).
 Let's further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let's take an extra second to translate the circuit diagram into a *causal graph*, a representation that will become quite handy in more complex environments that will be discussed later in the book.
 
-```{theorem, graphs, name = "Causal Graphs"}
-A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In *causal graphs*, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an *ordered* pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs).
-```
+
 
 We can further represent a *causal graph* as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
 \begin{equation}
@@ -58,7 +74,7 @@ Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem g
 
 
 
-## Causality in complex environments
+## Causality In A Complex Environment
 \begin{equation}
 \Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}
@@ -69,8 +85,37 @@ P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2
 \end{equation}
 
 
-## Measuring causal effects
+## Causal Effects
 
 The fundamental problem of causal inference
 
 The definition of [causal effect] hints at a severe problem for its measurements. It involves two quantities which can never be both observed at once. This poses a problem, a problem so fundamental that is often called **the fundamental problem of causal inference**.
+
+### Definition
+
+
+### Causal Effect Statistics
+
+```{definition, ate, name = "Average Treatment Effect"}
+The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+```
+
+bla bla bla
+
+```{definition, att, name = "Average Treatment Effect on the Treated"}
+The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
+```
+
+It is often used in situations where the treatment effect is expected to be heterogeneous in a population. In a given environment, selection into treatment could yield treated individuals to have a different average treatment effect than the total population. For example, if university eduction has a higher effect on earnings for people with high intelligence and if people with high intelligence more often chose a university education than less intelligent ones, the average effect of university eduction of those who choose to go to university will be higher than in the overall population (and therefore than those choosing not to go to university).
+
+
+```{definition, itt, name = "Intention To Treat Effect"}
+The Intention To Treat Effect, or ITT, is the expected value of xx in population x.
+```
+
+It is conceptually the same as the ATE, but often refers to a situation where the primary intervention cannot be manipulated directly, e.g. where a doctor can prescribe a drug but not enforce that the patient actually takes the drug.
+
+
+```{definition, late, name = "Local Average Treatment Effect"}
+The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+```
