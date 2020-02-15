@@ -14,6 +14,21 @@ Causal inference is much harder than statistical inference.
 ## Randomized Controlled Experiments
 
 TODO
+### Assignment Mechanisms
+```{definition, rct_assignment, name = "Complete Randomization"}
+If intervention $X$ is assigned through mechansim
+\begin{equation}
+X := U
+\end{equation}
+where $U ~ Bernoulli(p)$ with $0 < p < 1$, the experiment is said to be completely randomized.
+```
+
+```{definition, strat_assignment, name = "Stratified Randomization"}
+tbd
+```
+
+Startified experiments first group individuals according to some observable attribute (e.g. by gender or by city). These groups are called strata. Within each stratum, treatment assignment follows a copmpletey randomized experiment. All methods for statistical inference can be used if the stratum is interpreted as the population for each sub-experiment. In many cases, however, we're not primarily interested in the effect in each stratum (although this can be informative) but in the population containing all strata. The statistics become more cumbersome, but stratification imposes no harm in the sense of additional assumptions as the stratification mechanism is fully known. 
+
 
 ## Instrumental Variables
 
