@@ -21,8 +21,6 @@ Finally, I will  wrap up this book by providing some parting thoughts on epistem
 
 These chapters will hopefully provide you with a solid foundation and will allow you to find the right solution for your causal problem. But for most of your problems they will not be enough. Throughout this book we'll point you to resources where you can learn more. The appendix provides some additional material on statistics and programming.
 
-## How this book is organised
-
 ## What you won't learn
 
 There are some important topics that this book doesn't cover. We hope that this book will leave you wanting more and that you will continue in your journey to master causality by going deeper into this topic or by exploring closly related fields and applications that we did not cover in sufficient length.
@@ -35,7 +33,13 @@ We will, however, extensively discuss the differences between these two types of
 We will address issues of machine learning where we see a connection to causal concepts. We do not go deep on any causal and non-causal ML algorithms. The discussion will focus on the discussion of supervised ML versus reinforcement learning.
 
 ### Proofs
-The book does not contain any proof or any heavy mathematical derivations. We will link to reference material. Despite that, we do intend to be rigorous in argumentation and notation and some discussions might seem overly verbose at first. We believe however that this is necessary, especially to avoid confusion between statistical and causal concepts. 
+The book does not contain any proof or any heavy mathematical derivations. We will link to reference material. Despite that, we do intend to be rigorous in argumentation and notation and some discussions might seem overly verbose at first. We believe however that this is necessary, especially to avoid confusion between statistical and causal concepts.
+
+### Type Causality vs Actual Causality
+When referring to causality, we will always mean what philosophers typically call *type causality* rather than *actual causality*. The former takes a forward-looking approach by inferring the *effects of causes*. This allows to predict outcome for interventions, e.g. it allows to answer questions like "what will be the outcome if we prescribe this new drug *X* to patients with heart disease". *Actual causality* instead mostly takes a backward look at a given instance and tries to infer *causes of effects*. This allows to answer questions such as "what caused person *Y* to die from heart disease". This type of inference is important if the goal is to assign responsibility, e.g. in a legal case. For a thorough introduction I recommend to take a look at [@halpern2016].
+
+## How this book is organised
+
 
 ## Prerequisites
 
