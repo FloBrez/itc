@@ -57,22 +57,23 @@ We can easily spot that the structural equation representation is
 Y := f(X_1, X_2) = X_1 \cdot X_2
 \end{equation}
 
-Setzen wir in diesem System nun den Schalter 1 auf geschlossen, erkennen wir, dass der Zustand der Leuchte nun noch vom Zustand des zweiten Schalters abhängt.
+When we close switch 1, $X_1 := 1$, the state of the lamp is solely determined by the state of swith 2.
 \begin{equation}
 Y := f(1, X_2) = 1 \cdot X_2 = X_2
 \end{equation}
 
-Nehmen wir nun an, dass wir nicht allwissend sind, sondern sich ein Schleier des Unwissens über Schalter 2 gelegt hat: wir wissen, dass es ihn gibt, wir wissen nur nicht, ob dieser geschlossen ist oder nicht.
+At the same time, we also understand that, when $X_1 := 0$, the state of the lamp is independent of switch 2:
+\begin{equation}
+Y := f(0, X_2) = 0 \cdot X_2 = 0
+\end{equation}
 
-Man stellt uns nun die Aufgabe, den Zustand des Schalters 2 aus der rein passiven Beobachtung des Systems zu lernen.
+This might at first seem trivial, but here comes the twist: assume we know the system, but we are unable to observe the state of switch 1 (imagine it being hidden inside a plastic container or something). Imagine further that we also observe that switch 2 is open (and the lamp is therefore off). Will closing switch 2 turn on the light?
 
-Ein Blick auf Tabelle xxx zeigt, dass uns das nur in einigen Fällen gelingen wird. Bestimmte Konstellationen von Schalter 1 und Leuchte geben uns nicht ausreichende Information, um den Zustand von Schalter 2 lernen zu können. Selbstverständlich könnten wir dieses Problem lösen, indem wir Schalter 1 betätigen und beobachten, wie sich Leuchte dann ändert. Tatsächlich können wir durch die Intervention und die weitere Beobachtung auf den Zustand von Schalter 2 zu schließen.
+We cannot provide an answer to this question, at least not one with certainty. We know that the *effectiveness* of switch 2 depends on something that we don't know, the state of switch 1. *Only* through intervening with the system by closing switch 2 or by gathering information about the state of switch 1 we are able to answer this question.[^cf1] Nevertheless, we might be able to provide a *probabilistic* answer to the question, an answer that quanitifies our uncertainty about switch 1. If we know that the likelihood that switch 1 is closed is 0.8 in all cases where we encounter switch 2 to be open and and the light to be off, then closing switch 2 will turn on the light in 80% of the cases.
 
-Dies ist bereits ein erster Hinweis auf ein fundamentales Problem, auf das wir im Weiteren noch detaillierter eingehen werden: durch Interventionen in eine System können Informationen generiert werden, die aus rein passiver Beobachtung nicht verfügbar sind.
+[^cf1]: Note, however, that this ambiguity disappears if we happen to observe switch 2 to be closed and therefore the light to be on. With our understanding of the system, it is clear that switch 1 also has to be closed. Opening switch 2 will consequently turn off the light, *with certainty*.
 
-Gehen wir nun noch einen Schritt weiter und überlegen wir uns, ob das Problem gelöst werden kann, indem wir
-
-
+This example has shown that even in very simple causal systems, not being able to observe (and measure) a single variable, requires us to revert to inferences of a lesser kind, probabilistic rather than actual. Of course, most systems worth studying in fields outside of physics are far more complex as the one described here, and many variables of interest cannot be observed or measured. Causal analysis is therefore closely linked with statistics. From here on, we will consider these probabilistic use cases.
 
 ## Causality In A Complex Environment
 \begin{equation}
