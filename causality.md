@@ -85,7 +85,6 @@ As $Y$ is binary, $\Delta$ can be one of ${-1, 0, 1}$ with $\Delta = 1$ being th
 P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2}
 \end{equation}
 
-
 ## Causal Effects
 
 The fundamental problem of causal inference
