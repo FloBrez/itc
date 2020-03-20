@@ -26,6 +26,25 @@ The causal structure implies statistical dependencies. If observations violate t
 
 [^hte-error-control]: This problem is common in the search for heterogeneity in treatment effects, where e.g. the effectiveness of drug is broken down by patient groups (e.g. male vs female, with prior indication vs without). If the number of groups available to the researcher increases, the likelihood of a false discovery increases without proper control. See also https://xkcd.com/882/.
 
+### Example 1 Tutoring
+Let us first explore a simple but insightful DAG and reason about interventions and causal effects. Assume the model for the causal relationship between grade $Z$, tutoring $Y$ and passing the final exam $Y$ is as shown in DAG XXX.
+
+![DAG1](images/dag_exmpl_tut1.png)
+
+More precisely, let's first look at a deterministic quantitative relation given by
+
+\begin{align}
+X &:= I(Z >= 4) \\
+Y &:= I(Z < 5 \text(or) (Z = 5 and X = 1))
+\end{align}
+i.e. all students with grades 4, 5 or 6 get tuturing (but no students with grades 3 or better); students with grades 4 or better are all passing the exam, whether or not getting tutored, as well as tutored students with grade 5; untutored students with grade 5 are failing the test as well as all students with grade 6 (tutored or not).
+This system is already insightful to show that the causal model entails *multiple* probabilistic models. First, note that we do not observe any students with grade 5 who fail the test and that every failed student had grade 6. The observed conditional expected values for $Y|Z$ are given in table xx.
+Second, we can tell what will happen if we intervene in one or more mechanisms. If we, for example, restrict tutoring to students with grade 6, i.e. $X &:= I(Z >= 6)$, all students with grade 5 will fail the exam as well as those with grade 6. But nothing will change for students with grade 4, they still will all pass the exam. Without knowing the causal mechanism, the different behavior of stundents with grade 4 and 5 could not have been predicted. In the observed data, both groups were not distinguishible, neither their relation to tutoring (all got tutored) nor by their exam performance (all passed the exam).
+
+Let's now make this example a bit more interesting (and slightly more realistic) by abandoning the deterministic nature of the mechanism and using a probabilistic one instead. The graph is then to be xxx.
+
+
+
 ## Randomized Controlled Experiments
 
 TODO
