@@ -95,7 +95,9 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
-<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
+<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#example-1-tutoring"><i class="fa fa-check"></i><b>3.1.1</b> Example 1 Tutoring</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.2</b> Randomized Controlled Experiments</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#assignment-mechanisms"><i class="fa fa-check"></i><b>3.2.1</b> Assignment Mechanisms</a></li>
 </ul></li>
@@ -157,7 +159,37 @@ A common variation is the situation where the variable of interest cannot be dir
 <p>Finally, we discuss methods for causal inference in samples of size 1. Given appropriate assumptions, we are able to infer causal relations by leveraging (dependent) observations over time.</p>
 <div id="causal-vs-statistical-inference" class="section level2">
 <h2><span class="header-section-number">3.1</span> Causal vs Statistical Inference</h2>
-<p>Causal inference is much harder than statistical inference.</p>
+<p>Inferring causal mechansims from data is more difficult than learning about properties of the distribution of variables:</p>
+<ul>
+<li>Being able to infer causal mechanisms from data requires knowledge about the data generating process which cannot be inferred from the observed data itself. Observed data can help us justifying assumptions on the causal structure we are willing to accept, but it cannot fully specify the causal model in any application of interest. Hence, we will always have to incorporate (domain) knowledge to enrich the observed data before we can make causal inferences.</li>
+<li>Causal inference does not get rid of the typical statistical problems. These are still there and need to be solved. The causal problems are just an additional layer on top.</li>
+</ul>
+<p>The causal structure implies statistical dependencies. If observations violate the implied dependencies, the causal structure cannot be correct. In practice, observing two variables to be statistically dependent these variables either have a common cause or they directly cause each other. There are practical limitations though:</p>
+<ul>
+<li><p>this only holds true for i.i.d. variables. if the observed data is a time series, this property does not hold. hence, time series observations might be statistically dependent, although there is no causal link. a common phenomenon is that two variables are <em>trending</em> over time. As an effect, observations from such time series will likely have a very high correlation, despite them being causally independent.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p></li>
+<li><p>our ability to correctly infer statistical dependence might not be straightforward:</p>
+<ul>
+<li>if our analysis involves many variables, the number of tests necessary to establish conditional dependence between any pair of two variables increases swiftly. Maintaining a fixed type I error for independence will become exceedingly difficult. We may then falsely identify two variables as being dependent.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></li>
+<li>we might not be able to observe (a random sample of) the outcomes of a causal mechanism, but only a biased one. this is commonly referred to as selection bias (or survivalship bias) in the literature. See also <a href="https://xkcd.com/1827/" class="uri">https://xkcd.com/1827/</a></li>
+</ul></li>
+</ul>
+<div id="example-1-tutoring" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Example 1 Tutoring</h3>
+<p>Let us first explore a simple but insightful DAG and reason about interventions and causal effects. Assume the model for the causal relationship between grade <span class="math inline">\(Z\)</span>, tutoring <span class="math inline">\(Y\)</span> and passing the final exam <span class="math inline">\(Y\)</span> is as shown in DAG XXX.</p>
+<div class="figure">
+<img src="images/dag_exmpl_tut1.png" alt="" />
+<p class="caption">DAG1</p>
+</div>
+<p>More precisely, let’s first look at a deterministic quantitative relation given by</p>
+<p><span class="math display">\[\begin{align}
+X &amp;:= I(Z &gt;= 4) \\
+Y &amp;:= I(Z &lt; 5 \text{ or } (Z = 5 \text{ and } X = 1))
+\end{align}\]</span>
+i.e. all students with grades 4, 5 or 6 get tuturing (but no students with grades 3 or better); students with grades 4 or better are all passing the exam, whether or not getting tutored, as well as tutored students with grade 5; untutored students with grade 5 are failing the test as well as all students with grade 6 (tutored or not).
+This system is already insightful to show that the causal model entails <em>multiple</em> probabilistic models. First, note that we do not observe any students with grade 5 who fail the test and that every failed student had grade 6. The observed conditional expected values for <span class="math inline">\(Y|Z\)</span> are given in table xx.
+Second, we can tell what will happen if we intervene in one or more mechanisms. If we, for example, restrict tutoring to students with grade 6, i.e. <span class="math inline">\(X := I(Z &gt;= 6)\)</span>, all students with grade 5 will fail the exam as well as those with grade 6. But nothing will change for students with grade 4, they still will all pass the exam. Without knowing the causal mechanism, the different behavior of stundents with grade 4 and 5 could not have been predicted. In the observed data, both groups were not distinguishible, neither their relation to tutoring (all got tutored) nor by their exam performance (all passed the exam).</p>
+<p>Let’s now make this example a bit more interesting (and slightly more realistic) by abandoning the deterministic nature of the mechanism and using a probabilistic one instead. The graph is then to be xxx.</p>
+</div>
 </div>
 <div id="randomized-controlled-experiments" class="section level2">
 <h2><span class="header-section-number">3.2</span> Randomized Controlled Experiments</h2>
@@ -203,6 +235,13 @@ TODO</p>
 <p>TODO</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>As most (macro-)economic data are time-series, the econometrics literature is full of methods to establish causality in time-series. Most of it goes beyond the description provided in section xxx but unfortunately there are currently on few sources that cover this material in the language and notation of causality adopted here. See also <a href="https://xkcd.com/925/" class="uri">https://xkcd.com/925/</a>.<a href="methods-for-causal-inference.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>This problem is common in the search for heterogeneity in treatment effects, where e.g. the effectiveness of drug is broken down by patient groups (e.g. male vs female, with prior indication vs without). If the number of groups available to the researcher increases, the likelihood of a false discovery increases without proper control. See also <a href="https://xkcd.com/882/" class="uri">https://xkcd.com/882/</a>.<a href="methods-for-causal-inference.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

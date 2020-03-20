@@ -95,7 +95,9 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
-<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a></li>
+<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#example-1-tutoring"><i class="fa fa-check"></i><b>3.1.1</b> Example 1 Tutoring</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.2</b> Randomized Controlled Experiments</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#assignment-mechanisms"><i class="fa fa-check"></i><b>3.2.1</b> Assignment Mechanisms</a></li>
 </ul></li>
@@ -157,7 +159,7 @@ I will focus here on the (mis-)application of propensity modeling. Propensity mo
 <p><span class="math display">\[\begin{equation}
 P(Y|I) = f(I) \label{eq:mktg1} \tag{1}
 \end{equation}\]</span>
-where <span class="math inline">\(I\)</span> is the information set available for prediction.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+where <span class="math inline">\(I\)</span> is the information set available for prediction.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
 <p>There are plently of algorithms that could be used to estimate the function. Logistic regression is often chosen as it is easy to implement and the model itself might provide some insights. Here, we will focus not on the implementation part, but on the interpretation and (mis-) use of the model.</p>
 <p>To see why the model might not be want you think it is, we will have a
 A naive usage of the model is to focus marketing on customers with high likelhood to do the action. This however, can be serverly misleading, as we will discuss next. To show this, we will start with an ideal assumption: our model is perfect. A perfect model means that we predict the customer action correctly for every customer and the model produces predicted probabilies which are well calibrated. This means that we only get two predictions, either a customer will do action with estimated probability 0 or whether they will do so with probability 1 - and the model is always right.
@@ -263,8 +265,8 @@ Im Folgenden unterscheiden wir zwei Merkmalstypen</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>Typically you will find a notation similar to <span class="math inline">\(P(Y|X) = f(X)\)</span> where <span class="math inline">\(X\)</span> is called a feature set or a vector/matrix of features. I use the term information set to deliberately distinguish between the notion of all the information you have available for a customer. The information set is abstract and represents information in potentially very different formats, e.g. order data in your data base, the recorded call with the customer service team, or the customer’s product reviews. Feature engineering is the step where this information is transformed into a format that can be used by ML algorithms: the order data could be transformed into multiple features, e.g. the total revenue in past 30 days, total revenue in past 180 days, the number of days the customer put an order in; the recorded call can transformed into days since the latest customer service contanct, length of the call, length of waiting in line and whether or not the issue was resolved; the product reviews are transformed into word embeddings.<a href="applications.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<ol start="6">
+<li id="fn6"><p>Typically you will find a notation similar to <span class="math inline">\(P(Y|X) = f(X)\)</span> where <span class="math inline">\(X\)</span> is called a feature set or a vector/matrix of features. I use the term information set to deliberately distinguish between the notion of all the information you have available for a customer. The information set is abstract and represents information in potentially very different formats, e.g. order data in your data base, the recorded call with the customer service team, or the customer’s product reviews. Feature engineering is the step where this information is transformed into a format that can be used by ML algorithms: the order data could be transformed into multiple features, e.g. the total revenue in past 30 days, total revenue in past 180 days, the number of days the customer put an order in; the recorded call can transformed into days since the latest customer service contanct, length of the call, length of waiting in line and whether or not the issue was resolved; the product reviews are transformed into word embeddings.<a href="applications.html#fnref6" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
