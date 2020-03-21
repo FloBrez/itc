@@ -45,6 +45,17 @@ Let's now make this example a bit more interesting (and slightly more realistic)
 
 ![DAG2](images/dag_exmpl_tut2.png)
 
+Let's assume the SCM to be given by
+\begin{align}
+Z &:= f(U_z) \\
+X &:= f(Z, U_x) \\
+Y &:= f(X, Z, U_y)
+\end{align}
+
+This results int
+
+![CE1](images/test.png)
+
 
 
 ## Randomized Controlled Experiments
