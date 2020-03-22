@@ -38,7 +38,7 @@ p1 <- ce %>%
        title = "Observed E(Y|Z) in SCM xx") + 
   theme_ipsum_rc()
 
-ggsave("./test.png", p1)
+ggsave("images/test.png", p1, width = 12, height = 12, units = "cm")
 
 
 ########
