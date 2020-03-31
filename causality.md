@@ -1,5 +1,14 @@
 # Defining Causality
 
+## Causality, Asymmetry and Entropy
+
+*Causality* is strongly linked to the concept of *time*. Cause precedes effect, never the other way round. Symptoms occur after infection
+This asymmetry is mirrored in the physical notion of entropy and (as an emergent property) time.
+While the past is determined we feel that we are able to act on the future, that we are able to choose one among many possible futures. This is due to the low entropy the universe had in the past.
+All fundamental physical laws are perfectly symmetrical and therefore reversable. Asymmetry is only introduced by a coarse-grained look at the world, and therefore an *emergent* property. 
+
+
+
 
 ## Causal Models
 We assume the world can be modelled by *variables*. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. $X$, whereas we use lower-case letters for their values, e.g. $x$. In case $X$ is *categorical*, different values will be denoted by a subscript $x_j$. Where $X$ has two values only, we will encode them with $0$ and $1$.
