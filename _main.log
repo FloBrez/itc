@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.3.6)  21 MAR 2020 14:29
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.3.6)  15 APR 2020 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,17 +887,17 @@ Underfull \vbox (badness 1946) has occurred while \output is active []
 Chapter 2.
 [11
 
-] [12] [13]
-Underfull \hbox (badness 1558) in paragraph at lines 298--298
+] [12] [13] [14]
+Underfull \hbox (badness 1558) in paragraph at lines 306--306
 [][][]\TU/lmr/m/n/8 Imagine you are interested in the average \TU/lmr/m/it/8 ne
 t income \TU/lmr/m/n/8 of a certain population,
  []
 
-[14] [15] [16
+[15] [16]
+Chapter 3.
+[17
 
 ]
-Chapter 3.
-[17]
 File: images/dag_exmpl_tut1.png Graphic file (type bmp)
 <images/dag_exmpl_tut1.png>
 [18] [19]
@@ -909,55 +909,49 @@ File: images/test.png Graphic file (type bmp)
 
 ]
 Chapter 4.
-[25] [26]
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
-[27]
-Overfull \vbox (9.3991pt too high) has occurred while \output is active []
-
-[28] [29] [30]
-Chapter 5.
-[31
+[25] [26] [27] [28] [29] [30] [31] [32
 
 ]
+Chapter 5.
+[33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[32] [33] [34]
+[34] [35] [36]
 Appendix A.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[35
+[37
 
-] [36] [37] [38
+] [38] [39] [40
 
 ]
 Appendix B.
-[39] [40]
+[41] [42]
 Appendix C.
-[41
+[43
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 911.
-[42]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 911.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 930.
+[44]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 930.
 (./_main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 911.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 911.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 930.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 930.
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 3AC359644294A1ABFDD3B60DCDA4599C;5317.
+(rerunfilecheck)             Checksum: 0E952CF5455BC67474B520A4F045FDB6;5755.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 911.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 930.
  ) 
 Here is how much of TeX's memory you used:
- 16827 strings out of 481765
- 300002 string characters out of 5934543
+ 16829 strings out of 481765
+ 300067 string characters out of 5934543
  731683 words of memory out of 5000000
- 33601 multiletter control sequences out of 15000+600000
+ 33603 multiletter control sequences out of 15000+600000
  538837 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  52i,10n,115p,1420b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (42 pages).
+Output written on _main.pdf (44 pages).
