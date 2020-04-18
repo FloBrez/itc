@@ -9,9 +9,9 @@ rmd_files:
     "causality.md",
     "methods.md",
     "app_marketing.md",
-    "app_drug_trial.md",
+    "app_drug.md",
     "app_discrimination.md",
-    "app_epidemiology",
+    "app_epidemiology.md",
 
     "epistemology.md",
 

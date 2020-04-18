@@ -112,6 +112,9 @@
 <li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#marketing"><i class="fa fa-check"></i><b>4.2</b> Marketing</a></li>
 <li class="chapter" data-level="4.3" data-path="applications.html"><a href="applications.html#drug-trial"><i class="fa fa-check"></i><b>4.3</b> Drug Trial</a></li>
 <li class="chapter" data-level="4.4" data-path="applications.html"><a href="applications.html#discrimination"><i class="fa fa-check"></i><b>4.4</b> Discrimination</a></li>
+<li class="chapter" data-level="4.5" data-path="applications.html"><a href="applications.html#epidemiology"><i class="fa fa-check"></i><b>4.5</b> Epidemiology</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="applications.html"><a href="applications.html#the-reporting-mechanism"><i class="fa fa-check"></i><b>4.5.1</b> The reporting mechanism</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
 <li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#manipulation"><i class="fa fa-check"></i><b>5.1</b> Manipulation</a></li>
@@ -272,11 +275,32 @@ Im Folgenden unterscheiden wir zwei Merkmalstypen</p>
 </ul>
 
 </div>
+<div id="epidemiology" class="section level2">
+<h2><span class="header-section-number">4.5</span> Epidemiology</h2>
+<p>Inspired by the 2020 SARS-CoV-2 epidemic, let’s have a look at a causal model for understanding the high-level epidemiological data that was widely discussed at the time. We want to focus on the causal mecheanisms that generate the number of reported infections and the impact on non-pharmacological interventions.
+The model will illustrate that it is crucially important to understand the causal mechanisms when interpreting statistics, as differences (say across countries or compared between epidemics) might be misleading if this is not accounted for.</p>
+<p>For simplicity, we will present the causal graph as a summary graph, where we neglect the inherent time structure of the mechanism. This does not cause any problems for causal reasoning, as the summary graph is still acyclic. However, to make inferences based on observed data, we will later on take a look at the full time graph as well.</p>
+<div id="the-reporting-mechanism" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> The reporting mechanism</h3>
+<p>We model the reporting mechanism as follows:</p>
+<ul>
+<li>for a person to be reported to be infected with SARS-CoV-2, there are two main causal influneces: whether the person is in fact infected with that virus and whether a PCR test was performed. If we assume that test used is perfect (i.e. has no type I error nor a type II error), we can model this relationship deterministically as <span class="math inline">\(ReportedInfection := f(Test, Infection)\)</span>. Note that the assumption of a perfect test also allows us to disregard any causal influence from <span class="math inline">\(OtherInfection\)</span> to <span class="math inline">\(ReportedInfection\)</span>, which would be the case if the test accidently would show positive outcomes in cases where the person does not have SARS-CoV-2, but a similar infection (e.g. other corona viruses).</li>
+<li>a person is tested for SARS-CoV-2 if they are symptomatic and/or have had recent contact with a person known to be SARS-CoV-2-positive. Again, for simplicity, we assume that this is a strict rule-based (and stable) mechanism.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> The structural assigment is <span class="math inline">\(Test := g(Symptoms, ContactInfected)\)</span>.</li>
+</ul>
+<ul>
+<li><p>a person’s symptoms are determined by them being infected by the SARS-Cov-2 virus, other viruses causing respiratory diseases, age, pre-existing conditions, as well as other unspecified and unobserved factors (e.g. genetics). The assignment is <span class="math inline">\(Symptoms := h(Infection, InfectionOther, Age, PreCondition, U)\)</span>, and the assignment is probabilistic to to <span class="math inline">\(U\)</span> being treated as a noise term. As we define symptoms to include the value “death”, this mechanisms has to fully explain a person’s likelihood to die with and without the virus.</p></li>
+<li><p>the infection mechanism is modelled as a probablistic function of personal hygiene and exposure to the virus: <span class="math inline">\(Infection := h(Hygiene, Exposure, V)\)</span></p></li>
+<li><p>finally, a person is reported to have died of SARS-CoV-2 if the person has been positively tested for the virus and has died (one of the possible values of the symptom): <span class="math inline">\(ReportedDeath := h(ReportedInfection, Symptoms)\)</span>. We assume this to be a simple and determinsitic mechanism.</p></li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="6">
 <li id="fn6"><p>Typically you will find a notation similar to <span class="math inline">\(P(Y|X) = f(X)\)</span> where <span class="math inline">\(X\)</span> is called a feature set or a vector/matrix of features. I use the term information set to deliberately distinguish between the notion of all the information you have available for a customer. The information set is abstract and represents information in potentially very different formats, e.g. order data in your data base, the recorded call with the customer service team, or the customer’s product reviews. Feature engineering is the step where this information is transformed into a format that can be used by ML algorithms: the order data could be transformed into multiple features, e.g. the total revenue in past 30 days, total revenue in past 180 days, the number of days the customer put an order in; the recorded call can transformed into days since the latest customer service contanct, length of the call, length of waiting in line and whether or not the issue was resolved; the product reviews are transformed into word embeddings.<a href="applications.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>In reality, this assumption was violated. Over the course of the epidemic, testing capabilities have increased in most countries and tests have been expanded over time. In some countries and regions, asymptomatic persons have been tested as well, even if there was no known contact with another infected person. We discuss this in more detail when we take a look at the full time graph of the model.<a href="applications.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -307,7 +331,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/marketing.md",
+"link": "https://github.com/flobrez/itc/edit/master/app_marketing.md",
 "text": "Edit"
 },
 "history": {
