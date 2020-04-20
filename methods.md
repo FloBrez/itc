@@ -9,6 +9,8 @@ Afterwards, we switch to those methods that can be used even if we cannot interv
 Finally, we discuss methods for causal inference in samples of size 1. Given appropriate assumptions, we are able to infer causal relations by leveraging (dependent) observations over time.
 
 ## Causal vs Statistical Inference
+![Causal vs Statistical Inference](images/hierarchy_statistical_vs_causal.png)
+
 Inferring causal mechansims from data is more difficult than learning about properties of the distribution of variables:
 
 * Being able to infer causal mechanisms from data requires knowledge about the data generating process which cannot be inferred from the observed data itself. Observed data can help us justifying assumptions on the causal structure we are willing to accept, but it cannot fully specify the causal model in any application of interest. Hence, we will always have to incorporate (domain) knowledge to enrich the observed data before we can make causal inferences.
