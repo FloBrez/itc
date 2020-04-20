@@ -114,6 +114,7 @@
 <li class="chapter" data-level="4.4" data-path="applications.html"><a href="applications.html#discrimination"><i class="fa fa-check"></i><b>4.4</b> Discrimination</a></li>
 <li class="chapter" data-level="4.5" data-path="applications.html"><a href="applications.html#epidemiology"><i class="fa fa-check"></i><b>4.5</b> Epidemiology</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="applications.html"><a href="applications.html#the-reporting-mechanism"><i class="fa fa-check"></i><b>4.5.1</b> The reporting mechanism</a></li>
+<li class="chapter" data-level="4.5.2" data-path="applications.html"><a href="applications.html#evolving-symptoms"><i class="fa fa-check"></i><b>4.5.2</b> Evolving Symptoms</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
@@ -282,6 +283,11 @@ The model will illustrate that it is crucially important to understand the causa
 <p>For simplicity, we will present the causal graph as a summary graph, where we neglect the inherent time structure of the mechanism. This does not cause any problems for causal reasoning, as the summary graph is still acyclic. However, to make inferences based on observed data, we will later on take a look at the full time graph as well.</p>
 <div id="the-reporting-mechanism" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> The reporting mechanism</h3>
+<p>extra text</p>
+<div class="figure">
+<img src="images/dag_app_epidem1.png" alt="" />
+<p class="caption">DAG55</p>
+</div>
 <p>We model the reporting mechanism as follows:</p>
 <ul>
 <li>for a person to be reported to be infected with SARS-CoV-2, there are two main causal influneces: whether the person is in fact infected with that virus and whether a PCR test was performed. If we assume that test used is perfect (i.e. has no type I error nor a type II error), we can model this relationship deterministically as <span class="math inline">\(ReportedInfection := f(Test, Infection)\)</span>. Note that the assumption of a perfect test also allows us to disregard any causal influence from <span class="math inline">\(OtherInfection\)</span> to <span class="math inline">\(ReportedInfection\)</span>, which would be the case if the test accidently would show positive outcomes in cases where the person does not have SARS-CoV-2, but a similar infection (e.g. other corona viruses).</li>
@@ -292,6 +298,30 @@ The model will illustrate that it is crucially important to understand the causa
 <li><p>the infection mechanism is modelled as a probablistic function of personal hygiene and exposure to the virus: <span class="math inline">\(Infection := h(Hygiene, Exposure, V)\)</span></p></li>
 <li><p>finally, a person is reported to have died of SARS-CoV-2 if the person has been positively tested for the virus and has died (one of the possible values of the symptom): <span class="math inline">\(ReportedDeath := h(ReportedInfection, Symptoms)\)</span>. We assume this to be a simple and determinsitic mechanism.</p></li>
 </ul>
+<div id="reasoning-about-interventions-and-counterfactuals" class="section level4">
+<h4><span class="header-section-number">4.5.1.1</span> Reasoning about interventions and counterfactuals</h4>
+<p>The model now allows us to reason about certain interventions that affect the reported numbers of infected and deceased.</p>
+<div id="no-virus" class="section level5">
+<h5><span class="header-section-number">4.5.1.1.1</span> No virus</h5>
+<p>The most important one is certainly the counterfactual question of what would happen if there were no SARS-CoV-2 virus out there, which serves as a baseline model that allows us to compare the pandemic situation to a “normal” one.
+Technically, this amounts to replacing the assignment for variable <span class="math inline">\(Infection\)</span> to
+<span class="math display">\[\begin{equation}
+Infection := 0
+\end{equation}\]</span>
+As this is just a hypothetical intervention, let us assume that it is atomic, i.e. we assume that the rest of the model is not changed by this intervention. Most importantly, the assignment <span class="math inline">\(Symptoms := h(Infection, InfectionOther, Age, PreCondition, U)\)</span> is still in place, it’s just that the value of one of the inputs is <span class="math inline">\(0\)</span> in the entire population.
+As <span class="math inline">\(Symptoms\)</span> was defined to be a categorical variable including the value “death”, we can use the model to compare two distributions in the population, one with and one without the virus. The difference tells us the additional deaths due to SARS-CoV-2 virus rather than just the numer of deaths associated with SARS-CoV-2 (which is what <span class="math inline">\(ReportedDeath\)</span> is capturing). This information is important because we ultimately want to understand how deadly the disease acutally is, i.e. how many deaths it causes, not just how prevalent it is in people how are dying. With the median age of reported deaths with the virus being at around 80 and the probability of a person at 80 to die within 12 months being at around 5%, this is non-negligible.</p>
+</div>
+<div id="changing-testing-strategy" class="section level5">
+<h5><span class="header-section-number">4.5.1.1.2</span> Changing testing strategy</h5>
+<p>expanding test capacities
+comparing numbers across countries with (very) different test strategies
+random testing</p>
+</div>
+</div>
+</div>
+<div id="evolving-symptoms" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Evolving Symptoms</h3>
+<p>To model the evolution of symptoms over time, we need to switch from a time series summary graph to a full time graph.</p>
 
 </div>
 </div>
