@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="defining-causality.html"/>
+<link rel="prev" href="causal-models.html"/>
 <link rel="next" href="applications.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -82,17 +82,17 @@
 <li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.5</b> Acknowledgements</a></li>
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="defining-causality.html"><a href="defining-causality.html"><i class="fa fa-check"></i><b>2</b> Defining Causality</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-causality.html"><a href="defining-causality.html#causality-asymmetry-and-entropy"><i class="fa fa-check"></i><b>2.1</b> Causality, Asymmetry and Entropy</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-causality.html"><a href="defining-causality.html#causal-models"><i class="fa fa-check"></i><b>2.2</b> Causal Models</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="defining-causality.html"><a href="defining-causality.html#causal-graphs"><i class="fa fa-check"></i><b>2.2.1</b> Causal Graphs</a></li>
-<li class="chapter" data-level="2.2.2" data-path="defining-causality.html"><a href="defining-causality.html#structural-equations"><i class="fa fa-check"></i><b>2.2.2</b> Structural Equations</a></li>
+<li class="chapter" data-level="2" data-path="causal-models.html"><a href="causal-models.html"><i class="fa fa-check"></i><b>2</b> Causal Models</a><ul>
+<li class="chapter" data-level="2.1" data-path="causal-models.html"><a href="causal-models.html#causality-asymmetry-and-entropy"><i class="fa fa-check"></i><b>2.1</b> Causality, Asymmetry and Entropy</a></li>
+<li class="chapter" data-level="2.2" data-path="causal-models.html"><a href="causal-models.html#basic-definitions"><i class="fa fa-check"></i><b>2.2</b> Basic Definitions</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="causal-models.html"><a href="causal-models.html#causal-graphs"><i class="fa fa-check"></i><b>2.2.1</b> Causal Graphs</a></li>
+<li class="chapter" data-level="2.2.2" data-path="causal-models.html"><a href="causal-models.html#structural-equations"><i class="fa fa-check"></i><b>2.2.2</b> Structural Equations</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Simple Environment</a></li>
-<li class="chapter" data-level="2.4" data-path="defining-causality.html"><a href="defining-causality.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.4</b> Causality In A Complex Environment</a></li>
-<li class="chapter" data-level="2.5" data-path="defining-causality.html"><a href="defining-causality.html#causal-effects"><i class="fa fa-check"></i><b>2.5</b> Causal Effects</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="defining-causality.html"><a href="defining-causality.html#definition"><i class="fa fa-check"></i><b>2.5.1</b> Definition</a></li>
-<li class="chapter" data-level="2.5.2" data-path="defining-causality.html"><a href="defining-causality.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.5.2</b> Causal Effect Statistics</a></li>
+<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Simple Environment</a></li>
+<li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.4</b> Causality In A Complex Environment</a></li>
+<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#causal-effects"><i class="fa fa-check"></i><b>2.5</b> Causal Effects</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#definition"><i class="fa fa-check"></i><b>2.5.1</b> Definition</a></li>
+<li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.5.2</b> Causal Effect Statistics</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
@@ -102,10 +102,11 @@
 <li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.2</b> Randomized Controlled Experiments</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#assignment-mechanisms"><i class="fa fa-check"></i><b>3.2.1</b> Assignment Mechanisms</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#instrumental-variables"><i class="fa fa-check"></i><b>3.3</b> Instrumental Variables</a></li>
-<li class="chapter" data-level="3.4" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#propensity-score-matching"><i class="fa fa-check"></i><b>3.4</b> Propensity Score Matching</a></li>
-<li class="chapter" data-level="3.5" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#difference-in-difference-estimator"><i class="fa fa-check"></i><b>3.5</b> Difference-in-Difference Estimator</a></li>
-<li class="chapter" data-level="3.6" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#time-series-methods"><i class="fa fa-check"></i><b>3.6</b> Time Series Methods</a></li>
+<li class="chapter" data-level="3.3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#observational-data"><i class="fa fa-check"></i><b>3.3</b> Observational Data</a></li>
+<li class="chapter" data-level="3.4" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#instrumental-variables"><i class="fa fa-check"></i><b>3.4</b> Instrumental Variables</a></li>
+<li class="chapter" data-level="3.5" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#propensity-score-matching"><i class="fa fa-check"></i><b>3.5</b> Propensity Score Matching</a></li>
+<li class="chapter" data-level="3.6" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#difference-in-difference-estimator"><i class="fa fa-check"></i><b>3.6</b> Difference-in-Difference Estimator</a></li>
+<li class="chapter" data-level="3.7" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#time-series-methods"><i class="fa fa-check"></i><b>3.7</b> Time Series Methods</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
 <li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#causality-and-machine-learning"><i class="fa fa-check"></i><b>4.1</b> Causality and Machine Learning</a></li>
@@ -239,24 +240,133 @@ where <span class="math inline">\(U ~ Bernoulli(p)\)</span> with <span class="ma
 <p>Stratified experiments first group individuals according to some observable attribute (e.g. by gender or by city). These groups are called strata. Within each stratum, treatment assignment follows a copmpletey randomized experiment. All methods for statistical inference can be used if the stratum is interpreted as the population for each sub-experiment. In many cases, however, we’re not primarily interested in the effect in each stratum (although this can be informative) but in the population containing all strata. The statistics become more cumbersome, but stratification imposes no harm in the sense of additional assumptions as the stratification mechanism is fully known.</p>
 </div>
 </div>
+<div id="observational-data" class="section level2">
+<h2><span class="header-section-number">3.3</span> Observational Data</h2>
+<p>We will take a close look at a classic problem that occurs when we try to infer causal statements from observational data.
+The basic model that we use is the three-node model, where a variable <span class="math inline">\(Z\)</span> is expected to be a confounder for the causal relation of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>, see graph xxx</p>
+<div class="figure">
+<img src="images/dag_confounder.png" alt="" />
+<p class="caption">DAG</p>
+</div>
+<p>In the most simple case, <span class="math inline">\(Z\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are all binary and the SCM <span class="math inline">\(\Gamma\)</span> consists of
+<span class="math display">\[\begin{align}
+X &amp;:= f_1(Z, V) \\
+Y &amp;:= f_2(X, Z, U)
+\end{align}\]</span>
+and exogeneous variables <span class="math inline">\(Z, V, U\)</span> are mutually independent.</p>
+<p>A classic application of this problem occurs in epidemiology, where patients self-select into treatment <span class="math inline">\(X\)</span>, where certain risk factors <span class="math inline">\(Z\)</span> determine the health outcome <span class="math inline">\(Y\)</span> as well as their decision to get treatment <span class="math inline">\(X\)</span>. If observed data that was generated by such a process is used to make inferences about the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>, comparing conditional expectations <span class="math inline">\(E[Y|X = 1] - E[Y|X = 0]\)</span> will lead to incorrect conclusions about the (average) causal effect.</p>
+<p>To make this clear, let us walk through this example step-by-step to clarify this argument.
+First, note that the intervention we are interested in can be described by the graph below</p>
+<div class="figure">
+<img src="images/dag_confounder_intervention.png" alt="" />
+<p class="caption">DAG</p>
+</div>
+<p>and a change in the structural assignment of <span class="math inline">\(X\)</span>
+<span class="math display">\[\begin{equation}
+X := 1
+\end{equation}\]</span>
+in the case of treatment of the entire population (<span class="math inline">\(\Gamma_1\)</span>) and
+<span class="math display">\[\begin{equation}
+X := 0
+\end{equation}\]</span>
+in the case of no treatment (<span class="math inline">\(\Gamma_0\)</span>).</p>
+<p>What we’re interested in is <span class="math inline">\(E^{\Gamma_1}[Y] - E^{\Gamma_0}[Y]\)</span>, but the observed data was generated by <span class="math inline">\(\Gamma\)</span> rather than <span class="math inline">\(\Gamma_1\)</span> or <span class="math inline">\(\Gamma_0\)</span>. We not need to figure out how we can still get the right statistics.</p>
+<p>For this, follow
+<span class="math display">\[\begin{align*}
+E^{\Gamma_1}[Y] &amp;= P^{\Gamma_1}(Y = 1) \\
+                &amp;= P^{\Gamma_1}(Y = 1, X = 1, Z) \\
+                &amp;= P^{\Gamma_1}(Y = 1, X = 1, Z = 1) + \\
+                &amp;  P^{\Gamma_1}(Y = 1, X = 1, Z = 0) \\
+                &amp;= P^{\Gamma_1}(Y = 1 | X = 1, Z = 1) \cdot P^{\Gamma_1}(X = 1, Z = 1) + \\
+                &amp;  P^{\Gamma_1}(Y = 1 | X = 1, Z = 0) \cdot P^{\Gamma_1}(X = 1, Z = 0) \\
+                &amp;= P^{\Gamma_1}(Y = 1 | X = 1, Z = 1) \cdot P^{\Gamma_1}(Z = 1) + \\
+                &amp;  P^{\Gamma_1}(Y = 1 | X = 1, Z = 0) \cdot P^{\Gamma_1}(Z = 0)
+\end{align*}\]</span>
+where the last equality holds because in <span class="math inline">\(\Gamma_1\)</span> everyone in the population gets the treatment and therefore
+<span class="math display">\[\begin{align*}
+P^{\Gamma_1}(X = 1, Z = z) &amp;= P^{\Gamma_1}(Z = z | X = 1) \cdot P^{\Gamma_1}(X = 1) \\
+                           &amp;= P^{\Gamma_1}(Z = z | X = 1) \cdot 1
+\end{align*}\]</span></p>
+<p>So far, we have rewritten <span class="math inline">\(E^{\Gamma_1}[Y]\)</span> using some tricks of probability theory. The key point now is to recognize that <span class="math inline">\(P^{\Gamma_1}(Y = 1 | X = 1, Z = 1)\)</span> describes the mechanism of how the health output is determined by the treatment and the patient’s risk factors. From earlier discussion, we know that mechanisms remain invariant under atomic interventions. Hence,
+<span class="math display">\[\begin{align*}
+P^{\Gamma_1}(Y = 1 | X = 1, Z = 1) &amp;= P^{\Gamma}(Y = 1 | X = 1, Z = 1) \\
+P^{\Gamma_1}(Y = 1 | X = 1, Z = 0) &amp;= P^{\Gamma}(Y = 1 | X = 1, Z = 0) \\
+P^{\Gamma_1}(Z = 1)                &amp;= P^{\Gamma}(Z = 1)                \\
+P^{\Gamma_1}(Z = 0)                &amp;= P^{\Gamma}(Z = 0)
+\end{align*}\]</span>
+and therefore
+<span class="math display">\[\begin{align*}
+E^{\Gamma_1}[Y] &amp;= P^{\Gamma}(Y = 1 | X = 1, Z = 1) \cdot P^{\Gamma}(Z = 1) + \\
+                &amp;  P^{\Gamma}(Y = 1 | X = 1, Z = 0) \cdot P^{\Gamma}(Z = 0)
+\end{align*}\]</span></p>
+<p>Following the same reasoning, we can also derive that
+<span class="math display">\[\begin{align*}
+E^{\Gamma_0}[Y] &amp;= P^{\Gamma}(Y = 1 | X = 0, Z = 1) \cdot P^{\Gamma}(Z = 1) + \\
+                &amp;  P^{\Gamma}(Y = 1 | X = 0, Z = 0) \cdot P^{\Gamma}(Z = 0)
+\end{align*}\]</span>
+which finally produces
+<span class="math display">\[\begin{align*}
+ATE &amp;= E^{\Gamma_1}[Y] - E^{\Gamma_0}[Y] \\
+    &amp;= P^{\Gamma}(Y = 1 | X = 1, Z = 1) \cdot P^{\Gamma}(Z = 1) + P^{\Gamma}(Y = 1 | X = 1, Z = 0) \cdot P^{\Gamma}(Z = 0) - \\
+    &amp;  P^{\Gamma}(Y = 1 | X = 0, Z = 1) \cdot P^{\Gamma}(Z = 1) - P^{\Gamma}(Y = 1 | X = 0, Z = 0) \cdot P^{\Gamma}(Z = 0) \\
+    &amp;= (P^{\Gamma}(Y = 1 | X = 1, Z = 1) - P^{\Gamma}(Y = 1 | X = 0, Z = 1)) \cdot P^{\Gamma}(Z = 1) + \\
+    &amp;  (P^{\Gamma}(Y = 1 | X = 1, Z = 0) - P^{\Gamma}(Y = 1 | X = 0, Z = 0)) \cdot P^{\Gamma}(Z = 0)
+\end{align*}\]</span>
+In words, the ATE can be calculated from the observational data by comparing the average outcome of treated and non-treated individuals <em>within each risk group</em> <span class="math inline">\(Z\)</span>, and then weigthing these within-group comparisons by the proportion of individuals in each risk group.</p>
+<p>Obsiously, this is different from the naive group comparison of treated and non-treated patients</p>
+<p><span class="math display">\[\begin{equation}
+E^{\Gamma}[Y|X = 1] - E^{\Gamma}[Y|X = 0] = P^{\Gamma}(Y = 1 | X = 1) - P^{\Gamma}(Y = 1 | X = 0)
+\end{equation}\]</span>
+which therefore does not provide the ATE.</p>
+<p>In some cases, this can lead to the phenomenon known as Simpson’s paradox, where the different metrics have differnt sign.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Y = 1 / Y=0\)</span></th>
+<th><span class="math inline">\(Z = 0\)</span></th>
+<th><span class="math inline">\(Z = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(X = 0\)</span></td>
+<td>260/400</td>
+<td>55/100</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X = 1\)</span></td>
+<td>70/100</td>
+<td>240/400</td>
+</tr>
+</tbody>
+</table>
+<p>For the data shown int table xxx
+<span class="math display">\[\begin{equation}
+E^{\Gamma_1}[Y] - E^{\Gamma_0}[Y] = (\frac{240}{400} - \frac{55}{100}) \frac{500}{1000} + (\frac{70}{100} - \frac{260}{400}) \frac{500}{1000} = (0.6 - 0.55) 0.5 + (0.7 - 0.65) 0.5 = 0.05
+\end{equation}\]</span></p>
+<p>whereas
+<span class="math display">\[\begin{equation}
+E^{\Gamma}[Y | X = 1] - E^{\Gamma}[Y | X = 0] = (\frac{310}{500} - \frac{315}{500}) = 0.62 - 0.63 = -0.01
+\end{equation}\]</span></p>
+</div>
 <div id="instrumental-variables" class="section level2">
-<h2><span class="header-section-number">3.3</span> Instrumental Variables</h2>
+<h2><span class="header-section-number">3.4</span> Instrumental Variables</h2>
 <p>In many practical applications, the assignment cannot be enforced, e.g. patients assigned to take a drug might choose to not follow through. In these cases, the effect of assignment and the effect of the actual treatment (the drug) will be different. A drug might be effective, if the application is difficult, many patients might choose not to follow through. A less effective drug that is easier to apply might have overall higher effectiveness of the assignment.</p>
 <p>We can extend graph x from the previous section to show this mechanism explicitly. So far, we have focused on the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>, ignoring the details of the mechanism, especially that <span class="math inline">\(Z\)</span>, the patient’s decision to follow the assignment, is a <em>mediator</em> of the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>. This is not a problem if the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> is our primary interest. However, we might be interested to split this mechanism into two sub-mechanisms in their own right. The mechanism <span class="math inline">\(X -&gt; Z\)</span> explains how assignment of treatment is followed through by patients, whereas <span class="math inline">\(Z -&gt; Y\)</span> is the biochemical of the drug. Often, researchers are interested in the latter, but aren’t able to enforce assignment. As <span class="math inline">\(U\)</span> is a confounder of <span class="math inline">\(Z -&gt; Y\)</span>, the correlation of <span class="math inline">\(Z\)</span> and <span class="math inline">\(Y\)</span> is not a valid method to estimate the causal effect. In comes the instrumental variable, in this case <span class="math inline">\(X\)</span>.
 The intuition behind this method is as follows. We can reliably infer the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>, as <span class="math inline">\(X\)</span> is randomized and therefore there is no confounding. We can further also infer the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Z\)</span>, again because <span class="math inline">\(X\)</span> is randomized. In a sense, as <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> is the combined effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Z\)</span> and <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span>, there are ways we can get the latter from the former two (it is, in general, not just the difference of these two).</p>
 <p>TODO</p>
 </div>
 <div id="propensity-score-matching" class="section level2">
-<h2><span class="header-section-number">3.4</span> Propensity Score Matching</h2>
+<h2><span class="header-section-number">3.5</span> Propensity Score Matching</h2>
 <p>Many questions cannot be answered with deliberate experiments. Experimentation might be considered unethical or unfeasible; the intervention has already been done without randomization;
 TODO</p>
 </div>
 <div id="difference-in-difference-estimator" class="section level2">
-<h2><span class="header-section-number">3.5</span> Difference-in-Difference Estimator</h2>
+<h2><span class="header-section-number">3.6</span> Difference-in-Difference Estimator</h2>
 <p>TODO</p>
 </div>
 <div id="time-series-methods" class="section level2">
-<h2><span class="header-section-number">3.6</span> Time Series Methods</h2>
+<h2><span class="header-section-number">3.7</span> Time Series Methods</h2>
 <p>TODO</p>
 
 </div>
@@ -273,7 +383,7 @@ TODO</p>
           </div>
         </div>
       </div>
-<a href="defining-causality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="causal-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Causal Models | Introduction To Causality: A Modern Approach</title>
+  <meta name="description" content="A gentle introduction into the art and science of causal inference" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Causal Models | Introduction To Causality: A Modern Approach" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
+  
+  <meta property="og:description" content="A gentle introduction into the art and science of causal inference" />
+  <meta name="github-repo" content="flobrez/itc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Causal Models | Introduction To Causality: A Modern Approach" />
+  
+  <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
+  
+
+<meta name="author" content="Florian Brezina" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="methods-for-causal-inference.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="itc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">Introduction To Causality</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-you-will-learn"><i class="fa fa-check"></i><b>1.1</b> What you will learn</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-you-wont-learn"><i class="fa fa-check"></i><b>1.2</b> What you won’t learn</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#statistics"><i class="fa fa-check"></i><b>1.2.1</b> Statistics</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#machine-learning"><i class="fa fa-check"></i><b>1.2.2</b> Machine Learning</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#proofs"><i class="fa fa-check"></i><b>1.2.3</b> Proofs</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introduction.html"><a href="introduction.html#type-causality-vs-actual-causality"><i class="fa fa-check"></i><b>1.2.4</b> Type Causality vs Actual Causality</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#how-this-book-is-organised"><i class="fa fa-check"></i><b>1.3</b> How this book is organised</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#prerequisites"><i class="fa fa-check"></i><b>1.4</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.5</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#links"><i class="fa fa-check"></i><b>1.6</b> Links</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causal-models.html"><a href="causal-models.html"><i class="fa fa-check"></i><b>2</b> Causal Models</a><ul>
+<li class="chapter" data-level="2.1" data-path="causal-models.html"><a href="causal-models.html#causality-asymmetry-and-entropy"><i class="fa fa-check"></i><b>2.1</b> Causality, Asymmetry and Entropy</a></li>
+<li class="chapter" data-level="2.2" data-path="causal-models.html"><a href="causal-models.html#basic-definitions"><i class="fa fa-check"></i><b>2.2</b> Basic Definitions</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="causal-models.html"><a href="causal-models.html#causal-graphs"><i class="fa fa-check"></i><b>2.2.1</b> Causal Graphs</a></li>
+<li class="chapter" data-level="2.2.2" data-path="causal-models.html"><a href="causal-models.html#structural-equations"><i class="fa fa-check"></i><b>2.2.2</b> Structural Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Simple Environment</a></li>
+<li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.4</b> Causality In A Complex Environment</a></li>
+<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#causal-effects"><i class="fa fa-check"></i><b>2.5</b> Causal Effects</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#definition"><i class="fa fa-check"></i><b>2.5.1</b> Definition</a></li>
+<li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.5.2</b> Causal Effect Statistics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
+<li class="chapter" data-level="3.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#causal-vs-statistical-inference"><i class="fa fa-check"></i><b>3.1</b> Causal vs Statistical Inference</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#example-1-tutoring"><i class="fa fa-check"></i><b>3.1.1</b> Example 1 Tutoring</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>3.2</b> Randomized Controlled Experiments</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#assignment-mechanisms"><i class="fa fa-check"></i><b>3.2.1</b> Assignment Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#observational-data"><i class="fa fa-check"></i><b>3.3</b> Observational Data</a></li>
+<li class="chapter" data-level="3.4" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#instrumental-variables"><i class="fa fa-check"></i><b>3.4</b> Instrumental Variables</a></li>
+<li class="chapter" data-level="3.5" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#propensity-score-matching"><i class="fa fa-check"></i><b>3.5</b> Propensity Score Matching</a></li>
+<li class="chapter" data-level="3.6" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#difference-in-difference-estimator"><i class="fa fa-check"></i><b>3.6</b> Difference-in-Difference Estimator</a></li>
+<li class="chapter" data-level="3.7" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html#time-series-methods"><i class="fa fa-check"></i><b>3.7</b> Time Series Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
+<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#causality-and-machine-learning"><i class="fa fa-check"></i><b>4.1</b> Causality and Machine Learning</a></li>
+<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#marketing"><i class="fa fa-check"></i><b>4.2</b> Marketing</a></li>
+<li class="chapter" data-level="4.3" data-path="applications.html"><a href="applications.html#drug-trial"><i class="fa fa-check"></i><b>4.3</b> Drug Trial</a></li>
+<li class="chapter" data-level="4.4" data-path="applications.html"><a href="applications.html#discrimination"><i class="fa fa-check"></i><b>4.4</b> Discrimination</a></li>
+<li class="chapter" data-level="4.5" data-path="applications.html"><a href="applications.html#epidemiology"><i class="fa fa-check"></i><b>4.5</b> Epidemiology</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="applications.html"><a href="applications.html#the-reporting-mechanism"><i class="fa fa-check"></i><b>4.5.1</b> The reporting mechanism</a></li>
+<li class="chapter" data-level="4.5.2" data-path="applications.html"><a href="applications.html#evolving-symptoms"><i class="fa fa-check"></i><b>4.5.2</b> Evolving Symptoms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="epistemology.html"><a href="epistemology.html"><i class="fa fa-check"></i><b>5</b> Epistemology</a><ul>
+<li class="chapter" data-level="5.1" data-path="epistemology.html"><a href="epistemology.html#manipulation"><i class="fa fa-check"></i><b>5.1</b> Manipulation</a></li>
+<li class="chapter" data-level="5.2" data-path="epistemology.html"><a href="epistemology.html#long-term-effects"><i class="fa fa-check"></i><b>5.2</b> Long-Term Effects</a></li>
+<li class="chapter" data-level="5.3" data-path="epistemology.html"><a href="epistemology.html#are-all-sciences-equal"><i class="fa fa-check"></i><b>5.3</b> Are all sciences equal?</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a><ul>
+<li class="chapter" data-level="A.1" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html#terminology-confusion"><i class="fa fa-check"></i><b>A.1</b> Terminology Confusion</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a><ul>
+<li class="chapter" data-level="B.1" data-path="statistics-1.html"><a href="statistics-1.html#distributions"><i class="fa fa-check"></i><b>B.1</b> Distributions</a><ul>
+<li class="chapter" data-level="B.1.1" data-path="statistics-1.html"><a href="statistics-1.html#single-random-variable"><i class="fa fa-check"></i><b>B.1.1</b> Single Random Variable</a></li>
+<li class="chapter" data-level="B.1.2" data-path="statistics-1.html"><a href="statistics-1.html#multiple-random-variables"><i class="fa fa-check"></i><b>B.1.2</b> Multiple Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="statistics-1.html"><a href="statistics-1.html#statistical-inference"><i class="fa fa-check"></i><b>B.2</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="B.2.1" data-path="statistics-1.html"><a href="statistics-1.html#estimators"><i class="fa fa-check"></i><b>B.2.1</b> Estimators</a></li>
+<li class="chapter" data-level="B.2.2" data-path="statistics-1.html"><a href="statistics-1.html#hypothesis-tests"><i class="fa fa-check"></i><b>B.2.2</b> Hypothesis Tests</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>C</b> Code</a><ul>
+<li class="chapter" data-level="C.1" data-path="code.html"><a href="code.html#equivalence-of-statistical-properties-and-sql"><i class="fa fa-check"></i><b>C.1</b> Equivalence of statistical properties and SQL</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction To Causality: A Modern Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="causal-models" class="section level1">
+<h1><span class="header-section-number">2</span> Causal Models</h1>
+<div id="causality-asymmetry-and-entropy" class="section level2">
+<h2><span class="header-section-number">2.1</span> Causality, Asymmetry and Entropy</h2>
+<p><em>Causality</em> is strongly linked to the concept of <em>time</em>. Cause precedes effect, never the other way round. Symptoms occur after infection
+This asymmetry is mirrored in the physical notion of entropy and (as an emergent property) time.
+While the past is determined we feel that we are able to act on the future, that we are able to choose one among many possible futures. This is due to the low entropy the universe had in the past.
+All fundamental physical laws are perfectly symmetrical and therefore reversable. Asymmetry is only introduced by a coarse-grained look at the world, and therefore an <em>emergent</em> property.</p>
+</div>
+<div id="basic-definitions" class="section level2">
+<h2><span class="header-section-number">2.2</span> Basic Definitions</h2>
+<p>We assume the world can be modelled by <em>variables</em>. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. <span class="math inline">\(X\)</span>, whereas we use lower-case letters for their values, e.g. <span class="math inline">\(x\)</span>. In case <span class="math inline">\(X\)</span> is <em>categorical</em>, different values will be denoted by a subscript <span class="math inline">\(x_j\)</span>. Where <span class="math inline">\(X\)</span> has two values only, we will encode them with <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p>
+<div id="causal-graphs" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Causal Graphs</h3>
+
+<div class="definition">
+<span id="def:graphs" class="definition"><strong>Definition 2.1  (Causal Graph)  </strong></span>A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In <em>causal graphs</em>, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an <em>ordered</em> pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. These DAGs have no feedback loops.
+</div>
+
+<p>The causal graphs convey the qualitative pattern of causal relations. They do not quantify that relation, i.e. specify how two variables are related. A graph with relation <span class="math inline">\(A \rightarrow B\)</span>
+It The quantitative aspects are better represented in a set of structural equations.</p>
+
+<div class="definition">
+<span id="def:exoendo" class="definition"><strong>Definition 2.2  (Exogeneous and Endogeneous Variables)  </strong></span>An exogeneous variable in a graph G has no edges pointing into itself.
+An endogeneous variable in a graph G has at least one edge point into itself.
+</div>
+
+</div>
+<div id="structural-equations" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Structural Equations</h3>
+<p><em>Structural equations</em> represent the causal relations between <em>variables</em>. The <em>absence</em> of a variable from the model assumes that it is not relevant for the causal description of the system.
+We will focus exposition on <em>categorical variables</em> which can assume a</p>
+<p><span class="math inline">\(X \rightarrow Y\)</span> means that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span>. Manipulating <span class="math inline">\(X\)</span> determines the value of <span class="math inline">\(Y\)</span>, but not the other way round. We call <span class="math inline">\(X\)</span> the <em>cause</em> and <span class="math inline">\(Y\)</span> the <em>outcome</em>. Others call <span class="math inline">\(Y\)</span> the “<em>effect</em>”, but we will use <em>effect</em> to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. “average treatment effect”) and its usage in everyday language (e.g. “tipping on that button had no effect on the brightness of the screen”).</p>
+</div>
+</div>
+<div id="causality-in-a-simple-environment" class="section level2">
+<h2><span class="header-section-number">2.3</span> Causality In A Simple Environment</h2>
+<p>Let’s first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
+* the switch can either be open (0) or closed (1)
+* the lamp can either be off (0) or on (1).
+Let’s further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let’s take an extra second to translate the circuit diagram into a <em>causal graph</em>, a representation that will become quite handy in more complex environments that will be discussed later in the book.</p>
+<p>We can further represent a <em>causal graph</em> as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
+<span class="math display">\[\begin{equation}
+Y := f(X) = X
+\end{equation}\]</span>
+Note, that the equation uses operator “<span class="math inline">\(:=\)</span>”" rather than the usual “<span class="math inline">\(=\)</span>”. It reads “<span class="math inline">\(f(X)\)</span> is evaluated and <em>assigned</em> to <span class="math inline">\(Y\)</span>” and therefore resembles variable assignment in many programming languages where, for example, <code>x = x + 1</code> is a valid expression. Crucially, it is asymmetric: if <span class="math inline">\(X\)</span> is the air temperature and <span class="math inline">\(Y\)</span> the reading of the temperature on a thermometer, the reading will change if we heat up the air; manipulating the reading, e.g. by exposing the thermometer to direct sunlight will not heat up the air around it.</p>
+<p>Since the structural equation represents the <em>causal mechanism</em> relating the switch and the lamp, we can immediately read what happens if we intervene on the switch: when we close the switch, i.e. <span class="math inline">\(do(X:= 1)\)</span>, then the lamp will be on, <span class="math inline">\(Y := 1\)</span>; if we open the switch, <span class="math inline">\(do(X:= 0)\)</span>, then the lamp dies, <span class="math inline">\(Y := 0\)</span>.</p>
+<p>Let’s take it up a notch and create a more interesting environment by adding a second switch, connected in series, see figure XXX for the circuit diagram and figure xxx for the graph representation. The two switches allow the environment to be in four different states. Only if both switches are on, will the lamp be on, in the other three states it will be off:</p>
+<table>
+<thead>
+<tr class="header">
+<th>switch <span class="math inline">\(X_1\)</span></th>
+<th>switch <span class="math inline">\(X_2\)</span></th>
+<th>lamp <span class="math inline">\(Y\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>We can easily spot that the structural equation representation is
+<span class="math display">\[\begin{equation}
+Y := f(X_1, X_2) = X_1 \cdot X_2
+\end{equation}\]</span></p>
+<p>When we close switch 1, <span class="math inline">\(X_1 := 1\)</span>, the state of the lamp is solely determined by the state of swith 2.
+<span class="math display">\[\begin{equation}
+Y := f(1, X_2) = 1 \cdot X_2 = X_2
+\end{equation}\]</span></p>
+<p>At the same time, we also understand that, when <span class="math inline">\(X_1 := 0\)</span>, the state of the lamp is independent of switch 2:
+<span class="math display">\[\begin{equation}
+Y := f(0, X_2) = 0 \cdot X_2 = 0
+\end{equation}\]</span></p>
+<p>This might at first seem trivial, but here comes the twist: assume we know the system, but we are unable to observe the state of switch 1 (imagine it being hidden inside a plastic container or something). Imagine further that we also observe that switch 2 is open (and the lamp is therefore off). Will closing switch 2 turn on the light?</p>
+<p>We cannot provide an answer to this question, at least not one with certainty. We know that the <em>effectiveness</em> of switch 2 depends on something that we don’t know, the state of switch 1. <em>Only</em> through intervening with the system by closing switch 2 or by gathering information about the state of switch 1 we are able to answer this question.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Nevertheless, we might be able to provide a <em>probabilistic</em> answer to the question, an answer that quanitifies our uncertainty about switch 1. If we know that the likelihood that switch 1 is closed is 0.8 in all cases where we encounter switch 2 to be open and and the light to be off, then closing switch 2 will turn on the light in 80% of the cases.</p>
+<p>This example has shown that even in very simple causal systems, not being able to observe (and measure) a single variable, requires us to revert to inferences of a lesser kind, probabilistic rather than actual. Of course, most systems worth studying in fields outside of physics are far more complex as the one described here, and many variables of interest cannot be observed or measured. Causal analysis is therefore closely linked with statistics. From here on, we will consider these probabilistic use cases.</p>
+</div>
+<div id="causality-in-a-complex-environment" class="section level2">
+<h2><span class="header-section-number">2.4</span> Causality In A Complex Environment</h2>
+<p><span class="math display">\[\begin{equation}
+\Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
+\end{equation}\]</span></p>
+<p>As <span class="math inline">\(Y\)</span> is binary, <span class="math inline">\(\Delta\)</span> can be one of <span class="math inline">\({-1, 0, 1}\)</span> with <span class="math inline">\(\Delta = 1\)</span> being the desired outcome. As discussed in [causality], we are not able to measure this quantity directly, but need to resort to population-level quantities instead:
+<span class="math display">\[\begin{equation}
+P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2}
+\end{equation}\]</span></p>
+</div>
+<div id="causal-effects" class="section level2">
+<h2><span class="header-section-number">2.5</span> Causal Effects</h2>
+<p>The fundamental problem of causal inference</p>
+<p>The definition of [causal effect] hints at a severe problem for its measurements. It involves two quantities which can never be observed at once. This poses a severe problem, often called <strong>the fundamental problem of causal inference</strong>.
+Nevertheless, it does not prevent us from inferring <em>average</em> causal effects. This might be counterintuitive at first. How could we measure the <em>average</em> of a quantity, if we can’t measure the quantity itself? We will see that statistics comes to the rescue. The linearity of expectation states that</p>
+<p><span class="math display">\[\begin{equation}
+E(U - V) = E(U) - (V)
+\end{equation}\]</span>
+i.e. expected value of the difference of two random variables is the difference between the expected values of the individual random variables. Hence, even if <span class="math inline">\(U - V\)</span> cannot be observed, we can still calculate.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<div id="definition" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Definition</h3>
+<p>bla</p>
+</div>
+<div id="causal-effect-statistics" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Causal Effect Statistics</h3>
+
+<div class="definition">
+<span id="def:ate" class="definition"><strong>Definition 2.3  (Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+</div>
+
+<p>bla bla bla</p>
+
+<div class="definition">
+<span id="def:att" class="definition"><strong>Definition 2.4  (Average Treatment Effect on the Treated)  </strong></span>The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
+</div>
+
+<p>It is often used in situations where the treatment effect is expected to be heterogeneous in a population. In a given environment, selection into treatment could yield treated individuals to have a different average treatment effect than the total population. For example, if university eduction has a higher effect on earnings for people with high intelligence and if people with high intelligence more often chose a university education than less intelligent ones, the average effect of university eduction of those who choose to go to university will be higher than in the overall population (and therefore than those choosing not to go to university).</p>
+
+<div class="definition">
+<span id="def:itt" class="definition"><strong>Definition 2.5  (Intention To Treat Effect)  </strong></span>The Intention To Treat Effect, or ITT, is the expected value of xx in population x.
+</div>
+
+<p>It is conceptually the same as the ATE, but often refers to a situation where the primary intervention cannot be manipulated directly, e.g. where a doctor can prescribe a drug but not enforce that the patient actually takes the drug.</p>
+
+<div class="definition">
+<span id="def:late" class="definition"><strong>Definition 2.6  (Local Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+</div>
+
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Readers familiar with DAGs data processing pipelines will recognize that these too describe causal mechanisms. Datasets are manipulated in an ordered sequence of steps to produce a final outcome where the result of each step is determined by the outcome of its parents steps (the input datasets) and the mechanism itself (the transformation of the datasets).<a href="causal-models.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Note, however, that this ambiguity disappears if we happen to observe switch 2 to be closed and therefore the light to be on. With our understanding of the system, it is clear that switch 1 also has to be closed. Opening switch 2 will consequently turn off the light, <em>with certainty</em>.<a href="causal-models.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Imagine you are interested in the average <em>net income</em> of a certain population, i.e. <span class="math inline">\(E(income - expenses)\)</span>. Even if you do not have access to individual-level data, say due to privacy concerns, you can calculate this value if you are given the population averages of income and expenses, i.e. <span class="math inline">\(E(income) - E(expenses)\)</span>. Note that linearity is a property of the expected value, but not of other aggregate metris that might be of interest like the median value, where, in general, <span class="math inline">\(Median(income - expenses) \neq Median(income) - Median(expenses)\)</span>.<a href="causal-models.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods-for-causal-inference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/flobrez/itc/edit/master/causality.md",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
