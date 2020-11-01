@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction | Introduction To Causality: A Modern Approach</title>
+  <title>Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="causal-models.html"/>
+
+<link rel="next" href="introduction.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -88,12 +88,7 @@
 <li class="chapter" data-level="2.2.1" data-path="causal-models.html"><a href="causal-models.html#causal-graphs"><i class="fa fa-check"></i><b>2.2.1</b> Causal Graphs</a></li>
 <li class="chapter" data-level="2.2.2" data-path="causal-models.html"><a href="causal-models.html#structural-equations"><i class="fa fa-check"></i><b>2.2.2</b> Structural Equations</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#simple-environments"><i class="fa fa-check"></i><b>2.3</b> Simple Environments</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-one-switch"><i class="fa fa-check"></i><b>2.3.1</b> An electric circuit with one switch</a></li>
-<li class="chapter" data-level="2.3.2" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches"><i class="fa fa-check"></i><b>2.3.2</b> An electric circuit with two switches</a></li>
-<li class="chapter" data-level="2.3.3" data-path="causal-models.html"><a href="causal-models.html#unobservability"><i class="fa fa-check"></i><b>2.3.3</b> Unobservability</a></li>
-<li class="chapter" data-level="2.3.4" data-path="causal-models.html"><a href="causal-models.html#probabilistic-models-of-causality"><i class="fa fa-check"></i><b>2.3.4</b> Probabilistic Models of Causality</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-simple-environment"><i class="fa fa-check"></i><b>2.3</b> Causality In A Simple Environment</a></li>
 <li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.4</b> Causality In A Complex Environment</a></li>
 <li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#causal-effects"><i class="fa fa-check"></i><b>2.5</b> Causal Effects</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#definition"><i class="fa fa-check"></i><b>2.5.1</b> Definition</a></li>
@@ -162,78 +157,30 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">1</span> Introduction</h1>
-<blockquote>
-<p>Correlation doesn’t imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing ‘look over there.’
-— Randall Munroe</p>
-</blockquote>
-<p>Causal analysis is a fascinating field. It deals with the fundamental relation between cause and effect in complex environments. Being able to infer what the effect is going to be after doing A versus B is of utmost importance in a wide variety of applications, from policy analysis, drug prescription to marketing. Despite its ubiquity in all disciplines concerned with complex phenomena, the concept of <strong>causality</strong> has eluded a mathematically rigorous treatment for a long time, resulting in puzzling paradoxes and ambiguous statements. Only in recent decades a new formalism has emerged to solve these problems, with main contributors from the computer science and economics departments. The <strong>causal revolution</strong> <span class="citation">(Pearl and Mackenzie <a href="#ref-pearl2019" role="doc-biblioref">2018</a>)</span> swept away decades of experts and students arguing about the correct interpretation of phenomena such as <strong>Simpson’s paradox</strong>, the nature and properties of the <strong>error term in regression equations</strong> and the interpretation of <strong>structural parameters</strong> in SEMs. The revolution established a new regime, which introduced new notation and a unified language, where causal and statistical concepts are finally separated. At last, <strong>correlation</strong> is never again to be confused with <strong>causation</strong>.</p>
-<p>“Introduction To Causality” is a gentle introduction into this modern understanding of causality as it unfolded after the revolution. It will help you learn the fundamentals of this art and science of causal analysis. After reading this book, you’ll have the tools to understand and communicate causal concepts and you will know how to tackle the common questions. The code in the appendix will help you to apply these methods using the R programming language.</p>
-<div id="what-you-will-learn" class="section level2">
-<h2><span class="header-section-number">1.1</span> What you will learn</h2>
-<p>First we will discuss causality in a trivial lab environment where we are able to control every important aspect of the environment. This will help us get familiar with the vocabulary and notation and will provide some insights in how to think about causality.</p>
-<p>Once we have become familiar with the simple setting, we will loosen the assumption that we are able to fully control the environment. At this point, we will introduce causality as a probabilistic concept. Our inability to fully control and understand our environment forces us to settle for a less precise inference on the effects. We can’t say what will happen, but we can still provide robust inference on what will happen <strong>on average</strong>. Most importantly, we will see why classical statistical concepts and notation are not sufficient for a rigorous and unambiguous treatment of causality and we will get a sense that there is a fundamental difference between what can be learned from passive observation (“correlation”) and active intervention (“causation”).</p>
-<p>Once we mastered the probabilistic nature of causality we will discuss on how we can <strong>measure</strong> the effect of <strong>actions</strong> in a variety of settings. We will start with the easiest scenario, the randomized controlled trial. It is often considered the gold standard for clinical trials and applied across scientific disciplines. It will serve as a benchmark in our further discussion, where we will look at scenarios that violate the assumption behind the randomized controlled trial: we will discuss observational studies, synthetic cohorts and time series analysis.</p>
-<p>After this tour de force, we shift gears and have a closer look at a couple of applications. We will discuss how to measure and interpret the placebo effect in clinical trials, how to optimize marketing using A/B tests and multi-armed bandits, and how to evaluate government interventions.</p>
-<p>Finally, I will wrap up this book by providing some parting thoughts on epistemology and the importance of causality in the evolution of artificial intelligence and machine learning.</p>
-<p>These chapters will hopefully provide you with a solid foundation and will allow you to find the right solution for your causal problem. But for most of your problems they will not be enough. Throughout this book we’ll point you to resources where you can learn more. The appendix provides some additional material on statistics and programming.</p>
+<div id="header">
+<h1 class="title">Introduction To Causality: A Modern Approach</h1>
+<p class="author"><em>Florian Brezina</em></p>
 </div>
-<div id="what-you-wont-learn" class="section level2">
-<h2><span class="header-section-number">1.2</span> What you won’t learn</h2>
-<p>There are some important topics that this book doesn’t cover. We hope that this book will leave you wanting more and that you will continue in your journey to master causality by going deeper into this topic or by exploring closly related fields and applications that we did not cover in sufficient length.</p>
-<div id="statistics" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Statistics</h3>
-<p>The book focuses on causal inference rather than statistics. Some basic statistical concepts are discussed in the appendix, but they primarily serve as a refresher. We assume that the reader is (or has been) familiar with statistics as it is taught in most Statistics 101 classes. Details on estimation methods and properties of estimators (e.g. consistency) are not discussed. We will provide references that provide more details.
-We will, however, extensively discuss the differences between these two types of inferences and how they relate. Our discussion on causal inference will, except for the basic introduction, be probabilistic in nature and statistical notation will be used throughout the book. We have summarized information on notation and terminology in CHAPTER XX.</p>
-</div>
-<div id="machine-learning" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> Machine Learning</h3>
-<p>We will address issues of machine learning where we see a connection to causal concepts. We do not go deep on any causal and non-causal ML algorithms. The discussion will focus on the discussion of supervised ML versus reinforcement learning.</p>
-</div>
-<div id="proofs" class="section level3">
-<h3><span class="header-section-number">1.2.3</span> Proofs</h3>
-<p>The book does not contain any proof or any heavy mathematical derivations. We will link to reference material. Despite that, we do intend to be rigorous in argumentation and notation and some discussions might seem overly verbose at first. We believe however that this is necessary, especially to avoid confusion between statistical and causal concepts.</p>
-</div>
-<div id="type-causality-vs-actual-causality" class="section level3">
-<h3><span class="header-section-number">1.2.4</span> Type Causality vs Actual Causality</h3>
-<p>When referring to causality, we will always mean what philosophers typically call <em>type causality</em> rather than <em>actual causality</em>. The former takes a forward-looking approach by inferring the <em>effects of causes</em>. This allows to predict outcome for interventions, e.g. it allows to answer questions like “what will be the outcome if we prescribe this new drug <em>X</em> to patients with heart disease”. <em>Actual causality</em> instead mostly takes a backward look at a given instance and tries to infer <em>causes of effects</em>. This allows to answer questions such as “what caused person <em>Y</em> to die from heart disease”. This type of inference is important if the goal is to assign responsibility, e.g. in a legal case. For a thorough introduction I recommend to take a look at <span class="citation">(Halpern <a href="#ref-halpern2016" role="doc-biblioref">2016</a>)</span>.</p>
-</div>
-</div>
-<div id="how-this-book-is-organised" class="section level2">
-<h2><span class="header-section-number">1.3</span> How this book is organised</h2>
-</div>
-<div id="prerequisites" class="section level2">
-<h2><span class="header-section-number">1.4</span> Prerequisites</h2>
-<p>To get the most out of this book, you should be familiar with basic concepts of statistical analysis, nomeclature and notation. If “expected value”, “conditional probability” or “hypothesis test” are only vaguely familiar to you, please review the appendix before digging into the main text.</p>
-<p>The code snippets at the end of the book are purely optional. If you want to follow along on these, you need to have R on your computer. To download the software, go to CRAN, the <strong>c</strong>omprehensive <strong>R</strong> <strong>a</strong>rchive <strong>n</strong> etwork. CRAN is composed of a set of mirror servers distributed around the world and is used to distribute R and R packages. Don’t try and pick a mirror that’s close to you: instead use the cloud mirror, <a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a>, which automatically figures it out for you. RStudio is an integrated development environment, or IDE, for R programming. Download and install it from <a href="http://www.rstudio.com/download" class="uri">http://www.rstudio.com/download</a>.</p>
-</div>
-<div id="acknowledgements" class="section level2">
-<h2><span class="header-section-number">1.5</span> Acknowledgements</h2>
-<p>The book has been compiled from markdown documents using R package bookdown. This package has allowed me to adopt a very flexible workflow where the compilation and publication of an HTML version only takes seconds.</p>
-</div>
-<div id="links" class="section level2">
-<h2><span class="header-section-number">1.6</span> Links</h2>
-<p>A free HTML version of this book is available at <a href="https://flobrez.github.io/itc/" class="uri">https://flobrez.github.io/itc/</a>. The markdown sources and supplementary material is available at <a href="https://github.com/flobrez/itc" class="uri">https://github.com/flobrez/itc</a>.</p>
+<div id="welcome" class="section level1 unnumbered">
+<h1>Welcome</h1>
+<p>This is the HTML version of <strong>“Introduction to Causality: A Moden Approach”</strong>, a gentle but rigorous introduction into the art and science of causal inference. This book covers the basics of causal inference: you will learn</p>
+<ul>
+<li>how <strong>causal inference</strong> differs from <strong>statistical inference</strong> or <strong>prediction</strong>;</li>
+<li>how to express these differences in <strong>unambiguous mathematical notation</strong> and <strong>causal graphs</strong>;</li>
+<li>a variety of techniques to probe causal questions, from <strong>randomized controlled experiments</strong> to <strong>structural equation models</strong>;</li>
+<li>the current scientific edge on causal analysis, including reinforcement learning.</li>
+</ul>
+<p>We approach this topic by closely examining most simple scenarios first and build upon those chapter by chapter. Throughout the book, we will use modern notation and language, primarily following Pearl (2000).</p>
+<p>The book further contains an extensive appendix containing code snippets in the statistical programming language R as well as auxilliary material on statistics. We hope that this will allow the book to be a good standalone source for all those interested in causality, whether or not they have a solid foundation in statistics.</p>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-halpern2016">
-<p>Halpern, Joseph. 2016. <em>Actual Causality</em>. MIT Press.</p>
-</div>
-<div id="ref-pearl2019">
-<p>Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic Books.</p>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="causal-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -255,7 +202,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/introduction.md",
+"link": "https://github.com/flobrez/itc/edit/master/index.md",
 "text": "Edit"
 },
 "history": {

@@ -34,53 +34,109 @@ We will focus exposition on *categorical variables* which can assume a
 
 $X \rightarrow Y$ means that $X$ causes $Y$. Manipulating $X$ determines the value of $Y$, but not the other way round. We call $X$ the *cause* and $Y$ the *outcome*. Others call $Y$ the "*effect*", but we will use *effect* to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. "average treatment effect") and its usage in everyday language (e.g. "tipping on that button had no effect on the brightness of the screen").
 
-## Causality In A Simple Environment
-Let's first take a look at a maximally simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). All elements of this environment can assume one of two states each, which we will conveniently encode as 0 and 1:
-* the switch can either be open (0) or closed (1)
-* the lamp can either be off (0) or on (1).
-Let's further assume that the voltage source has enough capacity to lighten the lamp if the switch is closed. Although this system is easy to understand and reason about, let's take an extra second to translate the circuit diagram into a *causal graph*, a representation that will become quite handy in more complex environments that will be discussed later in the book.
+## Simple Environments
 
+### An electric circuit with one switch
+Let's first take a look at a most simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). Both, X and Y, can assume one of two states. We will encode these as 0 and 1:
 
+* switch is open (0) or closed (1)
+* light bulb is off (0) or on (1).
 
-We can further represent a *causal graph* as a set of structural equations. Due to its simplicity, the circuit diagram can be represented with a single equation:
+![A simple circuit diagram with a single power source, a switch (X) and a light bulb (Y)](images/causal_models-simple_electric_1.png)
+
+This system is very easy to reason about. Assuming that the power source has enough capacity, the light bulb will be on if and only if the switch is closed. The system can be in one of only two states:
+
+| switch $X$ 	| light bulb $Y$ |
+|-------------	|---------	|
+| 0           	| 0       	|
+| 1           	| 1       	|
+
+This table, however, does not contain any information on the causal relationship between X and Y and will therefore not be sufficient to correctly reason about the system. Hence, let's take an extra second to translate this circuit diagram into a *causal graph*. This will become much more useful in more complex systems, but it's probably a good idea to get used to this representation from the start.
+
+![The simple circuit diagram converted to a causal graph, where X is the (only) cause of Y](images/causal_models-dag_simple_environment.png)
+
+A *causal graph* represents variables as *nodes* and causal relationships as *directed edges* between nodes. $X \rightarrow Y$ means that $X$ causes $Y$. This in turn means that manipulating $X$ determines the state of $Y$, but not the other way round. Here, the graph consists of two nodes, the switch X and the light bulb Y, connected by a directed edge from X to Y.
+
+While the graphical representation of the causal structure makes it easy to *qualitatively* reason about the causal structure of the system, an algebraic representation will be needed for quantitative analysis. The algebraic representation of a causal relationship is called a *structural equation*. In any system we have one structural equation for every node that has at least a cause.
+In our case, only the light bulb Y has a cause and therefore we only have a single equation:
+\begin{equation}
+Y := f(X)
+\end{equation}
+where $f()$ is a function.
+Note, that a *structural equation* uses "$:=$" rather than the usual "$=$". It should be read as "$f(X)$ is evaluated and *assigned* to $Y$". It resembles variable assignment in many programming languages where, for example, `x = x + 1` is a valid expression. Here too, the current value of `x` is incremented by 1 and then reassigned to `x`. Crucially, a *structural equation* is asymmetric, capturing the important distinction that X causes Y, but not the other way around.
+
+In many applications, the goal is to identify $f()$. Here, however, our understanding of physics and the assumptions made about the system, allows us to infer $f()$ right away:
 \begin{equation}
 Y := f(X) = X
 \end{equation}
-Note, that the equation uses operator "$:=$"" rather than the usual "$=$". It reads "$f(X)$ is evaluated and *assigned* to $Y$" and therefore resembles variable assignment in many programming languages where, for example, `x = x + 1` is a valid expression. Crucially, it is asymmetric: if $X$ is the air temperature and $Y$ the reading of the temperature on a thermometer, the reading will change if we heat up the air; manipulating the reading, e.g. by exposing the thermometer to direct sunlight will not heat up the air around it.
 
-Since the structural equation represents the *causal mechanism* relating the switch and the lamp, we can immediately read what happens if we intervene on the switch: when we close the switch, i.e. $do(X:= 1)$, then the lamp will be on, $Y := 1$; if we open the switch, $do(X:= 0)$, then the lamp dies, $Y := 0$.
+Now that we managed to represent this system in various forms, we can start to reason about *interventions*. An *intervention* is an operation in the system that fixes a variable to a certain value. Here, two interventions are of interest: we can open the switch, i.e. set $X:=0$, or close it, i.e. set $X:=1$.  The *structural equation* is then
+\begin{equation}
+Y := f(X) = 0
+\end{equation}
+and 
+\begin{equation}
+Y := f(X) = 1
+\end{equation}
+respectively.
 
-Let's take it up a notch and create a more interesting environment by adding a second switch, connected in series, see figure XXX for the circuit diagram and figure xxx for the graph representation. The two switches allow the environment to be in four different states. Only if both switches are on, will the lamp be on, in the other three states it will be off:
+This simple system has a nice property: for the light bulb to be on, the closed switch is a *necessary* and *sufficient* condition. This property is "nice" as it allows us to falsify the causal model from observation: a *single* observation where the light bulb is on but the switch is open (or the light bulb is off but the switch is closed) allows us to refute the causal model, e.g. the power source might not be strong enough or the circuit might have flaws.
 
-| switch $X_1$ 	| switch $X_2$ 	| lamp $Y$  |
+### An electric circuit with two switches
+
+Let us now slightly increase the complexity of the system by adding a second switch. Both switches are connected in series as shown in the circuit diagram in figure XXX 
+
+![A circuit diagram with a single power source, two switches (X1 and X2) and a light bulb (Y)](images/causal_models-simple_electric_2.png)
+
+Again, our understanding of the physical nature of this system allow us to derive the corresponding causal graph. Both switches cause the state of the light bulb whereas the light bulb does not cause any of the switches and switch $X_1$ does not cause switch $X_2$, nor vice versa. Hence our causal graph has three nodes and directed edges $X_1 \rightarrow Y$ and $X_2 \rightarrow Y$:
+
+![The simple circuit diagram converted to a causal graph, where X is the (only) cause of Y](images/causal_models-dag_simple_electric_2.png)
+
+
+The structural equation for this system is also very simple:
+\begin{equation}
+Y := f(X_1, X_2)
+\end{equation}
+but the functional form of $f()$ might not be obvious. The two switches allow the environment to be in four different states. Only if *both* switches are on, will the light bulb be on, in the other three states it will be off:
+
+| switch $X_1$ 	| switch $X_2$ 	| light bulb $Y$  |
 |-------------	|-------------	|---------	|
 | 0           	| 0           	| 0       	|
 | 0           	| 1           	| 0       	|
 | 1           	| 0           	| 0       	|
 | 1           	| 1           	| 1       	|
 
-We can easily spot that the structural equation representation is
+Hence, the structural equation has to be
 \begin{equation}
 Y := f(X_1, X_2) = X_1 \cdot X_2
 \end{equation}
 
-When we close switch 1, $X_1 := 1$, the state of the lamp is solely determined by the state of swith 2.
-\begin{equation}
-Y := f(1, X_2) = 1 \cdot X_2 = X_2
-\end{equation}
+For the light bulb to be on, $X_1=1$ and $X_2=1$ are necessary conditions but neither is (on its own) sufficient.
 
-At the same time, we also understand that, when $X_1 := 0$, the state of the lamp is independent of switch 2:
+Let us now turn to interventions in this system. While in the system with just one switch, every intervention on $X$ caused a *change* in the state of $Y$, this is not true in the case of interventions on a single switch now. In a state where $X_1 = 0$, we are unable to change the state of $Y$ by intervening on $X_2$:
 \begin{equation}
 Y := f(0, X_2) = 0 \cdot X_2 = 0
 \end{equation}
 
-This might at first seem trivial, but here comes the twist: assume we know the system, but we are unable to observe the state of switch 1 (imagine it being hidden inside a plastic container or something). Imagine further that we also observe that switch 2 is open (and the lamp is therefore off). Will closing switch 2 turn on the light?
+Conversely, if the first switch is closed, $X_1 = 1$, we're basically back in a system with just one switch, which solely determines by the state of the light bulb.
+\begin{equation}
+Y := f(1, X_2) = 1 \cdot X_2 = X_2
+\end{equation}
 
-We cannot provide an answer to this question, at least not one with certainty. We know that the *effectiveness* of switch 2 depends on something that we don't know, the state of switch 1. *Only* through intervening with the system by closing switch 2 or by gathering information about the state of switch 1 we are able to answer this question.[^cf1] Nevertheless, we might be able to provide a *probabilistic* answer to the question, an answer that quanitifies our uncertainty about switch 1. If we know that the likelihood that switch 1 is closed is 0.8 in all cases where we encounter switch 2 to be open and and the light to be off, then closing switch 2 will turn on the light in 80% of the cases.
+### Unobservability
 
-[^cf1]: Note, however, that this ambiguity disappears if we happen to observe switch 2 to be closed and therefore the light to be on. With our understanding of the system, it is clear that switch 1 also has to be closed. Opening switch 2 will consequently turn off the light, *with certainty*.
+So far, we were able to reason about the effectiveness of interventions due to our ability to fully specify the structural equations (i.e. we knew $f()$) *and* were able to *observe* the state of all causes. This allowed us to reason that closing switch 2 will *not* have an effect on the light bulb when switch 1 is open, but will change its state if switch 1 is closed.
 
-This example has shown that even in very simple causal systems, not being able to observe (and measure) a single variable, requires us to revert to inferences of a lesser kind, probabilistic rather than actual. Of course, most systems worth studying in fields outside of physics are far more complex as the one described here, and many variables of interest cannot be observed or measured. Causal analysis is therefore closely linked with statistics. From here on, we will consider these probabilistic use cases.
+Problems arise, when one of these conditions fails. Suppose we are still dealing with the system with two switches connected in series, but the state of switch 1 cannot be observed as the switch is hidden in a box, see figure XXX.
+
+![A circuit diagram with a single power source, two switches (X1 and X2) and a light bulb (Y), but switch 1 is hidden in a box.](images/causal_models-hidden_electric_2.png)
+
+Imagine now that we observe that switch 2 is open (and the light bulb is off). Will closing switch 2 turn on the light?
+
+Unfortunately, we are not any more able to answer this question. Our best answer is "It depends.". It depends on the state of switch 1, which is not observable. What were left is to resort to a different kind of reasoning, *probabilistic* reasoning. While we're not able to make any statements about any single system of that kind, we can still make statments on the likelihood of $X_2$ effectiveness based on probability distributions for $X_1$. If we knew that the likelihood that switch 1 is closed is 0.8 in all cases where we encounter switch 2 to be open and and the light to be off, then closing switch 2 will turn on the light in 80% of the cases.
+
+### Probabilistic Models of Causality
+This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, *probabilistic* rather than *determinstic*. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of interest cannot be observed or measured. Causal models in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.
 
 ## Causality In A Complex Environment
 \begin{equation}
