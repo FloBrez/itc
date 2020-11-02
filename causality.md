@@ -136,9 +136,43 @@ Imagine now that we observe that switch 2 is open (and the light bulb is off). W
 Unfortunately, we are not any more able to answer this question. Our best answer is "It depends.". It depends on the state of switch 1, which is not observable. What were left is to resort to a different kind of reasoning, *probabilistic* reasoning. While we're not able to make any statements about any single system of that kind, we can still make statments on the likelihood of $X_2$ effectiveness based on probability distributions for $X_1$. If we knew that the likelihood that switch 1 is closed is 0.8 in all cases where we encounter switch 2 to be open and and the light to be off, then closing switch 2 will turn on the light in 80% of the cases.
 
 ### Probabilistic Models of Causality
-This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, *probabilistic* rather than *determinstic*. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of interest cannot be observed or measured. Causal models in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.
+This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, *probabilistic* rather than *determinstic*. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of (potential) interest cannot be observed or measured. Causal reasoning in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.
 
-## Causality In A Complex Environment
+## Complex Environments
+
+### An electric circuit with two switches, one unobserved
+Let us start with the problem above, where we model a system with two switches, but the state of switch one is unobserved. To make the distinction between the two switches more apparent, let's denote the unobserved switch by $U$ and the observable switch simply by $X$:
+
+![A circuit diagram with a single power source, a two switches (X and U) and a light bulb (Y). Switch U is unobserved.](images/causal_models-hidden_electric_ux.png)
+
+Note that the *structure* of the causal graphs remains the same, as the box only hinders us to observe the *state* of the switch, but we still know that there is a switch. This allows us to further specify $f()$ of the structural equation, which after refactoring variable names is now
+\begin{equation}
+Y := f(U, X) = X \cdot U
+\end{equation}
+
+Let us further introduce a symbol for the system, $S$, which not only denotes the structure of the system, but includes the probabilistic mechanism that determines $U$. We can now *derive* the *probability distributions* for $Y$ from the structural equation for each possible interventions on $X$:
+
+\begin{equation}
+P^{S;do(X:=x)}(Y) = P^{S;do(X:=x)}(X \cdot U) = P^{S;do(X:=x)}(x \cdot U) = x P^{S;do(X:=x)}(U)
+\end{equation}
+where $do(X:=x)$ denotes the intervention on $X$ where its state is set to $x$. Note that, as the intervention fixes $X$ to a specific value, it is non-random and can therefore be placed outside of $P()$.
+
+Causal reasoning about the effect of the switch on the light bulb (the effect of setting the state of $X$ on the state of $Y$) now depends not on the state of $U$, but its probability distribution. We can safely say that, if we open the switch, then the light bulb will never be on, regardless of the probability distribution of $U$:
+\begin{equation}
+P^{S;do(X:=0)}(Y=1) = 0 \cdot P^{S;do(X:=0)}(U) = 0
+\end{equation}
+Again, if we were to observe a case where the switch is open but the light bulb is on, we would instantly know that our structural equation is invalid.
+
+This is different however for the case where we close the switch:
+\begin{equation}
+P^{S;do(X:=1)}(Y=1) = 1 \cdot P^{S;do(X:=1)}(U=1) = P^{S}(U=1)
+\end{equation}
+
+Say, for example, system $S$ refers to a population of circuits that are all created by the same machine. This machine is supposed to close the switch in the box, but fails to do so 1% of the cases. Hence, $P^{S}(U=1)=0.99$ and therefore $P^{S;do(X:=1)}(Y=1)=0.99$: only in 99% of the cases where we close the switch, we will see the light bulb go on, in 1% of the cases it will fail to do so.
+
+
+
+###
 \begin{equation}
 \Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}
