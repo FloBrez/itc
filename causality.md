@@ -70,7 +70,9 @@ In many applications, the goal is to identify $f()$. Here, however, our understa
 Y := f(X) = X
 \end{equation}
 
-Now that we managed to represent this system in various forms, we can start to reason about *interventions*. An *intervention* is an operation in the system that fixes a variable to a certain value. Here, two interventions are of interest: we can open the switch, i.e. set $X:=0$, or close it, i.e. set $X:=1$.  The *structural equation* is then
+#### Intervention
+
+Now that we managed to represent this system in various forms, we can start to reason about *interventions*. For now, we define an *intervention* as an operation in the system that fixes a variable to a certain value. Here, two interventions are of interest: we can open the switch, i.e. set $X:=0$, or close it, i.e. set $X:=1$.  The *structural equation* is then
 \begin{equation}
 Y := f(X) = 0
 \end{equation}
@@ -113,6 +115,8 @@ Y := f(X_1, X_2) = X_1 \cdot X_2
 
 For the light bulb to be on, $X_1=1$ and $X_2=1$ are necessary conditions but neither is (on its own) sufficient.
 
+#### Intervention
+
 Let us now turn to interventions in this system. While in the system with just one switch, every intervention on $X$ caused a *change* in the state of $Y$, this is not true in the case of interventions on a single switch now. In a state where $X_1 = 0$, we are unable to change the state of $Y$ by intervening on $X_2$:
 \begin{equation}
 Y := f(0, X_2) = 0 \cdot X_2 = 0
@@ -123,7 +127,7 @@ Conversely, if the first switch is closed, $X_1 = 1$, we're basically back in a 
 Y := f(1, X_2) = 1 \cdot X_2 = X_2
 \end{equation}
 
-### Unobservability
+## Unobservability
 
 So far, we were able to reason about the effectiveness of interventions due to our ability to fully specify the structural equations (i.e. we knew $f()$) *and* were able to *observe* the state of all causes. This allowed us to reason that closing switch 2 will *not* have an effect on the light bulb when switch 1 is open, but will change its state if switch 1 is closed.
 
@@ -138,6 +142,28 @@ Unfortunately, we are not any more able to answer this question. Our best answer
 ### Probabilistic Models of Causality
 This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, *probabilistic* rather than *determinstic*. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of (potential) interest cannot be observed or measured. Causal reasoning in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.
 
+### Interventions More Generally Defined
+
+So far, we have used the term *intervention* when we fixed a variable of system to a certain value. More generally, an intervention is a change in one or more structural equations. An intervention that replaces the right-hand side of the structural equation with a *value* is called *hard intervention* (or *atomic*, *ideal*, *surgical*), whereas a replacement with another function with the same arguments is called a *soft intervention* (or *imperfect*, *parametric*) ([@pearl2009, p.35] and [@pearl2009, p.89])
+
+We already encountered examples for hard interventions, like closing switch $X_1$:
+\begin{equation}
+X_1 := 1
+\end{equation}.
+
+A soft intervention would be a rearrangment of the circuit, so $X_1$ and $X_2$ are placed are placed in parallel rather than in series. The state of the light bulb would still depend on both $X_1$ and $X_2$, but the assignment functions would be more like this:
+\begin{equation}
+Y := g(X_1, X_2) = I(X_1 + X_2 >= 0)
+\end{equation}
+where $I(a)$ is the indicator function that returns 1 if $a$ is true and 0 otherwise. In a parallel arrangement it is sufficient that *any* of the two switches is closed:
+
+| switch $X_1$ 	| switch $X_2$ 	| light bulb $Y$  |
+|-------------	|-------------	|---------	|
+| 0           	| 0           	| 0       	|
+| 0           	| 1           	| 1       	|
+| 1           	| 0           	| 1       	|
+| 1           	| 1           	| 1       	|
+
 ## Complex Environments
 
 ### An electric circuit with two switches, one unobserved
@@ -150,10 +176,10 @@ Note that the *structure* of the causal graphs remains the same, as the box only
 Y := f(U, X) = X \cdot U
 \end{equation}
 
-Let us further introduce a symbol for the system, $S$, which not only denotes the structure of the system, but includes the probabilistic mechanism that determines $U$. We can now *derive* the *probability distributions* for $Y$ from the structural equation for each possible interventions on $X$:
+Let us further introduce a symbol for the system itself, $S$, which not only denotes the structure of the system, but includes the probabilistic mechanism that determines $U$. We can now *derive* the *probability distributions* for $Y$ from the structural equation for each possible interventions on $X$:
 
 \begin{equation}
-P^{S;do(X:=x)}(Y) = P^{S;do(X:=x)}(X \cdot U) = P^{S;do(X:=x)}(x \cdot U) = x P^{S;do(X:=x)}(U)
+P^{S;do(X:=x)}(Y=y) = P^{S;do(X:=x)}(X \cdot U = y) = P^{S;do(X:=x)}(x \cdot U) = x P^{S;do(X:=x)}(U)
 \end{equation}
 where $do(X:=x)$ denotes the intervention on $X$ where its state is set to $x$. Note that, as the intervention fixes $X$ to a specific value, it is non-random and can therefore be placed outside of $P()$.
 

@@ -91,16 +91,18 @@
 <li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#simple-environments"><i class="fa fa-check"></i><b>2.3</b> Simple Environments</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-one-switch"><i class="fa fa-check"></i><b>2.3.1</b> An electric circuit with one switch</a></li>
 <li class="chapter" data-level="2.3.2" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches"><i class="fa fa-check"></i><b>2.3.2</b> An electric circuit with two switches</a></li>
-<li class="chapter" data-level="2.3.3" data-path="causal-models.html"><a href="causal-models.html#unobservability"><i class="fa fa-check"></i><b>2.3.3</b> Unobservability</a></li>
-<li class="chapter" data-level="2.3.4" data-path="causal-models.html"><a href="causal-models.html#probabilistic-models-of-causality"><i class="fa fa-check"></i><b>2.3.4</b> Probabilistic Models of Causality</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#complex-environments"><i class="fa fa-check"></i><b>2.4</b> Complex Environments</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches-one-unobserved"><i class="fa fa-check"></i><b>2.4.1</b> An electric circuit with two switches, one unobserved</a></li>
-<li class="chapter" data-level="2.4.2" data-path="causal-models.html"><a href="causal-models.html#section"><i class="fa fa-check"></i><b>2.4.2</b> </a></li>
+<li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#unobservability"><i class="fa fa-check"></i><b>2.4</b> Unobservability</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="causal-models.html"><a href="causal-models.html#probabilistic-models-of-causality"><i class="fa fa-check"></i><b>2.4.1</b> Probabilistic Models of Causality</a></li>
+<li class="chapter" data-level="2.4.2" data-path="causal-models.html"><a href="causal-models.html#interventions-more-generally-defined"><i class="fa fa-check"></i><b>2.4.2</b> Interventions More Generally Defined</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#causal-effects"><i class="fa fa-check"></i><b>2.5</b> Causal Effects</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#definition"><i class="fa fa-check"></i><b>2.5.1</b> Definition</a></li>
-<li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.5.2</b> Causal Effect Statistics</a></li>
+<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#complex-environments"><i class="fa fa-check"></i><b>2.5</b> Complex Environments</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches-one-unobserved"><i class="fa fa-check"></i><b>2.5.1</b> An electric circuit with two switches, one unobserved</a></li>
+<li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#section"><i class="fa fa-check"></i><b>2.5.2</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="causal-models.html"><a href="causal-models.html#causal-effects"><i class="fa fa-check"></i><b>2.6</b> Causal Effects</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="causal-models.html"><a href="causal-models.html#definition"><i class="fa fa-check"></i><b>2.6.1</b> Definition</a></li>
+<li class="chapter" data-level="2.6.2" data-path="causal-models.html"><a href="causal-models.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.6.2</b> Causal Effect Statistics</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods-for-causal-inference.html"><a href="methods-for-causal-inference.html"><i class="fa fa-check"></i><b>3</b> Methods for Causal Inference</a><ul>
@@ -249,7 +251,9 @@ Note, that a <em>structural equation</em> uses “<span class="math inline">\(:=
 <span class="math display">\[\begin{equation}
 Y := f(X) = X
 \end{equation}\]</span></p>
-<p>Now that we managed to represent this system in various forms, we can start to reason about <em>interventions</em>. An <em>intervention</em> is an operation in the system that fixes a variable to a certain value. Here, two interventions are of interest: we can open the switch, i.e. set <span class="math inline">\(X:=0\)</span>, or close it, i.e. set <span class="math inline">\(X:=1\)</span>. The <em>structural equation</em> is then
+<div id="intervention" class="section level4">
+<h4><span class="header-section-number">2.3.1.1</span> Intervention</h4>
+<p>Now that we managed to represent this system in various forms, we can start to reason about <em>interventions</em>. For now, we define an <em>intervention</em> as an operation in the system that fixes a variable to a certain value. Here, two interventions are of interest: we can open the switch, i.e. set <span class="math inline">\(X:=0\)</span>, or close it, i.e. set <span class="math inline">\(X:=1\)</span>. The <em>structural equation</em> is then
 <span class="math display">\[\begin{equation}
 Y := f(X) = 0
 \end{equation}\]</span>
@@ -259,6 +263,7 @@ Y := f(X) = 1
 \end{equation}\]</span>
 respectively.</p>
 <p>This simple system has a nice property: for the light bulb to be on, the closed switch is a <em>necessary</em> and <em>sufficient</em> condition. This property is “nice” as it allows us to falsify the causal model from observation: a <em>single</em> observation where the light bulb is on but the switch is open (or the light bulb is off but the switch is closed) allows us to refute the causal model, e.g. the power source might not be strong enough or the circuit might have flaws.</p>
+</div>
 </div>
 <div id="an-electric-circuit-with-two-switches" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> An electric circuit with two switches</h3>
@@ -313,6 +318,8 @@ but the functional form of <span class="math inline">\(f()\)</span> might not be
 Y := f(X_1, X_2) = X_1 \cdot X_2
 \end{equation}\]</span></p>
 <p>For the light bulb to be on, <span class="math inline">\(X_1=1\)</span> and <span class="math inline">\(X_2=1\)</span> are necessary conditions but neither is (on its own) sufficient.</p>
+<div id="intervention-1" class="section level4">
+<h4><span class="header-section-number">2.3.2.1</span> Intervention</h4>
 <p>Let us now turn to interventions in this system. While in the system with just one switch, every intervention on <span class="math inline">\(X\)</span> caused a <em>change</em> in the state of <span class="math inline">\(Y\)</span>, this is not true in the case of interventions on a single switch now. In a state where <span class="math inline">\(X_1 = 0\)</span>, we are unable to change the state of <span class="math inline">\(Y\)</span> by intervening on <span class="math inline">\(X_2\)</span>:
 <span class="math display">\[\begin{equation}
 Y := f(0, X_2) = 0 \cdot X_2 = 0
@@ -322,8 +329,10 @@ Y := f(0, X_2) = 0 \cdot X_2 = 0
 Y := f(1, X_2) = 1 \cdot X_2 = X_2
 \end{equation}\]</span></p>
 </div>
-<div id="unobservability" class="section level3">
-<h3><span class="header-section-number">2.3.3</span> Unobservability</h3>
+</div>
+</div>
+<div id="unobservability" class="section level2">
+<h2><span class="header-section-number">2.4</span> Unobservability</h2>
 <p>So far, we were able to reason about the effectiveness of interventions due to our ability to fully specify the structural equations (i.e. we knew <span class="math inline">\(f()\)</span>) <em>and</em> were able to <em>observe</em> the state of all causes. This allowed us to reason that closing switch 2 will <em>not</em> have an effect on the light bulb when switch 1 is open, but will change its state if switch 1 is closed.</p>
 <p>Problems arise, when one of these conditions fails. Suppose we are still dealing with the system with two switches connected in series, but the state of switch 1 cannot be observed as the switch is hidden in a box, see figure XXX.</p>
 <div class="figure">
@@ -332,16 +341,59 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 </div>
 <p>Imagine now that we observe that switch 2 is open (and the light bulb is off). Will closing switch 2 turn on the light?</p>
 <p>Unfortunately, we are not any more able to answer this question. Our best answer is “It depends.”. It depends on the state of switch 1, which is not observable. What were left is to resort to a different kind of reasoning, <em>probabilistic</em> reasoning. While we’re not able to make any statements about any single system of that kind, we can still make statments on the likelihood of <span class="math inline">\(X_2\)</span> effectiveness based on probability distributions for <span class="math inline">\(X_1\)</span>. If we knew that the likelihood that switch 1 is closed is 0.8 in all cases where we encounter switch 2 to be open and and the light to be off, then closing switch 2 will turn on the light in 80% of the cases.</p>
-</div>
 <div id="probabilistic-models-of-causality" class="section level3">
-<h3><span class="header-section-number">2.3.4</span> Probabilistic Models of Causality</h3>
+<h3><span class="header-section-number">2.4.1</span> Probabilistic Models of Causality</h3>
 <p>This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, <em>probabilistic</em> rather than <em>determinstic</em>. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of (potential) interest cannot be observed or measured. Causal reasoning in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.</p>
+</div>
+<div id="interventions-more-generally-defined" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Interventions More Generally Defined</h3>
+<p>So far, we have used the term <em>intervention</em> when we fixed a variable of system to a certain value. More generally, an intervention is a change in one or more structural equations. An intervention that replaces the right-hand side of the structural equation with a <em>value</em> is called <em>hard intervention</em> (or <em>atomic</em>, <em>ideal</em>, <em>surgical</em>), whereas a replacement with another function with the same arguments is called a <em>soft intervention</em> (or <em>imperfect</em>, <em>parametric</em>) (<span class="citation">(Pearl <a href="#ref-pearl2009" role="doc-biblioref">2009</a>, 35)</span> and <span class="citation">(Pearl <a href="#ref-pearl2009" role="doc-biblioref">2009</a>, 89)</span>)</p>
+<p>We already encountered examples for hard interventions, like closing switch <span class="math inline">\(X_1\)</span>:
+<span class="math display">\[\begin{equation}
+X_1 := 1
+\end{equation}\]</span>.</p>
+<p>A soft intervention would be a rearrangment of the circuit, so <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are placed are placed in parallel rather than in series. The state of the light bulb would still depend on both <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, but the assignment functions would be more like this:
+<span class="math display">\[\begin{equation}
+Y := g(X_1, X_2) = I(X_1 + X_2 &gt;= 0)
+\end{equation}\]</span>
+where <span class="math inline">\(I(a)\)</span> is the indicator function that returns 1 if <span class="math inline">\(a\)</span> is true and 0 otherwise. In a parallel arrangement it is sufficient that <em>any</em> of the two switches is closed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>switch <span class="math inline">\(X_1\)</span></th>
+<th>switch <span class="math inline">\(X_2\)</span></th>
+<th>light bulb <span class="math inline">\(Y\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="complex-environments" class="section level2">
-<h2><span class="header-section-number">2.4</span> Complex Environments</h2>
+<h2><span class="header-section-number">2.5</span> Complex Environments</h2>
 <div id="an-electric-circuit-with-two-switches-one-unobserved" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> An electric circuit with two switches, one unobserved</h3>
+<h3><span class="header-section-number">2.5.1</span> An electric circuit with two switches, one unobserved</h3>
 <p>Let us start with the problem above, where we model a system with two switches, but the state of switch one is unobserved. To make the distinction between the two switches more apparent, let’s denote the unobserved switch by <span class="math inline">\(U\)</span> and the observable switch simply by <span class="math inline">\(X\)</span>:</p>
 <div class="figure">
 <img src="images/causal_models-hidden_electric_ux.png" alt="" />
@@ -351,9 +403,9 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 <span class="math display">\[\begin{equation}
 Y := f(U, X) = X \cdot U
 \end{equation}\]</span></p>
-<p>Let us further introduce a symbol for the system, <span class="math inline">\(S\)</span>, which not only denotes the structure of the system, but includes the probabilistic mechanism that determines <span class="math inline">\(U\)</span>. We can now <em>derive</em> the <em>probability distributions</em> for <span class="math inline">\(Y\)</span> from the structural equation for each possible interventions on <span class="math inline">\(X\)</span>:</p>
+<p>Let us further introduce a symbol for the system itself, <span class="math inline">\(S\)</span>, which not only denotes the structure of the system, but includes the probabilistic mechanism that determines <span class="math inline">\(U\)</span>. We can now <em>derive</em> the <em>probability distributions</em> for <span class="math inline">\(Y\)</span> from the structural equation for each possible interventions on <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[\begin{equation}
-P^{S;do(X:=x)}(Y) = P^{S;do(X:=x)}(X \cdot U) = P^{S;do(X:=x)}(x \cdot U) = x P^{S;do(X:=x)}(U)
+P^{S;do(X:=x)}(Y=y) = P^{S;do(X:=x)}(X \cdot U = y) = P^{S;do(X:=x)}(x \cdot U) = x P^{S;do(X:=x)}(U)
 \end{equation}\]</span>
 where <span class="math inline">\(do(X:=x)\)</span> denotes the intervention on <span class="math inline">\(X\)</span> where its state is set to <span class="math inline">\(x\)</span>. Note that, as the intervention fixes <span class="math inline">\(X\)</span> to a specific value, it is non-random and can therefore be placed outside of <span class="math inline">\(P()\)</span>.</p>
 <p>Causal reasoning about the effect of the switch on the light bulb (the effect of setting the state of <span class="math inline">\(X\)</span> on the state of <span class="math inline">\(Y\)</span>) now depends not on the state of <span class="math inline">\(U\)</span>, but its probability distribution. We can safely say that, if we open the switch, then the light bulb will never be on, regardless of the probability distribution of <span class="math inline">\(U\)</span>:
@@ -368,7 +420,7 @@ P^{S;do(X:=1)}(Y=1) = 1 \cdot P^{S;do(X:=1)}(U=1) = P^{S}(U=1)
 <p>Say, for example, system <span class="math inline">\(S\)</span> refers to a population of circuits that are all created by the same machine. This machine is supposed to close the switch in the box, but fails to do so 1% of the cases. Hence, <span class="math inline">\(P^{S}(U=1)=0.99\)</span> and therefore <span class="math inline">\(P^{S;do(X:=1)}(Y=1)=0.99\)</span>: only in 99% of the cases where we close the switch, we will see the light bulb go on, in 1% of the cases it will fail to do so.</p>
 </div>
 <div id="section" class="section level3">
-<h3><span class="header-section-number">2.4.2</span> </h3>
+<h3><span class="header-section-number">2.5.2</span> </h3>
 <p><span class="math display">\[\begin{equation}
 \Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}\]</span></p>
@@ -379,7 +431,7 @@ P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2
 </div>
 </div>
 <div id="causal-effects" class="section level2">
-<h2><span class="header-section-number">2.5</span> Causal Effects</h2>
+<h2><span class="header-section-number">2.6</span> Causal Effects</h2>
 <p>The fundamental problem of causal inference</p>
 <p>The definition of [causal effect] hints at a severe problem for its measurements. It involves two quantities which can never be observed at once. This poses a severe problem, often called <strong>the fundamental problem of causal inference</strong>.
 Nevertheless, it does not prevent us from inferring <em>average</em> causal effects. This might be counterintuitive at first. How could we measure the <em>average</em> of a quantity, if we can’t measure the quantity itself? We will see that statistics comes to the rescue. The linearity of expectation states that</p>
@@ -388,11 +440,11 @@ E(U - V) = E(U) - (V)
 \end{equation}\]</span>
 i.e. expected value of the difference of two random variables is the difference between the expected values of the individual random variables. Hence, even if <span class="math inline">\(U - V\)</span> cannot be observed, we can still calculate.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <div id="definition" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Definition</h3>
+<h3><span class="header-section-number">2.6.1</span> Definition</h3>
 <p>bla</p>
 </div>
 <div id="causal-effect-statistics" class="section level3">
-<h3><span class="header-section-number">2.5.2</span> Causal Effect Statistics</h3>
+<h3><span class="header-section-number">2.6.2</span> Causal Effect Statistics</h3>
 
 <div class="definition">
 <span id="def:ate" class="definition"><strong>Definition 2.3  (Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
@@ -418,6 +470,12 @@ i.e. expected value of the difference of two random variables is the difference
 
 
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-pearl2009">
+<p>Pearl, Judea. 2009. <em>Causality</em>. 2nd ed. Cambridge University Press.</p>
 </div>
 </div>
 <div class="footnotes">
