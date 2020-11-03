@@ -94,7 +94,10 @@
 <li class="chapter" data-level="2.3.3" data-path="causal-models.html"><a href="causal-models.html#unobservability"><i class="fa fa-check"></i><b>2.3.3</b> Unobservability</a></li>
 <li class="chapter" data-level="2.3.4" data-path="causal-models.html"><a href="causal-models.html#probabilistic-models-of-causality"><i class="fa fa-check"></i><b>2.3.4</b> Probabilistic Models of Causality</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#causality-in-a-complex-environment"><i class="fa fa-check"></i><b>2.4</b> Causality In A Complex Environment</a></li>
+<li class="chapter" data-level="2.4" data-path="causal-models.html"><a href="causal-models.html#complex-environments"><i class="fa fa-check"></i><b>2.4</b> Complex Environments</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches-one-unobserved"><i class="fa fa-check"></i><b>2.4.1</b> An electric circuit with two switches, one unobserved</a></li>
+<li class="chapter" data-level="2.4.2" data-path="causal-models.html"><a href="causal-models.html#section"><i class="fa fa-check"></i><b>2.4.2</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#causal-effects"><i class="fa fa-check"></i><b>2.5</b> Causal Effects</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#definition"><i class="fa fa-check"></i><b>2.5.1</b> Definition</a></li>
 <li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#causal-effect-statistics"><i class="fa fa-check"></i><b>2.5.2</b> Causal Effect Statistics</a></li>
@@ -332,11 +335,40 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 </div>
 <div id="probabilistic-models-of-causality" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Probabilistic Models of Causality</h3>
-<p>This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, <em>probabilistic</em> rather than <em>determinstic</em>. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of interest cannot be observed or measured. Causal models in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.</p>
+<p>This example has shown that even in very simple causal systems, not being able to observe (or accurately measure) a single variable requires us to revert to inferences of a lesser kind, <em>probabilistic</em> rather than <em>determinstic</em>. Of course, outside of physics, most systems worth studying are far more complex as the one described here, and many variables of (potential) interest cannot be observed or measured. Causal reasoning in social sciences, medicine and other complex sciences is therefore closely linked with probability theory. Hence, from here on, we will consider these probabilistic use cases.</p>
 </div>
 </div>
-<div id="causality-in-a-complex-environment" class="section level2">
-<h2><span class="header-section-number">2.4</span> Causality In A Complex Environment</h2>
+<div id="complex-environments" class="section level2">
+<h2><span class="header-section-number">2.4</span> Complex Environments</h2>
+<div id="an-electric-circuit-with-two-switches-one-unobserved" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> An electric circuit with two switches, one unobserved</h3>
+<p>Let us start with the problem above, where we model a system with two switches, but the state of switch one is unobserved. To make the distinction between the two switches more apparent, let’s denote the unobserved switch by <span class="math inline">\(U\)</span> and the observable switch simply by <span class="math inline">\(X\)</span>:</p>
+<div class="figure">
+<img src="images/causal_models-hidden_electric_ux.png" alt="" />
+<p class="caption">A circuit diagram with a single power source, a two switches (X and U) and a light bulb (Y). Switch U is unobserved.</p>
+</div>
+<p>Note that the <em>structure</em> of the causal graphs remains the same, as the box only hinders us to observe the <em>state</em> of the switch, but we still know that there is a switch. This allows us to further specify <span class="math inline">\(f()\)</span> of the structural equation, which after refactoring variable names is now
+<span class="math display">\[\begin{equation}
+Y := f(U, X) = X \cdot U
+\end{equation}\]</span></p>
+<p>Let us further introduce a symbol for the system, <span class="math inline">\(S\)</span>, which not only denotes the structure of the system, but includes the probabilistic mechanism that determines <span class="math inline">\(U\)</span>. We can now <em>derive</em> the <em>probability distributions</em> for <span class="math inline">\(Y\)</span> from the structural equation for each possible interventions on <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+P^{S;do(X:=x)}(Y) = P^{S;do(X:=x)}(X \cdot U) = P^{S;do(X:=x)}(x \cdot U) = x P^{S;do(X:=x)}(U)
+\end{equation}\]</span>
+where <span class="math inline">\(do(X:=x)\)</span> denotes the intervention on <span class="math inline">\(X\)</span> where its state is set to <span class="math inline">\(x\)</span>. Note that, as the intervention fixes <span class="math inline">\(X\)</span> to a specific value, it is non-random and can therefore be placed outside of <span class="math inline">\(P()\)</span>.</p>
+<p>Causal reasoning about the effect of the switch on the light bulb (the effect of setting the state of <span class="math inline">\(X\)</span> on the state of <span class="math inline">\(Y\)</span>) now depends not on the state of <span class="math inline">\(U\)</span>, but its probability distribution. We can safely say that, if we open the switch, then the light bulb will never be on, regardless of the probability distribution of <span class="math inline">\(U\)</span>:
+<span class="math display">\[\begin{equation}
+P^{S;do(X:=0)}(Y=1) = 0 \cdot P^{S;do(X:=0)}(U) = 0
+\end{equation}\]</span>
+Again, if we were to observe a case where the switch is open but the light bulb is on, we would instantly know that our structural equation is invalid.</p>
+<p>This is different however for the case where we close the switch:
+<span class="math display">\[\begin{equation}
+P^{S;do(X:=1)}(Y=1) = 1 \cdot P^{S;do(X:=1)}(U=1) = P^{S}(U=1)
+\end{equation}\]</span></p>
+<p>Say, for example, system <span class="math inline">\(S\)</span> refers to a population of circuits that are all created by the same machine. This machine is supposed to close the switch in the box, but fails to do so 1% of the cases. Hence, <span class="math inline">\(P^{S}(U=1)=0.99\)</span> and therefore <span class="math inline">\(P^{S;do(X:=1)}(Y=1)=0.99\)</span>: only in 99% of the cases where we close the switch, we will see the light bulb go on, in 1% of the cases it will fail to do so.</p>
+</div>
+<div id="section" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> </h3>
 <p><span class="math display">\[\begin{equation}
 \Delta_i := Y_i^{S;do(Z_i:=1)} - Y_i^{S; do(Z_i:=0)} \label{eq:myfirsteq} \tag{1}
 \end{equation}\]</span></p>
@@ -344,6 +376,7 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 <span class="math display">\[\begin{equation}
 P(\Delta) = P^{S;do(Z:=1)}(Y) - P^{S;do(Z:=0)}(Y) \label{eq:mktg_pop_ate} \tag{2}
 \end{equation}\]</span></p>
+</div>
 </div>
 <div id="causal-effects" class="section level2">
 <h2><span class="header-section-number">2.5</span> Causal Effects</h2>
