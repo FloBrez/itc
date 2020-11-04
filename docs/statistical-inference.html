@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Epistemology | Introduction To Causality: A Modern Approach</title>
+  <title>C Statistical Inference | Introduction To Causality: A Modern Approach</title>
   <meta name="description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Epistemology | Introduction To Causality: A Modern Approach" />
+  <meta property="og:title" content="C Statistical Inference | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
   <meta property="og:image" content="https://flobrez.github.io/intro_to_causality/images/cover.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flobrez/itc" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Epistemology | Introduction To Causality: A Modern Approach" />
+  <meta name="twitter:title" content="C Statistical Inference | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="twitter:image" content="https://flobrez.github.io/intro_to_causality/images/cover.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="applications.html"/>
-<link rel="next" href="notation-and-terminology.html"/>
+<link rel="prev" href="probabilistic-models-and-reasoning.html"/>
+<link rel="next" href="code.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -234,61 +234,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="epistemology" class="section level1">
-<h1><span class="header-section-number">5</span> Epistemology</h1>
-<div id="manipulation" class="section level2">
-<h2><span class="header-section-number">5.1</span> Manipulation</h2>
-<p>Sometimes the cause cannot be directly manipulated: the doctor can prescribe a drug but not ensure the patient is taking the drug; a marketing manager might choose who to sent a mail to, but the delivery could fail; we dealt with problems like these in our application on instrumental variables.
-The problem is however, more subtle, and probably more important than we might have anticipated. The issue appears in situations where cannot directly intervene on a variable, but only on a mechanism that affects that variable.</p>
-<p>Assume, you’re an economist asked to evaluate the effect of university education on a persons lifetime income to inform a decision on whether or not to expand access to university education.
-As an expert in economics, statistics and causal inference, you immediately recognize the problems with this task.
-* knowing about treatment effect heterogeneity, you understand that the average treatment effect calculated for the current group of students is not an estimate for the treatment effect for those who will become available under the new policy.
-* you’re asked to provide a causal effect, but the intervention is not specified. The government can’t directly manipulate</p>
-<p>Uncertainty about effectiveness of interventions can have various reasons:
-* <em>correct model</em>: we are uncertain about the assumptions on the causal structure used to make the causal inference
-* <em>extrapolation</em>: the causal inference relied on data drawn from other populations, either other individual or a different time. In dynamic environments such as the economy, causal knowledge can depreciate fast with new technology, a changing competition and ever-so slightly different regulation.
-*</p>
-<p>In many circumstances the optimal decision will differ by perspective. Imagine a doctor having two different treatments at hand. Drug A is known to be most effective (100), but relies on the patient taking the drug reliably every day. If taken irregularly, the drug’s effectiveness is severly lower (50). Drug B on the other hand works similarly if take regularly or irregularly (75). If the doctor has to make a decision whether to prefer A vs B, she will have to rely on her judgements of the patient’s ability to follow through on a regular schedule. If it is known that most patients have a hard time doing this, the best treatment to prescribe from a doctor’s perspective is drug B. The patient, however, might think differently. Knowing that they have the self-discipline they might choose to go with drug A.
-This is just one example on how a guideline with simple recommendations can be sub-optimal. If the patient was given the information, he could use it to make a better judgement (but of course the patient might be overconfident in his ability to stick to a rigid schedule).
-This is similar to giving someone advice to exercise and restrict to 2000kcal food intake to loose weight. This certainly works <em>if</em> one adhere’s to it. The likelihood to fail will be great though. A less ambitious and rigid goal might be less effective, but might be substantially easier to follow-through. The <em>recommendation</em> for a diet will have to have a larger effect than the more rigid one.</p>
+<div id="statistical-inference" class="section level1">
+<h1><span class="header-section-number">C</span> Statistical Inference</h1>
+<p>This section provides a brief introduction into concepts of probability theory and statistical inference that are essential for understanding the technical parts of the main text.</p>
+<div id="distributions" class="section level2">
+<h2><span class="header-section-number">C.1</span> Distributions</h2>
+<div id="single-random-variable" class="section level3">
+<h3><span class="header-section-number">C.1.1</span> Single Random Variable</h3>
+<p>The expected value of a discrete random variable <span class="math inline">\(X\)</span> is the weighted avarage of the possible values <span class="math inline">\(x\)</span>, with their probabilites as weights</p>
+<p><span class="math display">\[\begin{equation}
+E(X) = \sum_{x} p(x) x
+\end{equation}\]</span></p>
+<p>The expected value of a sum of two random variables is the sum of their expected values</p>
+<p><span class="math display">\[\begin{equation}
+E(X + Y) = E(X) + E(Y)
+\end{equation}\]</span></p>
+<p>and the expected value scales linearly with scaling factor <span class="math inline">\(a\)</span></p>
+<p><span class="math display">\[\begin{equation}
+E(a X) = a E(X)
+\end{equation}\]</span></p>
+<p>Note, however, that this property does not hold for the product of two random variables</p>
+<p><span class="math display">\[\begin{equation}
+E(X \cdot Y) = E(X) \cdot E(Y)
+\end{equation}\]</span></p>
+<p>only if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 </div>
-<div id="long-term-effects" class="section level2">
-<h2><span class="header-section-number">5.2</span> Long-Term Effects</h2>
-<p>In examples so far we have considered situations where the intervention was one-shot, i.e. we only intervened once in the system. Although plausible in the applications considered, there are many applications where this is not the case. Especially when we are interested in long-term goals rather than short-term outcomes, it is implausible that we would not be able to intervene in the future. Of course, this can partly be alleviated estimating the likelihood of future actions and taken these into account, but that doesn’t make sense if we are the actors ourselves.
-The British xx was tasked to evaluate the effect of Brexit on British GDP in the years after Brexit. This is difficult to establish as many important decisions are undetermined by Brexit itself (leaving out the problem that the terms and conditions of the Brexit are not fully specified themselves). Leaving the EU will allow Great Britain to explore policies that were not available within the EU: every country in the EU has to have a value-added tax system. Leaving the EU allows to choose a different policy. An economist trying to provide this estimate will have to assume a probability distribution on this topic, as it will certainly have non-trivial impact. A politician in charge, e.g. the prime minister, might disregard this recommendation as he might have quite different plans and the probability distribution might be quite different (it might not be fully centered at a single option as he might be unsure whether he might achieve this policy if he is willing to go for it).</p>
-</div>
-<div id="are-all-sciences-equal" class="section level2">
-<h2><span class="header-section-number">5.3</span> Are all sciences equal?</h2>
-<p>The concept of causality as discussed in this book is a cornerstone of many scientific disciplines. Although in most cases not stated explicitly in those terms, the question <strong>what will happen if i does x (versus y)</strong> is implicit in most scientific work in diverse fields such as economics, psychology, medicine, and history.
-The interventions contemplated and analyzed in these disciplines vary widely in terms of manipulability, scope and ethics: a randomized experiment on fiscal policy is neither operationally feasible nor ethically desirable - at least at a the level of entire nations; assessing how individuals provide different answers if questions are phrased differently is both manipulable in a controlled environment and too unintrusive to be ethically problematic. Throughout the book we discussed several methods to infer causal relationships ranging from randomized controlled trials to time series analysis. With every step away from the ideal properties of an RCT, the reliability and robustness of results crucially depended on the validity of the assumptions that we were willing to accept. In general, the more assumptions we make, the more likely the results will be unreliable.
-On a sidenote: of course, incorrect causal assumptions are not the only or even the main reason for scientific results to be unreliable. Many of those have to do with problems of <em>statisical inference</em> instead. Even in experiments following an RCT design, there are plenty of pitfalls to be aware of. Too small samples, p-hacking, and publishing bias are just a few reasons for the <a href="https://en.wikipedia.org/wiki/Replication_crisis">replication crisis</a> in psychology, medicine and other social sciences.</p>
-<p>Least reliable results are to be expected when the complexity of the subject matter is very high, but the methodoligal toolkit to investigate it is reduced to the least reliable ones</p>
+<div id="multiple-random-variables" class="section level3">
+<h3><span class="header-section-number">C.1.2</span> Multiple Random Variables</h3>
 <ul>
-<li>macroeconomics. growth, business cycle, monetary and fiscal policy.</li>
-<li>epidemiology. including nutrition.</li>
-<li>social psychology.</li>
-<li>evolution. while the theory of evolution has strong empirical support, combinatorial explosion and complex dynamics do not allow for a reliable inference of effects of interventions in the biosphere.</li>
+<li>Covariance</li>
+<li>Correlation</li>
+<li>Conditional Probability</li>
+<li>Regression Parameter</li>
 </ul>
-<p>Even if complexity is high, if some aspects of the problem can be thoroughly studied and combined using a consistent theory, the overall results can be reasonably reliable:</p>
-<ul>
-<li>climate science.</li>
-<li>microeconomics. pseudo-experiments on price controls (e.g. minimum wage or gas price cap) supported by strong theory of supply and demand. problem is often quantification of effects rather than the general direction. There is almost no disagreement across labor economists that there exists a general trade-off between higher minimum wages and lower unemployment. The debate today primarily focuses on the possibility of small negative or even positive effects on employment, but virtually everybody accepts the logic that unemployment will exist/increase above a certain threshold.</li>
-<li></li>
-<li></li>
-</ul>
+</div>
+</div>
+<div id="statistical-inference-1" class="section level2">
+<h2><span class="header-section-number">C.2</span> Statistical Inference</h2>
+<div id="estimators" class="section level3">
+<h3><span class="header-section-number">C.2.1</span> Estimators</h3>
+</div>
+<div id="hypothesis-tests" class="section level3">
+<h3><span class="header-section-number">C.2.2</span> Hypothesis Tests</h3>
 
 </div>
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="applications.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notation-and-terminology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilistic-models-and-reasoning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="code.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -310,7 +308,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/epistemology.md",
+"link": "https://github.com/flobrez/itc/edit/master/appendix-stat-inference.md",
 "text": "Edit"
 },
 "history": {

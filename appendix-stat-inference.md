@@ -1,4 +1,4 @@
-# Statistics
+# Statistical Inference
 
 This section provides a brief introduction into concepts of probability theory and statistical inference that are essential for understanding the technical parts of the main text.
 

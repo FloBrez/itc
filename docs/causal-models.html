@@ -11,7 +11,7 @@
   <meta property="og:title" content="2 Causal Models | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
-  
+  <meta property="og:image" content="https://flobrez.github.io/intro_to_causality/images/cover.png" />
   <meta property="og:description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="github-repo" content="flobrez/itc" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="2 Causal Models | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
-  
+  <meta name="twitter:image" content="https://flobrez.github.io/intro_to_causality/images/cover.png" />
 
 <meta name="author" content="Florian Brezina" />
 
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.1" data-path="causal-models.html"><a href="causal-models.html#causal-graphs"><i class="fa fa-check"></i><b>2.2.1</b> Causal Graphs</a></li>
 <li class="chapter" data-level="2.2.2" data-path="causal-models.html"><a href="causal-models.html#structural-equations"><i class="fa fa-check"></i><b>2.2.2</b> Structural Equations</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#simple-environments"><i class="fa fa-check"></i><b>2.3</b> Simple Environments</a><ul>
+<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#deterministic-systems"><i class="fa fa-check"></i><b>2.3</b> Deterministic Systems</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-one-switch"><i class="fa fa-check"></i><b>2.3.1</b> An electric circuit with one switch</a></li>
 <li class="chapter" data-level="2.3.2" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches"><i class="fa fa-check"></i><b>2.3.2</b> An electric circuit with two switches</a></li>
 </ul></li>
@@ -160,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="causal-models.html"><a href="causal-models.html#probabilistic-models-of-causality"><i class="fa fa-check"></i><b>2.4.1</b> Probabilistic Models of Causality</a></li>
 <li class="chapter" data-level="2.4.2" data-path="causal-models.html"><a href="causal-models.html#interventions-more-generally-defined"><i class="fa fa-check"></i><b>2.4.2</b> Interventions More Generally Defined</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#complex-environments"><i class="fa fa-check"></i><b>2.5</b> Complex Environments</a><ul>
+<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#probabilistic-systems"><i class="fa fa-check"></i><b>2.5</b> Probabilistic Systems</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches-one-unobserved"><i class="fa fa-check"></i><b>2.5.1</b> An electric circuit with two switches, one unobserved</a></li>
 <li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#section"><i class="fa fa-check"></i><b>2.5.2</b> </a></li>
 </ul></li>
@@ -201,18 +201,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a><ul>
 <li class="chapter" data-level="A.1" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html#terminology-confusion"><i class="fa fa-check"></i><b>A.1</b> Terminology Confusion</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a><ul>
-<li class="chapter" data-level="B.1" data-path="statistics-1.html"><a href="statistics-1.html#distributions"><i class="fa fa-check"></i><b>B.1</b> Distributions</a><ul>
-<li class="chapter" data-level="B.1.1" data-path="statistics-1.html"><a href="statistics-1.html#single-random-variable"><i class="fa fa-check"></i><b>B.1.1</b> Single Random Variable</a></li>
-<li class="chapter" data-level="B.1.2" data-path="statistics-1.html"><a href="statistics-1.html#multiple-random-variables"><i class="fa fa-check"></i><b>B.1.2</b> Multiple Random Variables</a></li>
+<li class="chapter" data-level="B" data-path="probabilistic-models-and-reasoning.html"><a href="probabilistic-models-and-reasoning.html"><i class="fa fa-check"></i><b>B</b> Probabilistic Models and Reasoning</a><ul>
+<li class="chapter" data-level="B.1" data-path="probabilistic-models-and-reasoning.html"><a href="probabilistic-models-and-reasoning.html#probabilistic-reasoning"><i class="fa fa-check"></i><b>B.1</b> Probabilistic Reasoning</a></li>
 </ul></li>
-<li class="chapter" data-level="B.2" data-path="statistics-1.html"><a href="statistics-1.html#statistical-inference"><i class="fa fa-check"></i><b>B.2</b> Statistical Inference</a><ul>
-<li class="chapter" data-level="B.2.1" data-path="statistics-1.html"><a href="statistics-1.html#estimators"><i class="fa fa-check"></i><b>B.2.1</b> Estimators</a></li>
-<li class="chapter" data-level="B.2.2" data-path="statistics-1.html"><a href="statistics-1.html#hypothesis-tests"><i class="fa fa-check"></i><b>B.2.2</b> Hypothesis Tests</a></li>
+<li class="chapter" data-level="C" data-path="statistical-inference.html"><a href="statistical-inference.html"><i class="fa fa-check"></i><b>C</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="C.1" data-path="statistical-inference.html"><a href="statistical-inference.html#distributions"><i class="fa fa-check"></i><b>C.1</b> Distributions</a><ul>
+<li class="chapter" data-level="C.1.1" data-path="statistical-inference.html"><a href="statistical-inference.html#single-random-variable"><i class="fa fa-check"></i><b>C.1.1</b> Single Random Variable</a></li>
+<li class="chapter" data-level="C.1.2" data-path="statistical-inference.html"><a href="statistical-inference.html#multiple-random-variables"><i class="fa fa-check"></i><b>C.1.2</b> Multiple Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-inference-1"><i class="fa fa-check"></i><b>C.2</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="C.2.1" data-path="statistical-inference.html"><a href="statistical-inference.html#estimators"><i class="fa fa-check"></i><b>C.2.1</b> Estimators</a></li>
+<li class="chapter" data-level="C.2.2" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-tests"><i class="fa fa-check"></i><b>C.2.2</b> Hypothesis Tests</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="C" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>C</b> Code</a><ul>
-<li class="chapter" data-level="C.1" data-path="code.html"><a href="code.html#simulate-causal-models"><i class="fa fa-check"></i><b>C.1</b> Simulate Causal Models</a></li>
+<li class="chapter" data-level="D" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>D</b> Code</a><ul>
+<li class="chapter" data-level="D.1" data-path="code.html"><a href="code.html#simulate-causal-models"><i class="fa fa-check"></i><b>D.1</b> Simulate Causal Models</a></li>
 </ul></li>
 </ul>
 
@@ -242,19 +245,24 @@ All fundamental physical laws are perfectly symmetrical and therefore reversable
 </div>
 <div id="basic-definitions" class="section level2">
 <h2><span class="header-section-number">2.2</span> Basic Definitions</h2>
-<p>We assume the world can be modelled by <em>variables</em>. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. <span class="math inline">\(X\)</span>, whereas we use lower-case letters for their values, e.g. <span class="math inline">\(x\)</span>. In case <span class="math inline">\(X\)</span> is <em>categorical</em>, different values will be denoted by a subscript <span class="math inline">\(x_j\)</span>. Where <span class="math inline">\(X\)</span> has two values only, we will encode them with <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p>
+
+<div class="definition">
+<span id="def:var" class="definition"><strong>Definition 2.1  (Variable and State)  </strong></span>We assume the world can be modelled by <strong>variables</strong>. Variables can take various values, which we will call <strong>states</strong>. The variables themselves are denoted by upper-case latin letters, e.g. <span class="math inline">\(X\)</span>, whereas we use lower-case letters for their states, e.g. <span class="math inline">\(x\)</span>.
+In case <span class="math inline">\(X\)</span> is <em>categorical</em>, different values will be denoted by a subscript <span class="math inline">\(x_j\)</span>. Where <span class="math inline">\(X\)</span> has two values only, we will encode them with <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.
+</div>
+
 <div id="causal-graphs" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Causal Graphs</h3>
 
 <div class="definition">
-<span id="def:graphs" class="definition"><strong>Definition 2.1  (Causal Graph)  </strong></span>A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In <em>causal graphs</em>, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an <em>ordered</em> pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. These DAGs have no feedback loops.
+<span id="def:graphs" class="definition"><strong>Definition 2.2  (Causal Graph)  </strong></span>A graph is a mathematical structure. It consists of a set of nodes and and a set of edges, where edges connect ordered pairs of nodes. In <em>causal graphs</em>, nodes represent variables; edges represent the causal relation from cause to effect. Note that in a causal graph, an edge is an <em>ordered</em> pair of nodes, the edge therefore directed. In most graphs in this book, we will consider causal systems that can be represeted as directed acyclical graphs (DAGs)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. These DAGs have no feedback loops.
 </div>
 
 <p>The causal graphs convey the qualitative pattern of causal relations. They do not quantify that relation, i.e. specify how two variables are related. A graph with relation <span class="math inline">\(A \rightarrow B\)</span>
 It The quantitative aspects are better represented in a set of structural equations.</p>
 
 <div class="definition">
-<span id="def:exoendo" class="definition"><strong>Definition 2.2  (Exogeneous and Endogeneous Variables)  </strong></span>An exogeneous variable in a graph G has no edges pointing into itself.
+<span id="def:exoendo" class="definition"><strong>Definition 2.3  (Exogeneous and Endogeneous Variables)  </strong></span>An exogeneous variable in a graph G has no edges pointing into itself.
 An endogeneous variable in a graph G has at least one edge point into itself.
 </div>
 
@@ -266,8 +274,8 @@ We will focus exposition on <em>categorical variables</em> which can assume a</p
 <p><span class="math inline">\(X \rightarrow Y\)</span> means that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span>. Manipulating <span class="math inline">\(X\)</span> determines the value of <span class="math inline">\(Y\)</span>, but not the other way round. We call <span class="math inline">\(X\)</span> the <em>cause</em> and <span class="math inline">\(Y\)</span> the <em>outcome</em>. Others call <span class="math inline">\(Y\)</span> the “<em>effect</em>”, but we will use <em>effect</em> to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. “average treatment effect”) and its usage in everyday language (e.g. “tipping on that button had no effect on the brightness of the screen”).</p>
 </div>
 </div>
-<div id="simple-environments" class="section level2">
-<h2><span class="header-section-number">2.3</span> Simple Environments</h2>
+<div id="deterministic-systems" class="section level2">
+<h2><span class="header-section-number">2.3</span> Deterministic Systems</h2>
 <div id="an-electric-circuit-with-one-switch" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> An electric circuit with one switch</h3>
 <p>Let’s first take a look at a most simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). Both, X and Y, can assume one of two states. We will encode these as 0 and 1:</p>
@@ -411,7 +419,7 @@ Y := f(1, X_2) = 1 \cdot X_2 = X_2
 </div>
 <div id="interventions-more-generally-defined" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> Interventions More Generally Defined</h3>
-<p>So far, we have used the term <em>intervention</em> when we fixed a variable of system to a certain value. More generally, an intervention is a change in one or more structural equations. An intervention that replaces the right-hand side of the structural equation with a <em>value</em> is called <em>hard intervention</em> (or <em>atomic</em>, <em>ideal</em>, <em>surgical</em>), whereas a replacement with another function with the same arguments is called a <em>soft intervention</em> (or <em>imperfect</em>, <em>parametric</em>) (<span class="citation">(Pearl <a href="#ref-pearl2009" role="doc-biblioref">2009</a>, 35)</span> and <span class="citation">(Pearl <a href="#ref-pearl2009" role="doc-biblioref">2009</a>, 89)</span>)</p>
+<p>So far, we have used the term <em>intervention</em> when we fixed a variable of system to a certain value. More generally, an intervention is a change in one or more structural equations. An intervention that replaces the right-hand side of the structural equation with a <em>value</em> is called <em>hard intervention</em> (or <em>atomic</em>, <em>ideal</em>, <em>surgical</em>), whereas a replacement with another function with the same arguments is called a <em>soft intervention</em> (or <em>imperfect</em>, <em>parametric</em>) (<span class="citation">(Peters, Janzik, and Schölkopf <a href="#ref-peters2017" role="doc-biblioref">2017</a>, 35)</span> and <span class="citation">(Peters, Janzik, and Schölkopf <a href="#ref-peters2017" role="doc-biblioref">2017</a>, 89)</span>)</p>
 <p>We already encountered examples for hard interventions, like closing switch <span class="math inline">\(X_1\)</span>:
 <span class="math display">\[\begin{equation}
 X_1 := 1
@@ -454,13 +462,20 @@ where <span class="math inline">\(I(a)\)</span> is the indicator function that r
 </table>
 </div>
 </div>
-<div id="complex-environments" class="section level2">
-<h2><span class="header-section-number">2.5</span> Complex Environments</h2>
+<div id="probabilistic-systems" class="section level2">
+<h2><span class="header-section-number">2.5</span> Probabilistic Systems</h2>
+<p>In the previous chapter we have seen that our inability to observe the state of a variable introduces uncertainty. The model is then said to be <em>probabilistic</em> rather than <em>deterministic</em>. Uncertainty, however, can be introduced into the system for these reasons:</p>
+<ul>
+<li>unobservability;</li>
+<li>measurement error (i.e. we cannot prefectly observe the actual state of a variable but only an imperfect measure);</li>
+<li>inherent probabilistic behaviour of the physical mechanism (“quantum mechanics”);</li>
+<li>modelling simplification, i.e. treating a determinsitc system as though it were random, e.g. flipping a coin, generating “random numers” on a computer.</li>
+</ul>
 <div id="an-electric-circuit-with-two-switches-one-unobserved" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> An electric circuit with two switches, one unobserved</h3>
 <p>Let us start with the problem above, where we model a system with two switches, but the state of switch one is unobserved. To make the distinction between the two switches more apparent, let’s denote the unobserved switch by <span class="math inline">\(U\)</span> and the observable switch simply by <span class="math inline">\(X\)</span>:</p>
 <div class="figure">
-<img src="images/causal_models-hidden_electric_ux.png" alt="" />
+<img src="images/causal_models-hidden_electric_2.png" alt="" />
 <p class="caption">A circuit diagram with a single power source, a two switches (X and U) and a light bulb (Y). Switch U is unobserved.</p>
 </div>
 <p>Note that the <em>structure</em> of the causal graphs remains the same, as the box only hinders us to observe the <em>state</em> of the switch, but we still know that there is a switch. This allows us to further specify <span class="math inline">\(f()\)</span> of the structural equation, which after refactoring variable names is now
@@ -511,25 +526,25 @@ i.e. expected value of the difference of two random variables is the difference
 <h3><span class="header-section-number">2.6.2</span> Causal Effect Statistics</h3>
 
 <div class="definition">
-<span id="def:ate" class="definition"><strong>Definition 2.3  (Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+<span id="def:ate" class="definition"><strong>Definition 2.4  (Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
 </div>
 
 <p>bla bla bla</p>
 
 <div class="definition">
-<span id="def:att" class="definition"><strong>Definition 2.4  (Average Treatment Effect on the Treated)  </strong></span>The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
+<span id="def:att" class="definition"><strong>Definition 2.5  (Average Treatment Effect on the Treated)  </strong></span>The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
 </div>
 
 <p>It is often used in situations where the treatment effect is expected to be heterogeneous in a population. In a given environment, selection into treatment could yield treated individuals to have a different average treatment effect than the total population. For example, if university eduction has a higher effect on earnings for people with high intelligence and if people with high intelligence more often chose a university education than less intelligent ones, the average effect of university eduction of those who choose to go to university will be higher than in the overall population (and therefore than those choosing not to go to university).</p>
 
 <div class="definition">
-<span id="def:itt" class="definition"><strong>Definition 2.5  (Intention To Treat Effect)  </strong></span>The Intention To Treat Effect, or ITT, is the expected value of xx in population x.
+<span id="def:itt" class="definition"><strong>Definition 2.6  (Intention To Treat Effect)  </strong></span>The Intention To Treat Effect, or ITT, is the expected value of xx in population x.
 </div>
 
 <p>It is conceptually the same as the ATE, but often refers to a situation where the primary intervention cannot be manipulated directly, e.g. where a doctor can prescribe a drug but not enforce that the patient actually takes the drug.</p>
 
 <div class="definition">
-<span id="def:late" class="definition"><strong>Definition 2.6  (Local Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+<span id="def:late" class="definition"><strong>Definition 2.7  (Local Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
 </div>
 
 
@@ -538,8 +553,8 @@ i.e. expected value of the difference of two random variables is the difference
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-pearl2009">
-<p>Pearl, Judea. 2009. <em>Causality</em>. 2nd ed. Cambridge University Press.</p>
+<div id="ref-peters2017">
+<p>Peters, Jonas, Dominik Janzik, and Bernhard Schölkopf. 2017. <em>Elements of Causal Inference: Foundations and Learning Algorithms</em>. MIT Press.</p>
 </div>
 </div>
 <div class="footnotes">
@@ -577,7 +592,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/causality.md",
+"link": "https://github.com/flobrez/itc/edit/master/causal-models.md",
 "text": "Edit"
 },
 "history": {

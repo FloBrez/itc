@@ -9,7 +9,12 @@ All fundamental physical laws are perfectly symmetrical and therefore reversable
 
 
 ## Basic Definitions
-We assume the world can be modelled by *variables*. Variables can take various values. The variables themselves are denoted by upper-case latin letters, e.g. $X$, whereas we use lower-case letters for their values, e.g. $x$. In case $X$ is *categorical*, different values will be denoted by a subscript $x_j$. Where $X$ has two values only, we will encode them with $0$ and $1$.
+
+
+```{definition, var, name = "Variable and State"}
+We assume the world can be modelled by **variables**. Variables can take various values, which we will call **states**. The variables themselves are denoted by upper-case latin letters, e.g. $X$, whereas we use lower-case letters for their states, e.g. $x$.
+In case $X$ is *categorical*, different values will be denoted by a subscript $x_j$. Where $X$ has two values only, we will encode them with $0$ and $1$.
+```
 
 ### Causal Graphs
 
@@ -34,7 +39,7 @@ We will focus exposition on *categorical variables* which can assume a
 
 $X \rightarrow Y$ means that $X$ causes $Y$. Manipulating $X$ determines the value of $Y$, but not the other way round. We call $X$ the *cause* and $Y$ the *outcome*. Others call $Y$ the "*effect*", but we will use *effect* to denote changes in the outcome due to manipulations of the cause. This is in line with conventions in statistical literature (e.g. "average treatment effect") and its usage in everyday language (e.g. "tipping on that button had no effect on the brightness of the screen").
 
-## Simple Environments
+## Deterministic Systems
 
 ### An electric circuit with one switch
 Let's first take a look at a most simple environment, shown in figure xxx. It represents a circuit diagram with a voltage source, a switch (X) and a lamp (Y). Both, X and Y, can assume one of two states. We will encode these as 0 and 1:
@@ -144,7 +149,7 @@ This example has shown that even in very simple causal systems, not being able t
 
 ### Interventions More Generally Defined
 
-So far, we have used the term *intervention* when we fixed a variable of system to a certain value. More generally, an intervention is a change in one or more structural equations. An intervention that replaces the right-hand side of the structural equation with a *value* is called *hard intervention* (or *atomic*, *ideal*, *surgical*), whereas a replacement with another function with the same arguments is called a *soft intervention* (or *imperfect*, *parametric*) ([@pearl2009, p.35] and [@pearl2009, p.89])
+So far, we have used the term *intervention* when we fixed a variable of system to a certain value. More generally, an intervention is a change in one or more structural equations. An intervention that replaces the right-hand side of the structural equation with a *value* is called *hard intervention* (or *atomic*, *ideal*, *surgical*), whereas a replacement with another function with the same arguments is called a *soft intervention* (or *imperfect*, *parametric*) ([@peters2017, p.35] and [@peters2017, p.89])
 
 We already encountered examples for hard interventions, like closing switch $X_1$:
 \begin{equation}
@@ -164,12 +169,19 @@ where $I(a)$ is the indicator function that returns 1 if $a$ is true and 0 other
 | 1           	| 0           	| 1       	|
 | 1           	| 1           	| 1       	|
 
-## Complex Environments
+## Probabilistic Systems
+
+In the previous chapter we have seen that our inability to observe the state of a variable introduces uncertainty. The model is then said to be *probabilistic* rather than *deterministic*. Uncertainty, however, can be introduced into the system for these reasons:
+
+* unobservability;
+* measurement error (i.e. we cannot prefectly observe the actual state of a variable but only an imperfect measure);
+* inherent probabilistic behaviour of the physical mechanism ("quantum mechanics");
+* modelling simplification, i.e. treating a determinsitc system as though it were random, e.g. flipping a coin, generating "random numers" on a computer.
 
 ### An electric circuit with two switches, one unobserved
 Let us start with the problem above, where we model a system with two switches, but the state of switch one is unobserved. To make the distinction between the two switches more apparent, let's denote the unobserved switch by $U$ and the observable switch simply by $X$:
 
-![A circuit diagram with a single power source, a two switches (X and U) and a light bulb (Y). Switch U is unobserved.](images/causal_models-hidden_electric_ux.png)
+![A circuit diagram with a single power source, a two switches (X and U) and a light bulb (Y). Switch U is unobserved.](images/causal_models-hidden_electric_2.png)
 
 Note that the *structure* of the causal graphs remains the same, as the box only hinders us to observe the *state* of the switch, but we still know that there is a switch. This allows us to further specify $f()$ of the structural equation, which after refactoring variable names is now
 \begin{equation}

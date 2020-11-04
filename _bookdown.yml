@@ -6,8 +6,8 @@ rmd_files:
     "index.md",
 
     "introduction.md",
-    "causality.md",
-    "methods.md",
+    "causal-models.md",
+    "causal-inference.md",
     "app_marketing.md",
     "app_drug.md",
     "app_discrimination.md",
@@ -15,7 +15,8 @@ rmd_files:
 
     "epistemology.md",
 
-    "notation.md",
-    "statistics.md",
-    "r-code.md"
+    "appendix-notation.md",
+    "appendix-prob-models.md",
+    "appendix-stat-inference.md",
+    "appendix-code.md"
   ]

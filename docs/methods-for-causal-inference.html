@@ -11,7 +11,7 @@
   <meta property="og:title" content="3 Methods for Causal Inference | Introduction To Causality: A Modern Approach" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://flobrez.github.io/intro_to_causality/" />
-  
+  <meta property="og:image" content="https://flobrez.github.io/intro_to_causality/images/cover.png" />
   <meta property="og:description" content="A gentle introduction into the art and science of causal inference" />
   <meta name="github-repo" content="flobrez/itc" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="3 Methods for Causal Inference | Introduction To Causality: A Modern Approach" />
   
   <meta name="twitter:description" content="A gentle introduction into the art and science of causal inference" />
-  
+  <meta name="twitter:image" content="https://flobrez.github.io/intro_to_causality/images/cover.png" />
 
 <meta name="author" content="Florian Brezina" />
 
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.1" data-path="causal-models.html"><a href="causal-models.html#causal-graphs"><i class="fa fa-check"></i><b>2.2.1</b> Causal Graphs</a></li>
 <li class="chapter" data-level="2.2.2" data-path="causal-models.html"><a href="causal-models.html#structural-equations"><i class="fa fa-check"></i><b>2.2.2</b> Structural Equations</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#simple-environments"><i class="fa fa-check"></i><b>2.3</b> Simple Environments</a><ul>
+<li class="chapter" data-level="2.3" data-path="causal-models.html"><a href="causal-models.html#deterministic-systems"><i class="fa fa-check"></i><b>2.3</b> Deterministic Systems</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-one-switch"><i class="fa fa-check"></i><b>2.3.1</b> An electric circuit with one switch</a></li>
 <li class="chapter" data-level="2.3.2" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches"><i class="fa fa-check"></i><b>2.3.2</b> An electric circuit with two switches</a></li>
 </ul></li>
@@ -160,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="causal-models.html"><a href="causal-models.html#probabilistic-models-of-causality"><i class="fa fa-check"></i><b>2.4.1</b> Probabilistic Models of Causality</a></li>
 <li class="chapter" data-level="2.4.2" data-path="causal-models.html"><a href="causal-models.html#interventions-more-generally-defined"><i class="fa fa-check"></i><b>2.4.2</b> Interventions More Generally Defined</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#complex-environments"><i class="fa fa-check"></i><b>2.5</b> Complex Environments</a><ul>
+<li class="chapter" data-level="2.5" data-path="causal-models.html"><a href="causal-models.html#probabilistic-systems"><i class="fa fa-check"></i><b>2.5</b> Probabilistic Systems</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="causal-models.html"><a href="causal-models.html#an-electric-circuit-with-two-switches-one-unobserved"><i class="fa fa-check"></i><b>2.5.1</b> An electric circuit with two switches, one unobserved</a></li>
 <li class="chapter" data-level="2.5.2" data-path="causal-models.html"><a href="causal-models.html#section"><i class="fa fa-check"></i><b>2.5.2</b> </a></li>
 </ul></li>
@@ -201,18 +201,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html"><i class="fa fa-check"></i><b>A</b> Notation and Terminology</a><ul>
 <li class="chapter" data-level="A.1" data-path="notation-and-terminology.html"><a href="notation-and-terminology.html#terminology-confusion"><i class="fa fa-check"></i><b>A.1</b> Terminology Confusion</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="statistics-1.html"><a href="statistics-1.html"><i class="fa fa-check"></i><b>B</b> Statistics</a><ul>
-<li class="chapter" data-level="B.1" data-path="statistics-1.html"><a href="statistics-1.html#distributions"><i class="fa fa-check"></i><b>B.1</b> Distributions</a><ul>
-<li class="chapter" data-level="B.1.1" data-path="statistics-1.html"><a href="statistics-1.html#single-random-variable"><i class="fa fa-check"></i><b>B.1.1</b> Single Random Variable</a></li>
-<li class="chapter" data-level="B.1.2" data-path="statistics-1.html"><a href="statistics-1.html#multiple-random-variables"><i class="fa fa-check"></i><b>B.1.2</b> Multiple Random Variables</a></li>
+<li class="chapter" data-level="B" data-path="probabilistic-models-and-reasoning.html"><a href="probabilistic-models-and-reasoning.html"><i class="fa fa-check"></i><b>B</b> Probabilistic Models and Reasoning</a><ul>
+<li class="chapter" data-level="B.1" data-path="probabilistic-models-and-reasoning.html"><a href="probabilistic-models-and-reasoning.html#probabilistic-reasoning"><i class="fa fa-check"></i><b>B.1</b> Probabilistic Reasoning</a></li>
 </ul></li>
-<li class="chapter" data-level="B.2" data-path="statistics-1.html"><a href="statistics-1.html#statistical-inference"><i class="fa fa-check"></i><b>B.2</b> Statistical Inference</a><ul>
-<li class="chapter" data-level="B.2.1" data-path="statistics-1.html"><a href="statistics-1.html#estimators"><i class="fa fa-check"></i><b>B.2.1</b> Estimators</a></li>
-<li class="chapter" data-level="B.2.2" data-path="statistics-1.html"><a href="statistics-1.html#hypothesis-tests"><i class="fa fa-check"></i><b>B.2.2</b> Hypothesis Tests</a></li>
+<li class="chapter" data-level="C" data-path="statistical-inference.html"><a href="statistical-inference.html"><i class="fa fa-check"></i><b>C</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="C.1" data-path="statistical-inference.html"><a href="statistical-inference.html#distributions"><i class="fa fa-check"></i><b>C.1</b> Distributions</a><ul>
+<li class="chapter" data-level="C.1.1" data-path="statistical-inference.html"><a href="statistical-inference.html#single-random-variable"><i class="fa fa-check"></i><b>C.1.1</b> Single Random Variable</a></li>
+<li class="chapter" data-level="C.1.2" data-path="statistical-inference.html"><a href="statistical-inference.html#multiple-random-variables"><i class="fa fa-check"></i><b>C.1.2</b> Multiple Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-inference-1"><i class="fa fa-check"></i><b>C.2</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="C.2.1" data-path="statistical-inference.html"><a href="statistical-inference.html#estimators"><i class="fa fa-check"></i><b>C.2.1</b> Estimators</a></li>
+<li class="chapter" data-level="C.2.2" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-tests"><i class="fa fa-check"></i><b>C.2.2</b> Hypothesis Tests</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="C" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>C</b> Code</a><ul>
-<li class="chapter" data-level="C.1" data-path="code.html"><a href="code.html#simulate-causal-models"><i class="fa fa-check"></i><b>C.1</b> Simulate Causal Models</a></li>
+<li class="chapter" data-level="D" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>D</b> Code</a><ul>
+<li class="chapter" data-level="D.1" data-path="code.html"><a href="code.html#simulate-causal-models"><i class="fa fa-check"></i><b>D.1</b> Simulate Causal Models</a></li>
 </ul></li>
 </ul>
 
@@ -480,7 +483,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/flobrez/itc/edit/master/methods.md",
+"link": "https://github.com/flobrez/itc/edit/master/causal-inference.md",
 "text": "Edit"
 },
 "history": {

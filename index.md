@@ -6,6 +6,7 @@ description: "A gentle introduction into the art and science of causal inference
 url: 'https://flobrez.github.io/intro_to_causality/'
 github-repo: flobrez/itc
 site: bookdown::bookdown_site
+cover-image: "images/cover.png"
 documentclass: book
 link-citations: yes
 bibliography: ["bib.bib"]
