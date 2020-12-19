@@ -524,15 +524,26 @@ i.e. expected value of the difference of two random variables is the difference
 </div>
 <div id="causal-effect-statistics" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> Causal Effect Statistics</h3>
+<p>Very often, in every day discussion but also in academia, we say that something has a causal effect or it doesn’t. A drug is effective, a vaccine has “95% effectiveness”, a policy having no effect on learning outcomes.
+From the discussion before and equation xxx, it should be obvious that, in a complex environment, these statements are not meant to be understood as an intervention on a population having effect or no effect or the same effect on <em>every single</em> entity of the population. Usually, they refer to some statistic (i.e. an aggregate) of the individual treatment effect <span class="math inline">\(\Delta_i\)</span>.</p>
+<p>In most cases, the statistic referred to is the population average, commonly known as the <em>Average Treatment Effect</em> or simply <em>ATE</em>.</p>
 
 <div class="definition">
 <span id="def:ate" class="definition"><strong>Definition 2.4  (Average Treatment Effect)  </strong></span>The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+<span class="math display">\[\begin{equation}
+\Delta_{I} := \frac{1}{|I|} \sum_{i \elem I} \Delta_i
+\end{equation}\]</span>
+where <span class="math inline">\(I\)</span> is the population of interest/analysis.
 </div>
 
-<p>bla bla bla</p>
+<p>In some case scientists are interested in a subtly different statistic, the <em>Average Treatement Effect on the Treated</em> or <em>ATT</em>. This arises especially in contexts where individuals self-select into treatment and are expected to continue to do so once a policy or guideline is implemented.</p>
 
 <div class="definition">
 <span id="def:att" class="definition"><strong>Definition 2.5  (Average Treatment Effect on the Treated)  </strong></span>The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
+<span class="math display">\[\begin{equation}
+\Delta_{T} := \frac{1}{|I|} \sum_{i \elem I} \Delta_i
+\end{equation}\]</span>
+where <span class="math inline">\(T\)</span> is a subset of <span class="math inline">\(I\)</span> where the interventions was on.
 </div>
 
 <p>It is often used in situations where the treatment effect is expected to be heterogeneous in a population. In a given environment, selection into treatment could yield treated individuals to have a different average treatment effect than the total population. For example, if university eduction has a higher effect on earnings for people with high intelligence and if people with high intelligence more often chose a university education than less intelligent ones, the average effect of university eduction of those who choose to go to university will be higher than in the overall population (and therefore than those choosing not to go to university).</p>

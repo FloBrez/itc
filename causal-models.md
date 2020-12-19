@@ -240,18 +240,30 @@ bla
 
 ### Causal Effect Statistics
 
+Very often, in every day discussion but also in academia, we say that something has a causal effect or it doesn't. A drug is effective, a vaccine has "95% effectiveness", a policy having no effect on learning outcomes. 
+From the discussion before and equation xxx, it should be obvious that, in a complex environment, these statements are not meant to be understood as an intervention on a population having effect or no effect or the same effect on *every single* entity of the population. Usually, they refer to some statistic (i.e. an aggregate) of the individual treatment effect $\Delta_i$. 
+
+In most cases, the statistic referred to is the population average, commonly known as the *Average Treatment Effect* or simply *ATE*.
+
 ```{definition, ate, name = "Average Treatment Effect"}
 The Average Treatment Effect, or ATE, is the expected value of xx in population x.
+\begin{equation}
+\Delta_{I} := \frac{1}{|I|} \sum_{i \elem I} \Delta_i
+\end{equation}
+where $I$ is the population of interest/analysis.
 ```
 
-bla bla bla
+In some case scientists are interested in a subtly different statistic, the *Average Treatement Effect on the Treated* or *ATT*. This arises especially in contexts where individuals self-select into treatment and are expected to continue to do so once a policy or guideline is implemented. 
 
 ```{definition, att, name = "Average Treatment Effect on the Treated"}
 The Average Treatment Effect on the Treated, or ATT, is the expected value of xx in population x conditional on observing x.
+\begin{equation}
+\Delta_{T} := \frac{1}{|I|} \sum_{i \elem I} \Delta_i
+\end{equation}
+where $T$ is a subset of $I$ where the interventions was on.
 ```
 
 It is often used in situations where the treatment effect is expected to be heterogeneous in a population. In a given environment, selection into treatment could yield treated individuals to have a different average treatment effect than the total population. For example, if university eduction has a higher effect on earnings for people with high intelligence and if people with high intelligence more often chose a university education than less intelligent ones, the average effect of university eduction of those who choose to go to university will be higher than in the overall population (and therefore than those choosing not to go to university).
-
 
 ```{definition, itt, name = "Intention To Treat Effect"}
 The Intention To Treat Effect, or ITT, is the expected value of xx in population x.
